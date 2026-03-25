@@ -1,31 +1,42 @@
 // Colors
-$color-brand: #191919;           // Brand Color
-$color-main: #725a58;            // Bold Main Color
-$color-accent: #e3b6b1;          // Accent Color
-$color-light-pink: #fae9e7;      // Light Pink
-$color-pale-white: #f8f6f4;      // Pale White
-$color-paper-white: #fbfafa;     // Paper White
-$color-mid-grey: #888888;        // Mid Grey
-$color-dark-grey: #535353;       // Dark Grey
-$color-black: #191919;           // Black
-$color-dark-pink: #b99692;       // Dark Pink
-$color-brown: #a06d67;           // Brown
+$color-brand: #191919;
+$color-main: #725a58;
+$color-accent: #e3b6b1;
+$color-light-pink: #fae9e7;
+$color-pale-white: #f8f6f4;
+$color-paper-white: #fbfafa;
+$color-mid-grey: #888888;
+$color-dark-grey: #535353;
+$color-black: #191919;
+$color-dark-pink: #b99692;
+$color-brown: #a06d67;
 
-// Semantic Colors (用途別)
-$color-text: $color-brand;
-$color-background: $color-paper-white;
-
-// Typography
+// Typography - Font Family
 $font-family-base: 'Helvetica Neue', Arial, sans-serif;
 $font-family-heading: 'Georgia', serif;
+$font-family-signature: 'Dancing Script', cursive;
 
-$text-size-base: 16px;
-$font-size-base: $text-size-base;
-$font-size-small: 14px;
-$font-size-large: 18px;
-$font-size-h1: 48px;
-$font-size-h2: 36px;
-$font-size-h3: 24px;
+// Typography - Headings
+$font-size-h1-cap: 80px;
+$font-size-h1: 80px;
+$font-size-h2: 68px;
+$font-size-h3: 48px;
+$font-size-h4-cap: 40px;
+$font-size-h4: 36px;
+$font-size-h5: 32px;
+$font-size-h6: 24px;
+
+// Typography - Button
+$font-size-button: 20px;
+$font-size-button-small: 18px;
+
+// Typography - Body
+$font-size-body: 18px;
+$font-size-body-small: 16px;
+
+// Typography - Other
+$font-size-caption: 14px;
+$font-size-signature: 54px;
 
 // Spacing
 $spacing-xs: 4px;

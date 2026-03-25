@@ -9,14 +9,14 @@
 }
 
 html {
-  font-size: $text-size-base;
+  font-size: $font-size-body-small;
   scroll-behavior: smooth;
 }
 
 body {
   font-family: $font-family-base;
-  color: $color-text;
-  background-color: $color-background;
+  color: $color-brand;
+  background-color: $color-paper-white;
 }
 
 ul,

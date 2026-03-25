@@ -26,7 +26,7 @@
     gap: $spacing-xs;
 
     label {
-      font-size: $font-size-small;
+      font-size: $font-size-caption;
     }
 
     input,
@@ -34,7 +34,7 @@
       padding: $spacing-sm $spacing-md;
       border: 1px solid rgba($color-brand, 0.2);
       font-family: inherit;
-      font-size: $font-size-base;
+      font-size: $font-size-body-small;
 
       &:focus {
         outline: none;
@@ -50,9 +50,9 @@
 
   &__submit {
     background-color: $color-brand;
-    color: $color-background;
+    color: $color-paper-white;
     padding: $spacing-md $spacing-xl;
-    font-size: $font-size-base;
+    font-size: $font-size-body-small;
     transition: background-color 0.3s;
 
     &:hover {

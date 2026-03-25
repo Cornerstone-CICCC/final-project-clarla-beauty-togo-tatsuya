@@ -3,7 +3,7 @@
 
 .footer {
   background-color: $color-brand;
-  color: $color-background;
+  color: $color-paper-white;
   padding: $spacing-xxl 0 $spacing-lg;
 
   &__container {
@@ -21,7 +21,7 @@
 
   &__section {
     h3 {
-      font-size: $font-size-large;
+      font-size: $font-size-body;
       margin-bottom: $spacing-md;
     }
   }
@@ -33,7 +33,7 @@
   }
 
   &__link {
-    font-size: $font-size-small;
+    font-size: $font-size-caption;
     transition: color 0.3s;
 
     &:hover {
@@ -45,7 +45,7 @@
     text-align: center;
     margin-top: $spacing-xl;
     padding-top: $spacing-lg;
-    border-top: 1px solid rgba($color-background, 0.2);
-    font-size: $font-size-small;
+    border-top: 1px solid rgba($color-paper-white, 0.2);
+    font-size: $font-size-caption;
   }
 }

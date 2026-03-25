@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: $color-background;
+  background-color: $color-paper-white;
   z-index: 100;
   padding: $spacing-md 0;
 
@@ -17,7 +17,7 @@
 
   &__logo {
     font-family: $font-family-heading;
-    font-size: $font-size-large;
+    font-size: $font-size-body;
   }
 
   &__nav {
@@ -34,7 +34,7 @@
   }
 
   &__nav-link {
-    font-size: $font-size-small;
+    font-size: $font-size-caption;
     transition: color 0.3s;
 
     &:hover {
