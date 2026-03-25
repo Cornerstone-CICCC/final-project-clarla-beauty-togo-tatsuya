@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clarla Beauty | Home</title>
-  <link rel="stylesheet" href="../css/main.css">
+  <title>Contact | Clarla Beauty</title>
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
   <header class="header">
     <div class="header__container">
-      <a href="/index.html" class="header__logo">Clarla Beauty</a>
+      <a href="/" class="header__logo">Clarla Beauty</a>
       <nav class="header__nav">
         <ul class="header__nav-list">
           <li><a href="/my-work/" class="header__nav-link">My Work</a></li>
@@ -26,13 +26,25 @@
     </div>
   </header>
 
-  <main class="home">
-    <section class="home__hero">
-      <div class="container">
-        <h1 class="home__hero-title">Clarla Beauty</h1>
-        <p class="home__hero-subtitle">Professional Beauty Services</p>
-      </div>
-    </section>
+  <main class="contact">
+    <div class="contact__container">
+      <h1 class="contact__title">Contact</h1>
+      <form class="contact__form" id="contact-form">
+        <div class="contact__field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="contact__field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="contact__field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="contact__submit">Send Message</button>
+      </form>
+    </div>
   </main>
 
   <footer class="footer">
@@ -61,6 +73,6 @@
     </div>
   </footer>
 
-  <script src="../js/main.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>

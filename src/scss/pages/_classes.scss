@@ -23,7 +23,7 @@
   }
 
   &__card {
-    border: 1px solid rgba($color-primary, 0.1);
+    border: 1px solid rgba($color-brand, 0.1);
     overflow: hidden;
 
     img {
@@ -41,7 +41,7 @@
     }
 
     p {
-      color: $color-secondary;
+      color: $color-dark-grey;
     }
   }
 }

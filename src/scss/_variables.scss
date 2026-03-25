@@ -1,15 +1,26 @@
 // Colors
-$color-primary: #000000;
-$color-secondary: #666666;
-$color-accent: #d4a574;
-$color-background: #ffffff;
-$color-text: #333333;
+$color-brand: #191919;           // Brand Color
+$color-main: #725a58;            // Bold Main Color
+$color-accent: #e3b6b1;          // Accent Color
+$color-light-pink: #fae9e7;      // Light Pink
+$color-pale-white: #f8f6f4;      // Pale White
+$color-paper-white: #fbfafa;     // Paper White
+$color-mid-grey: #888888;        // Mid Grey
+$color-dark-grey: #535353;       // Dark Grey
+$color-black: #191919;           // Black
+$color-dark-pink: #b99692;       // Dark Pink
+$color-brown: #a06d67;           // Brown
+
+// Semantic Colors (用途別)
+$color-text: $color-brand;
+$color-background: $color-paper-white;
 
 // Typography
 $font-family-base: 'Helvetica Neue', Arial, sans-serif;
 $font-family-heading: 'Georgia', serif;
 
-$font-size-base: 16px;
+$text-size-base: 16px;
+$font-size-base: $text-size-base;
 $font-size-small: 14px;
 $font-size-large: 18px;
 $font-size-h1: 48px;

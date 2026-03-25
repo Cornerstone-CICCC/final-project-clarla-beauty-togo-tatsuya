@@ -32,7 +32,7 @@
     input,
     textarea {
       padding: $spacing-sm $spacing-md;
-      border: 1px solid rgba($color-primary, 0.2);
+      border: 1px solid rgba($color-brand, 0.2);
       font-family: inherit;
       font-size: $font-size-base;
 
@@ -49,14 +49,14 @@
   }
 
   &__submit {
-    background-color: $color-primary;
+    background-color: $color-brand;
     color: $color-background;
     padding: $spacing-md $spacing-xl;
     font-size: $font-size-base;
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: $color-secondary;
+      background-color: $color-dark-grey;
     }
   }
 }
