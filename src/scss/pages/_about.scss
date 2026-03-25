@@ -1,0 +1,39 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.about {
+  padding: $spacing-xxl 0;
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__content {
+    display: grid;
+    gap: $spacing-xl;
+
+    @include md {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    img {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    p {
+      color: $color-secondary;
+      line-height: 1.8;
+      margin-bottom: $spacing-md;
+    }
+  }
+}

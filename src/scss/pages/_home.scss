@@ -1,0 +1,20 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.home {
+  // Hero section
+  &__hero {
+    height: 100vh;
+    @include flex-center;
+    text-align: center;
+  }
+
+  &__hero-title {
+    margin-bottom: $spacing-md;
+  }
+
+  &__hero-subtitle {
+    font-size: $font-size-large;
+    color: $color-secondary;
+  }
+}

@@ -1,0 +1,16 @@
+// Base
+@use 'variables';
+@use 'base';
+
+// Common
+@use 'common/header';
+@use 'common/footer';
+
+// Pages
+@use 'pages/home';
+@use 'pages/my-work';
+@use 'pages/services';
+@use 'pages/classes';
+@use 'pages/beauty-tips';
+@use 'pages/about';
+@use 'pages/contact';

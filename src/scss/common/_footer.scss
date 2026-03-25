@@ -1,0 +1,51 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.footer {
+  background-color: $color-primary;
+  color: $color-background;
+  padding: $spacing-xxl 0 $spacing-lg;
+
+  &__container {
+    @include container;
+  }
+
+  &__content {
+    display: grid;
+    gap: $spacing-lg;
+
+    @include md {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__section {
+    h3 {
+      font-size: $font-size-large;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  &__link {
+    font-size: $font-size-small;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  &__copyright {
+    text-align: center;
+    margin-top: $spacing-xl;
+    padding-top: $spacing-lg;
+    border-top: 1px solid rgba($color-background, 0.2);
+    font-size: $font-size-small;
+  }
+}

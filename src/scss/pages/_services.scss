@@ -1,0 +1,43 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.services {
+  padding: $spacing-xxl 0;
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__list {
+    display: grid;
+    gap: $spacing-lg;
+
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    padding: $spacing-lg;
+    border: 1px solid rgba($color-primary, 0.1);
+
+    h3 {
+      margin-bottom: $spacing-sm;
+    }
+
+    p {
+      color: $color-secondary;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__price {
+    font-size: $font-size-large;
+    color: $color-accent;
+  }
+}

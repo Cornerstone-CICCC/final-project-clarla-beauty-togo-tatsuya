@@ -4,10 +4,10 @@
   "description": "**Objective:**",
   "main": "index.js",
   "scripts": {
-    "live": "live-server src/public/pages --verbose",
+    "live": "live-server src/pages --verbose",
     "dev": "npm run live & npm run sass:watch",
-    "sass": "sass src/public/pages:src/public/pages",
-    "sass:watch": "sass --watch src/public/pages:src/public/pages"
+    "sass": "sass src/scss:src/css",
+    "sass:watch": "sass --watch src/scss:src/css"
   },
   "repository": {
     "type": "git",

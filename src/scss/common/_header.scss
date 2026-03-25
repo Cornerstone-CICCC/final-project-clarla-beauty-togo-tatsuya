@@ -1,0 +1,52 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $color-background;
+  z-index: 100;
+  padding: $spacing-md 0;
+
+  &__container {
+    @include container;
+    @include flex-between;
+  }
+
+  &__logo {
+    font-family: $font-family-heading;
+    font-size: $font-size-large;
+  }
+
+  &__nav {
+    display: none;
+
+    @include md {
+      display: block;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    gap: $spacing-lg;
+  }
+
+  &__nav-link {
+    font-size: $font-size-small;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  &__hamburger {
+    display: block;
+
+    @include md {
+      display: none;
+    }
+  }
+}

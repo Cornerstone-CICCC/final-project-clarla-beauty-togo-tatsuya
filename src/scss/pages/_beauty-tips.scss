@@ -1,0 +1,35 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.beauty-tips {
+  padding: $spacing-xxl 0;
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__list {
+    display: grid;
+    gap: $spacing-lg;
+
+    @include lg {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__article {
+    h3 {
+      margin-bottom: $spacing-sm;
+    }
+
+    p {
+      color: $color-secondary;
+      line-height: 1.8;
+    }
+  }
+}
