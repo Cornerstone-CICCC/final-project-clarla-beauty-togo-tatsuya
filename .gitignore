@@ -1,0 +1,39 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor and IDE
+# .vscode/
+.idea/
+*.iml
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Log files
+*.log
+logs/
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+out/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Cache directories
+.cache/
+.parcel-cache/
+
+# Debug files
+*.map
