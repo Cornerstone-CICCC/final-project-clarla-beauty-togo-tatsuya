@@ -13,18 +13,6 @@
     "format": "prettier --write dist/**/*.html dist/js/**/*.js src/scss/**/*.scss",
     "format:check": "prettier --check dist/**/*.html dist/js/**/*.js src/scss/**/*.scss"
   },
-  "lint-staged": {
-    "dist/**/*.html": [
-      "prettier --write"
-    ],
-    "src/scss/**/*.scss": [
-      "prettier --write"
-    ],
-    "dist/js/**/*.js": [
-      "prettier --write",
-      "eslint --fix"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Cornerstone-CICCC/final-project-clarla-beauty-togo-tatsuya.git"
@@ -38,7 +26,6 @@
     "eslint": "^10.1.0",
     "eslint-config-prettier": "^10.1.8",
     "globals": "^17.4.0",
-    "lint-staged": "^16.4.0",
     "live-server": "^1.2.2",
     "prettier": "^3.8.1",
     "sass": "^1.98.0"
