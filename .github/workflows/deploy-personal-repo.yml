@@ -6,6 +6,7 @@ on:
     types:
       - completed
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   mirror:
@@ -17,8 +18,11 @@ jobs:
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Push to personal repository
+        env:
+          TOKEN: ${{ secrets.PERSONAL_REPO_TOKEN }}
         run: |
-          git remote add personal https://x-access-token:${{ secrets.PERSONAL_REPO_TOKEN }}@github.com/yk-graph/clarla-beauty.git
+          git remote add personal "https://yk-graph:${TOKEN}@github.com/yk-graph/clarla-beauty.git"
           git push personal main --force
