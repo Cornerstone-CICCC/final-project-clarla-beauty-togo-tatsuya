@@ -4,7 +4,7 @@
   "description": "**Objective:**",
   "main": "index.js",
   "scripts": {
-    "live": "serve dist -l 8080",
+    "live": "live-server dist",
     "dev": "npm run live & npm run sass:watch",
     "sass": "sass src/scss/main.scss:dist/css/main.css",
     "sass:watch": "sass --watch src/scss/main.scss:dist/css/main.css",
@@ -28,7 +28,6 @@
     "globals": "^17.4.0",
     "live-server": "^1.2.2",
     "prettier": "^3.8.1",
-    "sass": "^1.98.0",
-    "serve": "^14.2.6"
+    "sass": "^1.98.0"
   }
 }
