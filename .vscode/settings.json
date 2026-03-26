@@ -1,39 +1,14 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.tabSize": 2,
   "editor.formatOnSave": true,
-  "editor.unicodeHighlight.invisibleCharacters": false,
-  "editor.unicodeHighlight.ambiguousCharacters": false,
-  "editor.unicodeHighlight.allowedLocales": {
-    "zh-hant": true
-  },
   "editor.experimentalWhitespaceRendering": "off",
-  "prettier.bracketSameLine": true,
-  "prettier.htmlWhitespaceSensitivity": "strict",
-  "prettier.proseWrap": "never",
-  "prettier.semi": false,
-  "prettier.singleQuote": true,
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[sass]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "emmet.includeLanguages": {
-    "scss": "css"
-  },
-  "scss.lint.unknownAtRules": "ignore",
-  "files.associations": {
-    "*.css": "css",
-    "*.scss": "scss"
-  }
+
+  "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[scss]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[sass]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+  "emmet.includeLanguages": { "scss": "css" },
+  "scss.lint.unknownAtRules": "ignore"
 }
