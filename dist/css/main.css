@@ -1228,6 +1228,32 @@ img {
 .contact__result-share {
   min-width: 90px;
 }
+.contact__class-result {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact__class-result-talk {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.95);
+  font-family: "Baskervville";
+}
+.contact__class-result-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: clamp(0.875rem, 1vw, 1rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.9);
+  font-family: "Avenir";
+}
+.contact__class-result-links li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
 .contact__signature {
   text-align: center;
   margin-top: 40px;

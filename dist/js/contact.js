@@ -2,6 +2,7 @@
 const contactTabs = document.querySelectorAll('.contact__tab')
 const contactPanels = document.querySelectorAll('.contact__panel')
 const serviceSteps = document.querySelectorAll('[data-service-step]')
+const classSteps = document.querySelectorAll('[data-class-step]')
 
 const setServiceStep = (step) => {
   if (!serviceSteps.length) return
@@ -25,6 +26,21 @@ const setServiceStep = (step) => {
   })
 }
 
+const setClassStep = (step) => {
+  if (!classSteps.length) return
+
+  classSteps.forEach((classStep) => {
+    const isActive = classStep.dataset.classStep === String(step)
+    classStep.classList.toggle('contact__step--active', isActive)
+    classStep.hidden = !isActive
+
+    classStep.querySelectorAll('input, select, textarea, button').forEach((field) => {
+      if (field.hasAttribute('data-class-submit')) return
+      field.disabled = !isActive
+    })
+  })
+}
+
 if (contactTabs.length && contactPanels.length) {
   const setPanelState = (panel, isActive) => {
     panel.classList.toggle('contact__panel--active', isActive)
@@ -36,6 +52,10 @@ if (contactTabs.length && contactPanels.length) {
 
     if (panel.dataset.panel === 'services' && isActive) {
       setServiceStep(1)
+    }
+
+    if (panel.dataset.panel === 'classes' && isActive) {
+      setClassStep(1)
     }
   }
 
@@ -66,6 +86,10 @@ const serviceNextButton = document.querySelector('[data-service-next]')
 const serviceBackButton = document.querySelector('[data-service-back]')
 const serviceSubmitButton = document.querySelector('[data-service-submit]')
 const serviceEditButton = document.querySelector('[data-service-edit]')
+const classSubmitButton = document.querySelector('[data-class-submit]')
+const classResultName = document.querySelector('[data-class-result-name]')
+const classResultNameSecond = document.querySelector('[data-class-result-name-second]')
+const classResultContact = document.querySelector('[data-class-result-contact]')
 const resultName = document.querySelector('[data-result-name]')
 const resultContact = document.querySelector('[data-result-contact]')
 const resultBasicServices = document.querySelector('[data-result-basic-services]')
@@ -143,6 +167,15 @@ const updateServiceResult = () => {
   renderResultList(resultAttendees, attendeeValues)
 }
 
+const updateClassResult = () => {
+  const classNameValue = document.getElementById('class-name')?.value?.trim()
+  const classContactValue = document.querySelector('input[name="class_phone"]')?.value?.trim()
+
+  if (classResultName) classResultName.textContent = classNameValue || 'Guest'
+  if (classResultNameSecond) classResultNameSecond.textContent = classNameValue || 'Guest'
+  if (classResultContact) classResultContact.textContent = classContactValue || '+1-0000000000'
+}
+
 if (serviceNextButton) {
   serviceNextButton.addEventListener('click', () => {
     setServiceStep(2)
@@ -165,6 +198,13 @@ if (serviceSubmitButton) {
 if (serviceEditButton) {
   serviceEditButton.addEventListener('click', () => {
     setServiceStep(2)
+  })
+}
+
+if (classSubmitButton) {
+  classSubmitButton.addEventListener('click', () => {
+    updateClassResult()
+    setClassStep(2)
   })
 }
 

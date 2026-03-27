@@ -303,73 +303,105 @@
           </div>
 
           <div class="contact__panel" data-panel="classes" hidden>
-            <div class="contact__group">
-              <h2 class="contact__group-title">Class</h2>
-              <div class="contact__chips">
-                <label class="contact__chip">
-                  <input type="radio" name="class_type" value="master-subscription" checked />
-                  <span class="contact__chip-label">1-on-1 Master Subscription</span>
-                  <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
-                </label>
-                <label class="contact__chip">
-                  <input type="radio" name="class_type" value="1day-workshop" />
-                  <span class="contact__chip-label">1-day Makeup workshop</span>
-                  <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
-                </label>
-                <label class="contact__chip">
-                  <input type="radio" name="class_type" value="self-makeup" />
-                  <span class="contact__chip-label">Self-Makeup beginner class</span>
-                  <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+            <div class="contact__step contact__step--active" data-class-step="1">
+              <div class="contact__group">
+                <h2 class="contact__group-title">Class</h2>
+                <div class="contact__chips">
+                  <label class="contact__chip">
+                    <input type="radio" name="class_type" value="master-subscription" checked />
+                    <span class="contact__chip-label">1-on-1 Master Subscription</span>
+                    <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                  </label>
+                  <label class="contact__chip">
+                    <input type="radio" name="class_type" value="1day-workshop" />
+                    <span class="contact__chip-label">1-day Makeup workshop</span>
+                    <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                  </label>
+                  <label class="contact__chip">
+                    <input type="radio" name="class_type" value="self-makeup" />
+                    <span class="contact__chip-label">Self-Makeup beginner class</span>
+                    <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                  </label>
+                </div>
+              </div>
+
+              <div class="contact__field">
+                <label for="class-date">Class Date</label>
+                <p class="contact__hint">When you would like to take your class?</p>
+                <input type="date" id="class-date" name="class_date" />
+                <label class="contact__check">
+                  <input type="checkbox" name="class_date_flexible" />
+                  Doesn't matter
                 </label>
               </div>
-            </div>
 
-            <div class="contact__field">
-              <label for="class-date">Class Date</label>
-              <p class="contact__hint">When you would like to take your class?</p>
-              <input type="date" id="class-date" name="class_date" />
-              <label class="contact__check">
-                <input type="checkbox" name="class_date_flexible" />
-                Doesn't matter
-              </label>
-            </div>
-
-            <div class="contact__field">
-              <label for="class-question">Any questions?</label>
-              <textarea id="class-question" name="class_question" placeholder="Your message"></textarea>
-            </div>
-
-            <div class="contact__field">
-              <label for="class-name">Name</label>
-              <input type="text" id="class-name" name="class_name" placeholder="Your name" />
-            </div>
-
-            <div class="contact__group">
-              <h2 class="contact__group-title">Contact</h2>
-              <div class="contact__choices">
-                <label class="contact__choice">
-                  <input type="radio" name="class_contact_method" value="call" checked />
-                  Call
-                </label>
+              <div class="contact__field">
+                <label for="class-question">Any questions?</label>
+                <textarea id="class-question" name="class_question" placeholder="Your message"></textarea>
               </div>
-              <input type="tel" name="class_phone" placeholder="+ +1  Your mobile number" />
-              <div class="contact__choices contact__choices--stack">
-                <label class="contact__choice">
-                  <input type="radio" name="class_contact_method" value="whatsapp" />
-                  WhatsApp
-                </label>
-                <label class="contact__choice">
-                  <input type="radio" name="class_contact_method" value="sms" />
-                  SMS
-                </label>
-                <label class="contact__choice">
-                  <input type="radio" name="class_contact_method" value="email" />
-                  Email
-                </label>
+
+              <div class="contact__field">
+                <label for="class-name">Name</label>
+                <input type="text" id="class-name" name="class_name" placeholder="Your name" />
               </div>
+
+              <div class="contact__group">
+                <h2 class="contact__group-title">Contact</h2>
+                <div class="contact__choices">
+                  <label class="contact__choice">
+                    <input type="radio" name="class_contact_method" value="call" checked />
+                    Call
+                  </label>
+                </div>
+                <input type="tel" name="class_phone" placeholder="+ +1  Your mobile number" />
+                <div class="contact__choices contact__choices--stack">
+                  <label class="contact__choice">
+                    <input type="radio" name="class_contact_method" value="whatsapp" />
+                    WhatsApp
+                  </label>
+                  <label class="contact__choice">
+                    <input type="radio" name="class_contact_method" value="sms" />
+                    SMS
+                  </label>
+                  <label class="contact__choice">
+                    <input type="radio" name="class_contact_method" value="email" />
+                    Email
+                  </label>
+                </div>
+              </div>
+
+              <button type="button" class="contact__submit" data-class-submit>Next</button>
             </div>
 
-            <button type="submit" class="contact__submit">Next</button>
+            <div class="contact__step" data-class-step="2" hidden>
+              <div class="contact__class-result">
+                <h2 class="contact__result-title">
+                  Thanks <span data-class-result-name>Janny</span>,<br />we will contact you soon!
+                </h2>
+                <p class="contact__result-subtitle">
+                  We will call <span data-class-result-contact>+1-0000000000</span> to get back to your enquiry
+                </p>
+                <img src="/images/form-complete.png" alt="Beauty tools" class="contact__result-image" />
+
+                <h3 class="contact__class-result-talk"
+                  >Talk soon <span data-class-result-name-second>Janny</span> :)</h3
+                >
+                <ul class="contact__class-result-links">
+                  <li>
+                    <img src="/images/icon_phone.svg" alt="" class="contact__quick-icon" />
+                    <span>+1 0000000000</span>
+                  </li>
+                  <li>
+                    <img src="/images/icon-whatapp.svg" alt="" class="contact__quick-icon" />
+                    <span>+1 0000000000</span>
+                  </li>
+                  <li>
+                    <img src="/images/icon_instagram.svg" alt="" class="contact__quick-icon" />
+                    <span>carlabeatrizs_</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </form>
 

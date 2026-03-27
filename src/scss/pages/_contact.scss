@@ -411,6 +411,30 @@
     min-width: 90px;
   }
 
+  &__class-result {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  &__class-result-talk {
+    @include text(clamp(1.5rem, 2.4vw, 2rem), normal, rgba($color-main, 0.95), 'Baskervville');
+  }
+
+  &__class-result-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    @include text(clamp(0.875rem, 1vw, 1rem), normal, rgba($color-main, 0.9), 'Avenir');
+  }
+
+  &__class-result-links li {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
   &__signature {
     text-align: center;
     margin-top: $spacing-2xl;
