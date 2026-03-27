@@ -6,7 +6,6 @@ $my-work-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
 $my-work-font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
 // Figma: muted taupe for MY WORK + underline (footer active link style)
 $my-work-title-taupe: $color-main;
-
 .my-work {
   padding-top: 5.25rem;
 
@@ -19,7 +18,7 @@ $my-work-title-taupe: $color-main;
     padding: $spacing-xl 0 $spacing-lg;
 
     @include md {
-      padding: $spacing-xxl 0 $spacing-xl;
+      padding: $spacing-2xl 0 $spacing-3xl;
     }
   }
 
@@ -34,22 +33,28 @@ $my-work-title-taupe: $color-main;
 
   &__title {
     display: inline-block;
-    font-family: $my-work-font-display;
-    font-size: clamp(2.25rem, 6vw, 3.75rem);
-    font-weight: 500;
+    font-family: Baskervville;
+    font-size: clamp(2.25rem, 6vw, 4.5rem);
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.14em;
     line-height: 1.15;
     color: $my-work-title-taupe;
-    border-bottom: 1px solid $my-work-title-taupe;
     padding-bottom: $spacing-sm;
     margin: 0;
   }
-
+  &__title-underline {
+    width: 200px;
+    height: 1px;
+    background-color: $color-accent;
+    margin-top: $spacing-sm;
+    border: 1px solid $color-accent;
+    margin: 0 auto;
+  }
   &__subtitle {
-    font-family: $my-work-font-serif;
+    font-family: Avenir;
     font-size: clamp(1rem, 2.5vw, 1.1875rem);
-    font-weight: 500;
+    font-weight: 300;
     color: $color-black;
     text-align: center;
     line-height: 1.65;
@@ -59,56 +64,98 @@ $my-work-title-taupe: $color-main;
   }
 
   &__inner {
-    background-color: $color-light-pink;
-    padding: $spacing-xl $spacing-md $spacing-xxl;
+    background-color: #fcf1f1;
+    padding: 80px $spacing-md 80px;
 
     @include md {
-      padding: $spacing-xxl $spacing-lg ($spacing-xxl + $spacing-lg);
+      padding: 80px 150px 150px;
     }
+
+    > .my-work__container {
+      width: 100%;
+      max-width: none;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__tabs-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
   }
 
   &__tabs {
+    box-sizing: border-box;
+    position: relative;
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: $spacing-xl;
-    margin-bottom: $spacing-xl;
+    gap: 100px;
+    width: min(400px, 100%);
+    height: 53px;
+    border-bottom: 0.5px solid $color-mid-grey;
   }
 
   &__tab {
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    flex: 0 0 auto;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-family: $my-work-font-serif;
-    font-size: 1.125rem;
+    font-size: clamp(1.375rem, 2.4vw, 1.6875rem);
     font-weight: 500;
-    color: $color-black;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    color: $color-mid-grey;
     background: none;
     border: none;
     cursor: pointer;
-    padding: $spacing-sm 0;
+    padding: 0 0 1px;
+    margin-bottom: -1px;
     border-bottom: 2px solid transparent;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease;
 
     &.is-active {
       font-weight: 600;
+      color: $color-black;
       border-bottom-color: $color-black;
     }
 
-    &:hover {
-      color: $color-dark-grey;
+    &:hover:not(.is-active) {
+      color: rgba($color-mid-grey, 0.82);
     }
   }
 
   &__panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     &:not(.is-active) {
       display: none;
+    }
+
+    > .my-work__gallery {
+      align-self: stretch;
     }
   }
 
   &__gallery {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $spacing-md;
-    margin-bottom: $spacing-xl;
+    gap: $spacing-xs;
+    margin-bottom: $spacing-6xl;
 
     @include lg {
       grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-xs;
     }
   }
 
@@ -116,7 +163,7 @@ $my-work-title-taupe: $color-main;
     aspect-ratio: 1 / 1;
     background-color: $my-work-bg-page;
     overflow: hidden;
-    border-radius: 2px;
+    border-radius: 0;
 
     img {
       width: 100%;
@@ -131,23 +178,28 @@ $my-work-title-taupe: $color-main;
   }
 
   &__view-more {
-    display: table;
-    margin: 0 auto;
-    font-family: $my-work-font-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Baskervville;
     font-size: 1rem;
     font-weight: 600;
-    letter-spacing: 0.04em;
-    color: $color-black;
+    letter-spacing: 0.06em;
+    text-transform: capitalize;
+    color: $color-brown;
     background: transparent;
-    border: 1px solid $color-black;
-    border-radius: 16px;
-    padding: 10px $spacing-xxl;
-    min-width: 11rem;
+    border: 1px solid $color-main;
+    border-radius: 0;
+    padding: 16px 40px;
+    min-width: 10.5rem;
     text-align: center;
-    transition: background-color 0.2s, color 0.2s;
+    text-decoration: none;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
 
     &:hover {
-      background-color: rgba($color-black, 0.04);
+      background-color: rgba($color-main, 0.06);
     }
   }
 }

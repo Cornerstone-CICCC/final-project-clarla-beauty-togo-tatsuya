@@ -2,7 +2,7 @@
 @use '../mixins' as *;
 
 .classes {
-  padding: $spacing-xxl 0;
+  padding: $spacing-5xl 0;
 
   &__container {
     @include container;

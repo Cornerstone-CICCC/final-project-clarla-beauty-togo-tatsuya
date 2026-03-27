@@ -1,3 +1,29 @@
+// My Work: Makeup / Hairstyle tabs
+const myWorkRoot = document.querySelector('.my-work')
+
+if (myWorkRoot) {
+  const tabs = myWorkRoot.querySelectorAll('.my-work__tab')
+  const panels = myWorkRoot.querySelectorAll('.my-work__panel')
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const name = tab.getAttribute('data-tab')
+
+      tabs.forEach((t) => {
+        const isOn = t === tab
+        t.classList.toggle('is-active', isOn)
+        t.setAttribute('aria-selected', isOn ? 'true' : 'false')
+      })
+
+      panels.forEach((panel) => {
+        const match = panel.getAttribute('data-panel') === name
+        panel.classList.toggle('is-active', match)
+        panel.hidden = !match
+      })
+    })
+  })
+}
+
 // Hamburger menu toggle
 const hamburger = document.querySelector('.header__hamburger')
 const nav = document.querySelector('.header__nav')
