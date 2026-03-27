@@ -1,47 +1,256 @@
 @use '../variables' as *;
 @use '../mixins' as *;
 
+$classes-shell-pink: $color-light-pink;
+$classes-page-cream: #f8f6f4;
+$classes-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+$classes-font-body: 'Cormorant Garamond', Georgia, serif;
+$classes-title-taupe: $color-main;
+$classes-text-muted: $color-dark-grey;
+$classes-card-gap: 3.75rem;
+
 .classes {
-  padding: $spacing-xxl 0;
+  padding-top: 5.25rem;
+
+  @include md {
+    padding-top: 5.5rem;
+  }
+
+  padding-bottom: 0;
+
+  &__hero {
+    background-color: $classes-page-cream;
+    padding: $spacing-xl 0 $spacing-lg;
+
+    @include md {
+      padding: $spacing-xxl 0 $spacing-xl;
+    }
+  }
+
+  &__shell {
+    background-color: $classes-shell-pink;
+    padding-bottom: $spacing-xxl;
+  }
 
   &__container {
     @include container;
   }
 
-  &__title {
-    text-align: center;
-    margin-bottom: $spacing-xl;
-  }
-
-  &__grid {
-    display: grid;
-    gap: $spacing-lg;
+  &__container--list {
+    padding-top: $spacing-lg;
+    padding-bottom: 0;
 
     @include md {
-      grid-template-columns: repeat(2, 1fr);
+      padding-top: $spacing-xl;
     }
+  }
+
+  &__title-wrap {
+    text-align: center;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__title {
+    display: inline-block;
+    font-family: $classes-font-display;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    line-height: 1.15;
+    color: $classes-title-taupe;
+    border-bottom: 1px solid $classes-title-taupe;
+    padding-bottom: $spacing-sm;
+    margin: 0;
+  }
+
+  &__intro {
+    font-family: $classes-font-body;
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-align: center;
+    color: $classes-text-muted;
+    max-width: 38rem;
+    margin: 0 auto;
+    line-height: 1.7;
+    padding: 0 $spacing-sm;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $classes-card-gap;
+    margin: 0;
+    padding: 0;
   }
 
   &__card {
-    border: 1px solid rgba($color-brand, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
     overflow: hidden;
 
-    img {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
+    @include md {
+      flex-direction: row;
+      align-items: stretch;
     }
   }
 
-  &__card-content {
-    padding: $spacing-lg;
+  &__media {
+    width: 100%;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    background-color: $classes-shell-pink;
 
-    h3 {
-      margin-bottom: $spacing-sm;
+    @include md {
+      width: 42%;
+      max-width: 400px;
+      align-self: stretch;
     }
 
-    p {
-      color: $color-dark-grey;
+    img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+      display: block;
+      vertical-align: top;
+
+      @include md {
+        min-height: 100%;
+      }
+    }
+  }
+
+  &__body {
+    flex: 1;
+    background-color: $classes-shell-pink;
+    padding: $spacing-lg $spacing-md $spacing-xl;
+    text-align: left;
+
+    @include md {
+      padding: $spacing-xl $spacing-xl $spacing-xl $spacing-xxl;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+
+  &__name {
+    font-family: $classes-font-display;
+    font-size: clamp(1.35rem, 2.5vw, $font-size-h5);
+    font-weight: 500;
+    color: $classes-title-taupe;
+    margin: 0 0 $spacing-md;
+    line-height: 1.35;
+  }
+
+  &__meta {
+    list-style: none;
+    margin: 0 0 $spacing-lg;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm $spacing-xl;
+    font-family: $classes-font-body;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $classes-text-muted;
+  }
+
+  &__meta li {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  &__meta-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    line-height: 0;
+  }
+
+  &__meta-img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    display: block;
+  }
+
+  &__block {
+    margin-bottom: $spacing-md;
+
+    &:last-of-type {
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  &__section-title {
+    font-family: $classes-font-display;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 $spacing-sm;
+    color: $classes-title-taupe;
+    letter-spacing: 0.03em;
+  }
+
+  &__text {
+    font-family: $classes-font-body;
+    color: $classes-text-muted;
+    line-height: 1.7;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  &__bullets {
+    font-family: $classes-font-body;
+    margin: 0;
+    padding-left: 1.125rem;
+    color: $classes-text-muted;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.65;
+    list-style-type: square;
+
+    li {
+      margin-bottom: $spacing-xs;
+      padding-left: $spacing-xs;
+    }
+  }
+
+  // スクリーンショット：本文カラム左寄せ・ボタンは左下（中央揃えではない）
+  &__actions {
+    text-align: left;
+    margin-top: $spacing-md;
+    padding-top: $spacing-sm;
+  }
+
+  &__btn {
+    display: inline-block;
+    font-family: $font-family-base;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: $color-black;
+    background-color: #fff;
+    border: 1px solid $color-black;
+    border-radius: 2px;
+    padding: 0.65rem 2rem;
+    min-width: 9.5rem;
+    text-align: center;
+    transition: background-color 0.2s, color 0.2s;
+
+    &:hover {
+      background-color: rgba($color-black, 0.04);
     }
   }
 }
