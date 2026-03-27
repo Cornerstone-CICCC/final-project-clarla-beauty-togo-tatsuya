@@ -909,6 +909,25 @@ img {
 .contact__panel[hidden] {
   display: none;
 }
+.contact__step {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.contact__step[hidden] {
+  display: none;
+}
+.contact__back {
+  align-self: flex-start;
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: clamp(0.8125rem, 1vw, 0.875rem);
+  font-weight: normal;
+  color: rgba(114, 90, 88, 0.8);
+  font-family: "Avenir";
+  cursor: pointer;
+}
 .contact__group {
   display: flex;
   flex-direction: column;
@@ -925,6 +944,9 @@ img {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
 }
+.contact__chips--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 .contact__chip {
   display: flex;
   align-items: center;
@@ -935,7 +957,7 @@ img {
   padding: 8px 16px;
   font-size: clamp(0.8125rem, 1.1vw, 0.875rem);
   font-weight: normal;
-  color: #191919;
+  color: black;
   font-family: "Lora", "Georgia", serif;
   cursor: pointer;
 }
@@ -965,28 +987,56 @@ img {
     grid-template-columns: 1fr 1fr;
   }
 }
-.contact__row .contact__field > label {
-  font-size: clamp(1.25rem, 2.1vw, 2rem);
-  font-weight: normal;
-  color: black;
-  font-family: "Baskervville";
-}
 .contact__row .contact__field > .contact__check {
   font-size: clamp(0.8125rem, 1vw, 0.875rem);
   font-weight: normal;
-  color: rgba(114, 90, 88, 0.8);
+  color: black;
   font-family: "Lora", "Georgia", serif;
+}
+.contact__premium-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px 24px;
+}
+@media (min-width: 576px) {
+  .contact__premium-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.contact__guest-list {
+  border: 1px solid rgba(114, 90, 88, 0.15);
+  background-color: rgba(251, 250, 250, 0.7);
+}
+.contact__guest-row {
+  display: grid;
+  grid-template-columns: minmax(80px, 1fr) 70px 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-bottom: 1px solid rgba(114, 90, 88, 0.12);
+  font-size: clamp(0.8125rem, 1vw, 0.875rem);
+  font-weight: normal;
+  color: black;
+  font-family: "Avenir";
+}
+@media (min-width: 576px) {
+  .contact__guest-row {
+    grid-template-columns: minmax(90px, 1fr) 70px 1fr 1fr;
+  }
+}
+.contact__guest-row:last-child {
+  border-bottom: none;
 }
 .contact__field {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.contact__field label {
-  font-size: clamp(1rem, 1.5vw, 1.125rem);
+.contact__field > label:not(.contact__check) {
+  font-size: clamp(1.25rem, 2.1vw, 2rem);
   font-weight: normal;
-  color: #725a58;
-  font-family: "Baskervville", "Georgia", serif;
+  color: black;
+  font-family: "Baskervville";
 }
 .contact__field input,
 .contact__field select,
@@ -1016,13 +1066,7 @@ img {
   gap: 8px;
   font-size: clamp(0.8125rem, 1vw, 0.875rem);
   font-weight: normal;
-  color: rgba(114, 90, 88, 0.8);
-  font-family: "Lora", "Georgia", serif;
-}
-.contact__field .contact__check {
-  font-size: clamp(0.8125rem, 1vw, 0.875rem);
-  font-weight: normal;
-  color: rgba(114, 90, 88, 0.8);
+  color: black;
   font-family: "Lora", "Georgia", serif;
 }
 .contact__choices {
@@ -1041,7 +1085,7 @@ img {
   gap: 8px;
   font-size: clamp(0.8125rem, 1vw, 0.875rem);
   font-weight: normal;
-  color: rgba(114, 90, 88, 0.85);
+  color: black;
   font-family: "Lora", "Georgia", serif;
 }
 .contact__group > input {
@@ -1073,6 +1117,13 @@ img {
 .contact__submit:hover {
   background-color: rgba(114, 90, 88, 0.08);
   color: #725a58;
+}
+.contact__next {
+  margin-top: 8px;
+}
+.contact__actions {
+  display: flex;
+  justify-content: center;
 }
 .contact__signature {
   text-align: center;

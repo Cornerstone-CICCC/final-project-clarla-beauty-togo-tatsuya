@@ -105,6 +105,25 @@
     display: none;
   }
 
+  &__step {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+
+  &__step[hidden] {
+    display: none;
+  }
+
+  &__back {
+    align-self: flex-start;
+    border: none;
+    background: transparent;
+    padding: 0;
+    @include text(clamp(0.8125rem, 1vw, 0.875rem), normal, rgba($color-main, 0.8), 'Avenir');
+    cursor: pointer;
+  }
+
   &__group {
     display: flex;
     flex-direction: column;
@@ -121,6 +140,10 @@
     gap: $spacing-sm;
   }
 
+  &__chips--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   &__chip {
     display: flex;
     align-items: center;
@@ -129,7 +152,7 @@
     border: 1px solid transparent;
     background-color: $color-paper-white;
     padding: $spacing-sm $spacing-md;
-    @include text(clamp(0.8125rem, 1.1vw, 0.875rem), normal);
+    @include text(clamp(0.8125rem, 1.1vw, 0.875rem), normal, black);
     cursor: pointer;
   }
 
@@ -164,12 +187,41 @@
     }
   }
 
-  &__row .contact__field > label {
-    @include text(clamp(1.25rem, 2.1vw, 2rem), normal, black, 'Baskervville');
+  &__row .contact__field > .contact__check {
+    @include text(clamp(0.8125rem, 1vw, 0.875rem), normal, black);
   }
 
-  &__row .contact__field > .contact__check {
-    @include text(clamp(0.8125rem, 1vw, 0.875rem), normal, rgba($color-main, 0.8));
+  &__premium-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-sm $spacing-lg;
+
+    @include sm {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__guest-list {
+    border: 1px solid rgba($color-main, 0.15);
+    background-color: rgba($color-paper-white, 0.7);
+  }
+
+  &__guest-row {
+    display: grid;
+    grid-template-columns: minmax(80px, 1fr) 70px 1fr;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-sm $spacing-md;
+    border-bottom: 1px solid rgba($color-main, 0.12);
+    @include text(clamp(0.8125rem, 1vw, 0.875rem), normal, black, 'Avenir');
+
+    @include sm {
+      grid-template-columns: minmax(90px, 1fr) 70px 1fr 1fr;
+    }
+  }
+
+  &__guest-row:last-child {
+    border-bottom: none;
   }
 
   &__field {
@@ -177,8 +229,8 @@
     flex-direction: column;
     gap: $spacing-sm;
 
-    label {
-      @include text(clamp(1rem, 1.5vw, 1.125rem), normal, $color-main, $font-family-heading);
+    > label:not(.contact__check) {
+      @include text(clamp(1.25rem, 2.1vw, 2rem), normal, black, 'Baskervville');
     }
 
     input,
@@ -205,11 +257,7 @@
     display: flex;
     align-items: center;
     gap: $spacing-sm;
-    @include text(clamp(0.8125rem, 1vw, 0.875rem), normal, rgba($color-main, 0.8));
-  }
-
-  &__field .contact__check {
-    @include text(clamp(0.8125rem, 1vw, 0.875rem), normal, rgba($color-main, 0.8));
+    @include text(clamp(0.8125rem, 1vw, 0.875rem), normal, black);
   }
 
   &__choices {
@@ -228,7 +276,7 @@
     display: inline-flex;
     align-items: center;
     gap: $spacing-sm;
-    @include text(clamp(0.8125rem, 1vw, 0.875rem), normal, rgba($color-main, 0.85));
+    @include text(clamp(0.8125rem, 1vw, 0.875rem), normal, black);
   }
 
   &__group > input {
@@ -262,6 +310,15 @@
       background-color: rgba($color-main, 0.08);
       color: $color-main;
     }
+  }
+
+  &__next {
+    margin-top: $spacing-sm;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
   }
 
   &__signature {

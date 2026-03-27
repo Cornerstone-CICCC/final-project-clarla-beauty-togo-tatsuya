@@ -59,100 +59,204 @@
           </div>
 
           <div class="contact__panel contact__panel--active" data-panel="services">
-            <div class="contact__group">
-              <h2 class="contact__group-title">Event Type</h2>
-              <div class="contact__chips">
-                <label class="contact__chip">
-                  <input type="radio" name="event_type" value="wedding" checked />
-                  <span class="contact__chip-label">Wedding</span>
-                  <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
-                </label>
-                <label class="contact__chip">
-                  <input type="radio" name="event_type" value="party" />
-                  <span class="contact__chip-label">Party</span>
-                  <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
-                </label>
-                <label class="contact__chip">
-                  <input type="radio" name="event_type" value="photoshoot" />
-                  <span class="contact__chip-label">Photoshoot</span>
-                  <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
-                </label>
+            <div class="contact__step contact__step--active" data-service-step="1">
+              <div class="contact__group">
+                <h2 class="contact__group-title">Event Type</h2>
+                <div class="contact__chips">
+                  <label class="contact__chip">
+                    <input type="radio" name="event_type" value="wedding" checked />
+                    <span class="contact__chip-label">Wedding</span>
+                    <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                  </label>
+                  <label class="contact__chip">
+                    <input type="radio" name="event_type" value="party" />
+                    <span class="contact__chip-label">Party</span>
+                    <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                  </label>
+                  <label class="contact__chip">
+                    <input type="radio" name="event_type" value="photoshoot" />
+                    <span class="contact__chip-label">Photoshoot</span>
+                    <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                  </label>
+                </div>
               </div>
+
+              <div class="contact__row">
+                <div class="contact__field">
+                  <label for="event-date">Event Date</label>
+                  <input type="date" id="event-date" name="event_date" />
+                  <label class="contact__check">
+                    <input type="checkbox" name="date_not_decided" />
+                    Not decided
+                  </label>
+                </div>
+                <div class="contact__field">
+                  <label for="event-time">Event Time</label>
+                  <select id="event-time" name="event_time">
+                    <option>Full day</option>
+                    <option>Morning</option>
+                    <option>Afternoon</option>
+                    <option>Evening</option>
+                  </select>
+                  <label class="contact__check">
+                    <input type="checkbox" name="time_not_decided" />
+                    Not decided
+                  </label>
+                </div>
+              </div>
+
+              <div class="contact__field">
+                <label for="service-name">Name</label>
+                <input type="text" id="service-name" name="name" placeholder="Your name" />
+              </div>
+
+              <div class="contact__group">
+                <h2 class="contact__group-title">Contact</h2>
+                <div class="contact__choices">
+                  <label class="contact__choice">
+                    <input type="radio" name="service_contact_method" value="call" checked />
+                    Call
+                  </label>
+                </div>
+                <input type="tel" name="service_phone" placeholder="+ +1  Your mobile number" />
+                <div class="contact__choices contact__choices--stack">
+                  <label class="contact__choice">
+                    <input type="radio" name="service_contact_method" value="whatsapp" />
+                    WhatsApp
+                  </label>
+                  <label class="contact__choice">
+                    <input type="radio" name="service_contact_method" value="sms" />
+                    SMS
+                  </label>
+                  <label class="contact__choice">
+                    <input type="radio" name="service_contact_method" value="email" />
+                    Email
+                  </label>
+                </div>
+              </div>
+
+              <div class="contact__group">
+                <h2 class="contact__group-title">When do you want us to call?</h2>
+                <div class="contact__choices contact__choices--stack">
+                  <label class="contact__choice">
+                    <input type="radio" name="call_time" value="any" checked />
+                    I don't mind
+                  </label>
+                  <label class="contact__choice">
+                    <input type="radio" name="call_time" value="morning" />
+                    Morning
+                  </label>
+                  <label class="contact__choice">
+                    <input type="radio" name="call_time" value="afternoon" />
+                    Afternoon
+                  </label>
+                  <label class="contact__choice">
+                    <input type="radio" name="call_time" value="evening" />
+                    Evening
+                  </label>
+                </div>
+              </div>
+
+              <button type="button" class="contact__submit contact__next" data-service-next>Next</button>
             </div>
 
-            <div class="contact__row">
+            <div class="contact__step" data-service-step="2" hidden>
+              <button type="button" class="contact__back" data-service-back>&lt; Back</button>
+
+              <div class="contact__group">
+                <h2 class="contact__group-title">Bridal Service</h2>
+                <div class="contact__chips contact__chips--two">
+                  <label class="contact__chip">
+                    <input type="radio" name="bridal_service" value="makeup" checked />
+                    <span class="contact__chip-label">Makeup</span>
+                    <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                  </label>
+                  <label class="contact__chip">
+                    <input type="radio" name="bridal_service" value="hairstyle" />
+                    <span class="contact__chip-label">Hairstyle</span>
+                    <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                  </label>
+                </div>
+              </div>
+
               <div class="contact__field">
-                <label for="event-date">Event Date</label>
-                <input type="date" id="event-date" name="event_date" />
+                <label for="event-location">Event Location</label>
+                <input type="text" id="event-location" name="event_location" placeholder="Search address" />
                 <label class="contact__check">
-                  <input type="checkbox" name="date_not_decided" />
+                  <input type="checkbox" name="location_not_decided" />
                   Not decided
                 </label>
               </div>
+
+              <div class="contact__group">
+                <h2 class="contact__group-title">Premium service</h2>
+                <div class="contact__premium-grid">
+                  <label class="contact__check"
+                    ><input type="checkbox" name="premium[]" value="deep-skin-cleansing" />Deep skin cleansing</label
+                  >
+                  <label class="contact__check"
+                    ><input type="checkbox" name="premium[]" value="bleach-body-hair" />Bleach body hair</label
+                  >
+                  <label class="contact__check"
+                    ><input type="checkbox" name="premium[]" value="hydromassage" />Hydromassage</label
+                  >
+                  <label class="contact__check"
+                    ><input type="checkbox" name="premium[]" value="hair-moisture" />Hair Moisture</label
+                  >
+                  <label class="contact__check"><input type="checkbox" name="premium[]" value="waxing" />Waxing</label>
+                  <label class="contact__check"
+                    ><input type="checkbox" name="premium[]" value="foot-and-hand-spa" />Foot and hand SPA</label
+                  >
+                  <label class="contact__check"
+                    ><input type="checkbox" name="premium[]" value="relaxing-massage" />Relaxing massage</label
+                  >
+                  <label class="contact__check"
+                    ><input type="checkbox" name="premium[]" value="gommage" />Gommage (body exfoliation and
+                    hydration)</label
+                  >
+                </div>
+              </div>
+
+              <div class="contact__group">
+                <h2 class="contact__group-title">Anyone else need service?</h2>
+                <div class="contact__guest-list">
+                  <div class="contact__guest-row">
+                    <span>Groom</span>
+                    <span>0 +</span>
+                    <label class="contact__check"
+                      ><input type="checkbox" name="guest_groom_makeup" checked />Makeup</label
+                    >
+                  </div>
+                  <div class="contact__guest-row">
+                    <span>Bridesmaid</span>
+                    <span>0 +</span>
+                    <label class="contact__check"
+                      ><input type="checkbox" name="guest_bridesmaid_hair" checked />Hairstyle</label
+                    >
+                    <label class="contact__check"
+                      ><input type="checkbox" name="guest_bridesmaid_makeup" checked />Makeup</label
+                    >
+                  </div>
+                  <div class="contact__guest-row">
+                    <span>Flower girl</span>
+                    <span>0 +</span>
+                    <label class="contact__check"
+                      ><input type="checkbox" name="guest_flower_hair" checked />Hairstyle</label
+                    >
+                    <label class="contact__check"
+                      ><input type="checkbox" name="guest_flower_makeup" checked />Makeup</label
+                    >
+                  </div>
+                </div>
+              </div>
+
               <div class="contact__field">
-                <label for="event-time">Event Time</label>
-                <select id="event-time" name="event_time">
-                  <option>Full day</option>
-                  <option>Morning</option>
-                  <option>Afternoon</option>
-                  <option>Evening</option>
-                </select>
-                <label class="contact__check">
-                  <input type="checkbox" name="time_not_decided" />
-                  Not decided
-                </label>
+                <label for="service-message">Anything you want us to know?</label>
+                <textarea id="service-message" name="service_message" placeholder="Your message"></textarea>
               </div>
-            </div>
 
-            <div class="contact__field">
-              <label for="service-name">Name</label>
-              <input type="text" id="service-name" name="name" placeholder="Your name" />
-            </div>
-
-            <div class="contact__group">
-              <h2 class="contact__group-title">Contact</h2>
-              <div class="contact__choices">
-                <label class="contact__choice">
-                  <input type="radio" name="service_contact_method" value="call" checked />
-                  Call
-                </label>
-              </div>
-              <input type="tel" name="service_phone" placeholder="+ +1  Your mobile number" />
-              <div class="contact__choices contact__choices--stack">
-                <label class="contact__choice">
-                  <input type="radio" name="service_contact_method" value="whatsapp" />
-                  WhatsApp
-                </label>
-                <label class="contact__choice">
-                  <input type="radio" name="service_contact_method" value="sms" />
-                  SMS
-                </label>
-                <label class="contact__choice">
-                  <input type="radio" name="service_contact_method" value="email" />
-                  Email
-                </label>
-              </div>
-            </div>
-
-            <div class="contact__group">
-              <h2 class="contact__group-title">When do you want us to call?</h2>
-              <div class="contact__choices contact__choices--stack">
-                <label class="contact__choice">
-                  <input type="radio" name="call_time" value="any" checked />
-                  I don't mind
-                </label>
-                <label class="contact__choice">
-                  <input type="radio" name="call_time" value="morning" />
-                  Morning
-                </label>
-                <label class="contact__choice">
-                  <input type="radio" name="call_time" value="afternoon" />
-                  Afternoon
-                </label>
-                <label class="contact__choice">
-                  <input type="radio" name="call_time" value="evening" />
-                  Evening
-                </label>
+              <div class="contact__actions">
+                <button type="submit" class="contact__submit">Submit</button>
               </div>
             </div>
           </div>
@@ -223,9 +327,9 @@
                 </label>
               </div>
             </div>
-          </div>
 
-          <button type="submit" class="contact__submit">Next</button>
+            <button type="submit" class="contact__submit">Next</button>
+          </div>
         </form>
 
         <section class="contact__signature" aria-label="Brand signature">
