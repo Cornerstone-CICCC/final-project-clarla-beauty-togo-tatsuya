@@ -2,8 +2,8 @@
 @use '../mixins' as *;
 
 .footer {
-  background-color: $color-brand;
-  color: $color-paper-white;
+  background-color: var(--color-brand);
+  color: var(--color-paper-white);
   padding: $spacing-2xl 0 $spacing-lg;
 
   &__container {
@@ -37,7 +37,7 @@
     transition: color 0.3s;
 
     &:hover {
-      color: $color-accent;
+      color: var(--color-accent);
     }
   }
 

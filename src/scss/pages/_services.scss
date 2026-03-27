@@ -31,13 +31,13 @@
     }
 
     p {
-      color: $color-dark-grey;
+      color: var(--color-dark-grey);
       margin-bottom: $spacing-md;
     }
   }
 
   &__price {
     font-size: $font-size-body;
-    color: $color-accent;
+    color: var(--color-accent);
   }
 }

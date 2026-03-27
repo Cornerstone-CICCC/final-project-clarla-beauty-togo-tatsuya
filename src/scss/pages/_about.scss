@@ -31,7 +31,7 @@
 
   &__text {
     p {
-      color: $color-dark-grey;
+      color: var(--color-dark-grey);
       line-height: 1.8;
       margin-bottom: $spacing-md;
     }

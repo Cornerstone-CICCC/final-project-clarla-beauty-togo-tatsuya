@@ -1,9 +1,9 @@
 // Colors
 $color-brand: #191919;
-$color-main: #725a58;
+$color-dark-brown: #725a58;
 $color-accent: #e3b6b1;
 $color-light-pink: #fae9e7;
-$color-pale-white: #f8f6f4;
+$color-snow-white: #f8f6f4;
 $color-paper-white: #fbfafa;
 $color-mid-grey: #888888;
 $color-dark-grey: #535353;
@@ -16,44 +16,43 @@ $font-family-base: 'Lora', 'Georgia', serif;
 $font-family-heading: 'Baskervville', 'Georgia', serif;
 
 // Typography - Headings
-$font-size-h1-cap: 80px;
-$font-size-h1: 80px;
-$font-size-h2: 68px;
-$font-size-h3: 48px;
-$font-size-h4-cap: 40px;
-$font-size-h4: 36px;
-$font-size-h5: 32px;
-$font-size-h6: 24px;
+$font-size-h1: 5rem; // 80px
+$font-size-h2: 4.25rem; // 68px
+$font-size-h3: 3rem; // 48px
+$font-size-h4-cap: 2.5rem; // 40px
+$font-size-h4: 2.25rem; // 36px
+$font-size-h5: 2rem; // 32px
+$font-size-h6: 1.5rem; // 24px
 
 // Typography - Button
-$font-size-button: 20px;
-$font-size-button-small: 18px;
+$font-size-button: 1.25rem; // 20px
+$font-size-button-small: 1.125rem; // 18px
 
 // Typography - Body
-$font-size-body: 18px;
-$font-size-body-small: 16px;
+$font-size-body: 1.125rem; // 18px
+$font-size-body-small: 1rem; // 16px
 
 // Typography - Other
-$font-size-caption: 14px;
-$font-size-signature: 54px;
+$font-size-caption: 0.875rem; // 14px
+$font-size-signature: 3.375rem; // 54px
 
 // Spacing
-$spacing-xs: 4px;
-$spacing-sm: 8px;
-$spacing-md: 16px;
-$spacing-lg: 24px;
-$spacing-xl: 32px;
-$spacing-2xl: 40px;
-$spacing-3xl: 48px;
-$spacing-4xl: 64px;
-$spacing-5xl: 80px;
-$spacing-6xl: 96px;
+$spacing-xs: 0.25rem; // 4px
+$spacing-sm: 0.5rem; // 8px
+$spacing-md: 1rem; // 16px
+$spacing-lg: 1.5rem; // 24px
+$spacing-xl: 2rem; // 32px
+$spacing-2xl: 2.5rem; // 40px
+$spacing-3xl: 3rem; // 48px
+$spacing-4xl: 4rem; // 64px
+$spacing-5xl: 5rem; // 80px
+$spacing-6xl: 6rem; // 96px
 
 // Breakpoints
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
+$breakpoint-xl: 1280px;
 
 // Container
-$container-max-width: 1200px;
+$container-max-width: 1280px;

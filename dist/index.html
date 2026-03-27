@@ -11,28 +11,44 @@
     <!-- header -->
     <header class="header">
       <div class="header__inner">
-        <nav class="header__nav header__nav--left">
+        <!-- lattop navigation -->
+        <nav class="header__nav">
           <a href="/" class="header__nav-link">Home</a>
           <a href="/my-work" class="header__nav-link">My Work</a>
           <a href="/services" class="header__nav-link">Services</a>
           <a href="/classes" class="header__nav-link">Classes</a>
         </nav>
-        <img src="/images/logo.png" alt="Clarla Beauty Logo" class="header__logo" />
-        <nav class="header__nav header__nav--right">
+        <!-- hamburger menu for tablet and mobile -->
+        <div class="header__toggle">
+          <span class="header__toggle-bar"></span>
+          <span class="header__toggle-bar"></span>
+          <span class="header__toggle-bar"></span>
+        </div>
+
+        <img src="/images/logo-black.svg" alt="Clarla Beauty Logo" class="header__logo" />
+
+        <!-- lattop navigation -->
+        <nav class="header__nav">
           <a href="/beauty-tips" class="header__nav-link">Beauty Tips</a>
           <a href="/about" class="header__nav-link">About</a>
           <a href="/contact" class="header__nav-link">Contact</a>
           <a href="#" target="_blank" class="header__nav-link header__nav-link--external">
-            <img src="/images/instagram-icon.png" alt="Instagram" class="header__nav-icon" />
+            <img src="/images/logo-instagram.svg" alt="Instagram" />
           </a>
         </nav>
+        <!-- instagram link for tablet and mobile -->
+        <div class="header__btn">
+          <a href="#" target="_blank" class="header__sns-link">
+            <img src="/images/logo-instagram.svg" alt="Instagram" />
+          </a>
+        </div>
       </div>
     </header>
 
     <main class="home">
       <section class="home__hero">
         <div class="container">
-          <h1 class="home__hero-title">Clarla Beauty aaaaaaaa</h1>
+          <h1 class="home__hero-title">Clarla Beauty</h1>
           <p class="home__hero-subtitle">Professional Beauty Services</p>
         </div>
       </section>
