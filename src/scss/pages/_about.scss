@@ -1,39 +1,234 @@
 @use '../variables' as *;
 @use '../mixins' as *;
 
+$about-shell-pink: #fbe7e4;
+$about-shell-bottom: 6rem;
+$about-shell-bottom-md: 7.5rem;
+$about-font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+$about-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+
 .about {
-  padding: $spacing-xxl 0;
+  padding-top: 5.25rem;
+  padding-bottom: 0;
+
+  @include md {
+    padding-top: 5.5rem;
+  }
+
+  &__hero {
+    background-color: $color-pale-white;
+    padding: $spacing-xl 0 $spacing-lg;
+
+    @include md {
+      padding: $spacing-2xl 0 $spacing-3xl;
+    }
+  }
 
   &__container {
     @include container;
   }
 
-  &__title {
-    text-align: center;
-    margin-bottom: $spacing-xl;
+  &__container--bio {
+    padding-top: clamp(2.5rem, 6vw, 4.5rem);
+    padding-bottom: clamp(2.5rem, 6vw, 4.5rem);
   }
 
-  &__content {
-    display: grid;
+  &__title-wrap {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  &__eyebrow {
+    font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: clamp(0.75rem, 1.8vw, 0.875rem);
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: $color-accent;
+    margin: 0 0 $spacing-sm;
+  }
+
+  &__title {
+    font-family: Baskervville;
+    font-size: clamp(2rem, 5.5vw, 3.75rem);
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    line-height: 1.15;
+    color: $color-main;
+    text-transform: uppercase;
+    padding-bottom: $spacing-sm;
+    margin: 0;
+  }
+
+  &__title-underline {
+    width: 200px;
+    height: 1px;
+    background-color: $color-accent;
+    border: 1px solid $color-accent;
+    margin: $spacing-sm auto 0;
+  }
+
+  &__shell {
+    background-color: $about-shell-pink;
+  }
+
+  &__profile {
+    display: flex;
+    flex-direction: column;
     gap: $spacing-xl;
+    align-items: stretch;
 
     @include md {
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: $spacing-xxl;
     }
   }
 
-  &__image {
+  &__media {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: min(100%, 22.5rem);
+    margin-inline: auto;
+    line-height: 0;
+    background-color: rgba($color-black, 0.04);
+
+    @include md {
+      width: 36%;
+      max-width: 320px;
+      margin-inline: 0;
+    }
+
     img {
       width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
     }
+  }
+
+  &__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-width: 0;
+  }
+
+  &__headline {
+    font-family: $about-font-display;
+    font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+    font-weight: 500;
+    color: $color-main;
+    line-height: 1.4;
+    margin: 0 0 $spacing-lg;
   }
 
   &__text {
     p {
+      font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+      font-weight: 400;
       color: $color-dark-grey;
-      line-height: 1.8;
-      margin-bottom: $spacing-md;
+      line-height: 1.75;
+      margin: 0 0 $spacing-md;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__actions {
+    margin-top: $spacing-xl;
+    text-align: center;
+
+    @include md {
+      text-align: left;
+    }
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $about-font-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: $color-main;
+    background-color: transparent;
+    border: 1px solid $color-main;
+    border-radius: 0;
+    padding: 14px 3rem;
+    min-width: 11rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: rgba($color-main, 0.06);
+    }
+  }
+
+  &__brands {
+    background-color: $color-pale-white;
+    padding: clamp(2.5rem, 6vw, 5rem) 0 $about-shell-bottom;
+
+    @include md {
+      padding-bottom: $about-shell-bottom-md;
+    }
+  }
+
+  &__brands-title {
+    font-family: $about-font-display;
+    font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+    font-weight: 500;
+    text-align: center;
+    color: $color-main;
+    margin: 0 0 $spacing-xl;
+  }
+
+  &__brands-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: $spacing-lg $spacing-md;
+    align-items: center;
+    justify-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include md {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: $spacing-xl $spacing-lg;
+    }
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 10rem;
+    padding: $spacing-sm;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 3rem;
+      object-fit: contain;
+      filter: grayscale(1);
+      opacity: 0.72;
+      transition:
+        opacity 0.2s ease,
+        filter 0.2s ease;
+    }
+
+    &:hover img {
+      filter: grayscale(0.4);
+      opacity: 0.95;
     }
   }
 }
