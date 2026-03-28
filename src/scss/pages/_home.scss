@@ -9,17 +9,8 @@
     text-align: center;
   }
 
-  &__title-wrap {
-    text-align: center;
-    margin-bottom: $spacing-md;
-  }
-
   &__hero-title {
-    @include page-hero-h1;
-  }
-
-  &__hero-title-rule {
-    @include page-hero-h1-rule;
+    margin-bottom: $spacing-md;
   }
 
   &__hero-subtitle {

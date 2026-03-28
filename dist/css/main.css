@@ -149,29 +149,8 @@ img {
   align-items: center;
   text-align: center;
 }
-.home__title-wrap {
-  text-align: center;
-  margin-bottom: 16px;
-}
 .home__hero-title {
-  display: inline-block;
-  font-family: "Baskervville", "Georgia", serif;
-  font-size: clamp(2.25rem, 6vw, 4.5rem);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  line-height: 1.15;
-  color: #725a58;
-  padding-bottom: 8px;
-  margin: 0;
-}
-.home__hero-title-rule {
-  width: 200px;
-  height: 1px;
-  margin: 8px auto 0;
-  padding: 0;
-  border: 1px solid #e3b6b1;
-  background-color: #e3b6b1;
+  margin-bottom: 16px;
 }
 .home__hero-subtitle {
   font-size: 18px;
