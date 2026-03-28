@@ -154,14 +154,10 @@ $about-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
 
   &__actions {
     margin-top: $spacing-xl;
-    display: flex;
-    flex-wrap: wrap;
-    gap: $spacing-md;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 
     @include md {
-      justify-content: flex-start;
+      text-align: left;
     }
   }
 
@@ -185,15 +181,6 @@ $about-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
 
     &:hover {
       background-color: rgba($color-main, 0.06);
-    }
-  }
-
-  &__btn--secondary {
-    border-color: $color-accent;
-    color: $color-dark-pink;
-
-    &:hover {
-      background-color: rgba($color-accent, 0.2);
     }
   }
 

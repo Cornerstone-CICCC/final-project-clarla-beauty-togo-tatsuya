@@ -1163,15 +1163,11 @@ img {
 }
 .about__actions {
   margin-top: 32px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 }
 @media (min-width: 768px) {
   .about__actions {
-    justify-content: flex-start;
+    text-align: left;
   }
 }
 .about__btn {
@@ -1194,13 +1190,6 @@ img {
 }
 .about__btn:hover {
   background-color: rgba(114, 90, 88, 0.06);
-}
-.about__btn--secondary {
-  border-color: #e3b6b1;
-  color: #b99692;
-}
-.about__btn--secondary:hover {
-  background-color: rgba(227, 182, 177, 0.2);
 }
 .about__brands {
   background-color: #f8f6f4;
