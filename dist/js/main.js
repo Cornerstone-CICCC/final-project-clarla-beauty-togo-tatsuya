@@ -1,3 +1,32 @@
+// Beauty Tips: category filters
+const beautyTipsRoot = document.querySelector('.beauty-tips')
+
+if (beautyTipsRoot) {
+  const filterButtons = beautyTipsRoot.querySelectorAll('.beauty-tips__filter')
+  const cards = beautyTipsRoot.querySelectorAll('.beauty-tips__card')
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter') || 'all'
+
+      filterButtons.forEach((b) => {
+        const on = b === btn
+        b.classList.toggle('is-active', on)
+        b.setAttribute('aria-selected', on ? 'true' : 'false')
+      })
+
+      cards.forEach((card) => {
+        if (filter === 'all') {
+          card.classList.remove('is-hidden')
+          return
+        }
+        const tags = (card.getAttribute('data-tags') || '').split(/\s+/)
+        card.classList.toggle('is-hidden', !tags.includes(filter))
+      })
+    })
+  })
+}
+
 // My Work: Makeup / Hairstyle tabs
 const myWorkRoot = document.querySelector('.my-work')
 
