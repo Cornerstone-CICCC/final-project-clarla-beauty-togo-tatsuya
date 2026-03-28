@@ -23,13 +23,13 @@ $classes-card-gap: 3.75rem;
     padding: $spacing-xl 0 $spacing-lg;
 
     @include md {
-      padding: $spacing-xxl 0 $spacing-xl;
+      padding: $spacing-2xl 0 $spacing-xl;
     }
   }
 
   &__shell {
     background-color: $classes-shell-pink;
-    padding-bottom: $spacing-xxl;
+    padding-bottom: $spacing-2xl;
   }
 
   &__container {
@@ -129,7 +129,7 @@ $classes-card-gap: 3.75rem;
     text-align: left;
 
     @include md {
-      padding: $spacing-xl $spacing-xl $spacing-xl $spacing-xxl;
+      padding: $spacing-xl $spacing-xl $spacing-xl $spacing-2xl;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -241,7 +241,9 @@ $classes-card-gap: 3.75rem;
     padding: 0.65rem 2rem;
     min-width: 9.5rem;
     text-align: center;
-    transition: background-color 0.2s, color 0.2s;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
 
     &:hover {
       background-color: rgba($color-black, 0.04);

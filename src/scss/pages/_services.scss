@@ -29,7 +29,7 @@ $services-shell-pad-bottom-md: 7.5rem;
     padding: $spacing-xl 0 $spacing-lg;
 
     @include md {
-      padding: $spacing-xxl 0 $spacing-xl;
+      padding: $spacing-2xl 0 $spacing-xl;
     }
   }
 
@@ -141,7 +141,7 @@ $services-shell-pad-bottom-md: 7.5rem;
     text-align: left;
 
     @include md {
-      padding: $spacing-xl $spacing-xl $spacing-xl $spacing-xxl;
+      padding: $spacing-xl $spacing-xl $spacing-xl $spacing-2xl;
       display: flex;
       flex-direction: column;
       justify-content: center;
