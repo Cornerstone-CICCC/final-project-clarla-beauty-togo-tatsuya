@@ -68,6 +68,18 @@ $about-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
     margin: $spacing-sm auto 0;
   }
 
+  &__intro {
+    font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.1875rem);
+    font-weight: 300;
+    text-align: center;
+    color: $color-black;
+    max-width: 38rem;
+    margin: $spacing-xl auto 0;
+    line-height: 1.65;
+    padding: 0 $spacing-sm;
+  }
+
   &__shell {
     background-color: $about-shell-pink;
   }
@@ -142,10 +154,14 @@ $about-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
 
   &__actions {
     margin-top: $spacing-xl;
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    align-items: center;
+    justify-content: center;
 
     @include md {
-      text-align: left;
+      justify-content: flex-start;
     }
   }
 
@@ -169,6 +185,15 @@ $about-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
 
     &:hover {
       background-color: rgba($color-main, 0.06);
+    }
+  }
+
+  &__btn--secondary {
+    border-color: $color-accent;
+    color: $color-dark-pink;
+
+    &:hover {
+      background-color: rgba($color-accent, 0.2);
     }
   }
 

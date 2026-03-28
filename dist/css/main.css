@@ -1086,6 +1086,17 @@ img {
   border: 1px solid #e3b6b1;
   margin: 8px auto 0;
 }
+.about__intro {
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.1875rem);
+  font-weight: 300;
+  text-align: center;
+  color: #191919;
+  max-width: 38rem;
+  margin: 32px auto 0;
+  line-height: 1.65;
+  padding: 0 8px;
+}
 .about__shell {
   background-color: #fbe7e4;
 }
@@ -1152,11 +1163,15 @@ img {
 }
 .about__actions {
   margin-top: 32px;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
 }
 @media (min-width: 768px) {
   .about__actions {
-    text-align: left;
+    justify-content: flex-start;
   }
 }
 .about__btn {
@@ -1179,6 +1194,13 @@ img {
 }
 .about__btn:hover {
   background-color: rgba(114, 90, 88, 0.06);
+}
+.about__btn--secondary {
+  border-color: #e3b6b1;
+  color: #b99692;
+}
+.about__btn--secondary:hover {
+  background-color: rgba(227, 182, 177, 0.2);
 }
 .about__brands {
   background-color: #f8f6f4;
