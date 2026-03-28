@@ -176,6 +176,32 @@ const updateClassResult = () => {
   if (classResultContact) classResultContact.textContent = classContactValue || '+1-0000000000'
 }
 
+const guestCounters = document.querySelectorAll('[data-guest-counter]')
+
+guestCounters.forEach((counter) => {
+  const valueEl = counter.querySelector('[data-counter-value]')
+  const decreaseBtn = counter.querySelector('[data-counter-action="decrease"]')
+  const increaseBtn = counter.querySelector('[data-counter-action="increase"]')
+  let count = Number(valueEl?.textContent || 0)
+
+  const render = () => {
+    if (valueEl) valueEl.textContent = String(count)
+    if (decreaseBtn) decreaseBtn.disabled = count === 0
+  }
+
+  decreaseBtn?.addEventListener('click', () => {
+    count = Math.max(0, count - 1)
+    render()
+  })
+
+  increaseBtn?.addEventListener('click', () => {
+    count += 1
+    render()
+  })
+
+  render()
+})
+
 if (serviceNextButton) {
   serviceNextButton.addEventListener('click', () => {
     setServiceStep(2)

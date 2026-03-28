@@ -1458,9 +1458,19 @@ img {
   border: 1px solid rgba(114, 90, 88, 0.15);
   background-color: rgba(251, 250, 250, 0.7);
 }
+.contact__guest-list .contact__check input[type=checkbox] {
+  border-color: #e3b6b1;
+}
+.contact__guest-list .contact__check input[type=checkbox]:checked {
+  background-color: #e3b6b1;
+  border-color: #e3b6b1;
+}
+.contact__guest-list .contact__check input[type=checkbox]:focus-visible {
+  outline: 2px solid rgba(227, 182, 177, 0.35);
+}
 .contact__guest-row {
   display: grid;
-  grid-template-columns: minmax(80px, 1fr) 70px 1fr;
+  grid-template-columns: minmax(80px, 1fr) 78px 1px 1fr;
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
@@ -1472,11 +1482,53 @@ img {
 }
 @media (min-width: 576px) {
   .contact__guest-row {
-    grid-template-columns: minmax(90px, 1fr) 70px 1fr 1fr;
+    grid-template-columns: minmax(90px, 1fr) 78px 1px 1fr 1fr;
   }
 }
 .contact__guest-row:last-child {
   border-bottom: none;
+}
+.contact__guest-counter {
+  display: inline-grid;
+  grid-template-columns: 26px 26px 26px;
+  align-items: center;
+  justify-items: center;
+  height: 34px;
+  background-color: #fae9e7;
+  padding: 0;
+  margin-right: 0;
+}
+.contact__guest-counter-divider {
+  width: 1px;
+  height: 46px;
+  background-color: rgba(185, 150, 146, 0.6);
+  justify-self: center;
+}
+.contact__guest-counter-button {
+  border: none;
+  background: transparent;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: normal;
+  color: rgba(25, 25, 25, 0.75);
+  font-family: "Avenir";
+  line-height: 1;
+  cursor: pointer;
+}
+.contact__guest-counter-button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.contact__guest-counter-value {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: normal;
+  color: #191919;
+  font-family: "Avenir";
+  line-height: 1;
+  min-width: 16px;
+  text-align: center;
 }
 .contact__field {
   display: flex;
@@ -1513,7 +1565,7 @@ img {
 }
 .contact__check {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 8px;
   font-size: clamp(0.8125rem, 1vw, 0.875rem);
   font-weight: normal;
@@ -1712,6 +1764,10 @@ img {
   justify-content: space-between;
   gap: 16px;
   margin-top: 8px;
+}
+.contact__result-logo-image {
+  width: 72px;
+  height: auto;
 }
 .contact__result-logo {
   font-size: clamp(2rem, 4vw, 3rem);

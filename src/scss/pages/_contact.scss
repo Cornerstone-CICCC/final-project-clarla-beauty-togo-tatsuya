@@ -206,9 +206,22 @@
     background-color: rgba($color-paper-white, 0.7);
   }
 
+  &__guest-list .contact__check input[type='checkbox'] {
+    border-color: $color-accent;
+  }
+
+  &__guest-list .contact__check input[type='checkbox']:checked {
+    background-color: $color-accent;
+    border-color: $color-accent;
+  }
+
+  &__guest-list .contact__check input[type='checkbox']:focus-visible {
+    outline: 2px solid rgba($color-accent, 0.35);
+  }
+
   &__guest-row {
     display: grid;
-    grid-template-columns: minmax(80px, 1fr) 70px 1fr;
+    grid-template-columns: minmax(80px, 1fr) 78px 1px 1fr;
     align-items: center;
     gap: $spacing-sm;
     padding: $spacing-sm $spacing-md;
@@ -216,12 +229,53 @@
     @include text(clamp(0.8125rem, 1vw, 0.875rem), normal, black, 'Avenir');
 
     @include sm {
-      grid-template-columns: minmax(90px, 1fr) 70px 1fr 1fr;
+      grid-template-columns: minmax(90px, 1fr) 78px 1px 1fr 1fr;
     }
   }
 
   &__guest-row:last-child {
     border-bottom: none;
+  }
+
+  &__guest-counter {
+    display: inline-grid;
+    grid-template-columns: 26px 26px 26px;
+    align-items: center;
+    justify-items: center;
+    height: 34px;
+    background-color: $color-light-pink;
+    padding: 0;
+    margin-right: 0;
+  }
+
+  &__guest-counter-divider {
+    width: 1px;
+    height: 46px;
+    background-color: rgba($color-dark-pink, 0.6);
+    justify-self: center;
+  }
+
+  &__guest-counter-button {
+    border: none;
+    background: transparent;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    @include text(clamp(1.25rem, 2vw, 1.5rem), normal, rgba($color-brand, 0.75), 'Avenir');
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  &__guest-counter-button:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+
+  &__guest-counter-value {
+    @include text(clamp(1.25rem, 2vw, 1.5rem), normal, $color-brand, 'Avenir');
+    line-height: 1;
+    min-width: 16px;
+    text-align: center;
   }
 
   &__field {
@@ -255,7 +309,7 @@
 
   &__check {
     display: flex;
-    align-items: center;
+    align-items: start;
     gap: $spacing-sm;
     @include text(clamp(0.8125rem, 1vw, 0.875rem), normal, black);
   }
@@ -466,6 +520,11 @@
     justify-content: space-between;
     gap: $spacing-md;
     margin-top: $spacing-sm;
+  }
+
+  &__result-logo-image {
+    width: 72px;
+    height: auto;
   }
 
   &__result-logo {

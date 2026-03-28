@@ -222,14 +222,24 @@
                 <div class="contact__guest-list">
                   <div class="contact__guest-row">
                     <span>Groom</span>
-                    <span>0 +</span>
+                    <div class="contact__guest-counter" data-guest-counter>
+                      <button type="button" class="contact__guest-counter-button" data-counter-action="decrease">-</button>
+                      <span class="contact__guest-counter-value" data-counter-value>0</span>
+                      <button type="button" class="contact__guest-counter-button" data-counter-action="increase">+</button>
+                    </div>
+                    <span class="contact__guest-counter-divider"></span>
                     <label class="contact__check"
                       ><input type="checkbox" name="guest_groom_makeup" checked />Makeup</label
                     >
                   </div>
                   <div class="contact__guest-row">
                     <span>Bridesmaid</span>
-                    <span>0 +</span>
+                    <div class="contact__guest-counter" data-guest-counter>
+                      <button type="button" class="contact__guest-counter-button" data-counter-action="decrease">-</button>
+                      <span class="contact__guest-counter-value" data-counter-value>0</span>
+                      <button type="button" class="contact__guest-counter-button" data-counter-action="increase">+</button>
+                    </div>
+                    <span class="contact__guest-counter-divider"></span>
                     <label class="contact__check"
                       ><input type="checkbox" name="guest_bridesmaid_hair" checked />Hairstyle</label
                     >
@@ -239,7 +249,12 @@
                   </div>
                   <div class="contact__guest-row">
                     <span>Flower girl</span>
-                    <span>0 +</span>
+                    <div class="contact__guest-counter" data-guest-counter>
+                      <button type="button" class="contact__guest-counter-button" data-counter-action="decrease">-</button>
+                      <span class="contact__guest-counter-value" data-counter-value>0</span>
+                      <button type="button" class="contact__guest-counter-button" data-counter-action="increase">+</button>
+                    </div>
+                    <span class="contact__guest-counter-divider"></span>
                     <label class="contact__check"
                       ><input type="checkbox" name="guest_flower_hair" checked />Hairstyle</label
                     >
@@ -292,8 +307,7 @@
 
                   <div class="contact__result-footer">
                     <div>
-                      <p class="contact__result-logo">cb</p>
-                      <p class="contact__result-brand">Carla Beauty</p>
+                      <img src="/images/CB_logo.svg" alt="Clarla Beauty logo" class="contact__result-logo-image" />
                     </div>
                     <button type="button" class="contact__submit contact__result-share">Share</button>
                   </div>
