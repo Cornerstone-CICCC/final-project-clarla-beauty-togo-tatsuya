@@ -20,7 +20,7 @@
             <li><a href="/contact.html" class="header__nav-link">Contact</a></li>
           </ul>
         </nav>
-        <button class="header__hamburger" aria-label="Menu">
+        <button class="header__hamburger">
           <span></span>
         </button>
       </div>
@@ -51,11 +51,11 @@
         </section>
 
         <form class="contact__form" id="contact-form">
-          <div class="contact__tabs" role="tablist" aria-label="Contact type">
-            <button type="button" class="contact__tab contact__tab--active" data-tab="services" aria-selected="true">
+          <div class="contact__tabs">
+            <button type="button" class="contact__tab contact__tab--active" data-tab="services">
               Services
             </button>
-            <button type="button" class="contact__tab" data-tab="classes" aria-selected="false"> Classes </button>
+            <button type="button" class="contact__tab" data-tab="classes"> Classes </button>
           </div>
 
           <div class="contact__panel contact__panel--active" data-panel="services">
@@ -118,7 +118,7 @@
                     Call
                   </label>
                 </div>
-                <input type="tel" name="service_phone" placeholder="+ +1  Your mobile number" />
+                <input type="tel" name="service_phone" placeholder="+1  Your mobile number" />
                 <div class="contact__choices contact__choices--stack">
                   <label class="contact__choice">
                     <input type="radio" name="service_contact_method" value="whatsapp" />
@@ -405,7 +405,7 @@
           </div>
         </form>
 
-        <section class="contact__signature" aria-label="Brand signature">
+        <section class="contact__signature">
           <img src="/images/CB_logo.svg" alt="Clarla Beauty logo" class="contact__signature-logo" />
           <p class="contact__signature-note">Expert Makeup and Hairstyle Studio</p>
           <ul class="contact__signature-links">
