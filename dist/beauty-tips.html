@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beauty Tips | Clarla Beauty</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
@@ -27,10 +33,167 @@
     </header>
 
     <main class="beauty-tips">
-      <div class="beauty-tips__container">
-        <h1 class="beauty-tips__title">Beauty Tips</h1>
-        <div class="beauty-tips__list">
-          <!-- Tips articles will go here -->
+      <div class="beauty-tips__hero">
+        <div class="beauty-tips__container">
+          <div class="beauty-tips__title-wrap">
+            <h1 class="beauty-tips__title">Beauty Tips</h1>
+            <hr class="beauty-tips__title-underline" />
+          </div>
+          <p class="beauty-tips__intro">
+            Short tutorials and inspiration for eyes, base, lips, and hair—straight from the studio.
+          </p>
+          <div class="beauty-tips__hero-cta">
+            <a
+              class="beauty-tips__btn beauty-tips__btn--hero"
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >More on Instagram</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="beauty-tips__shell">
+        <div class="beauty-tips__container beauty-tips__container--main">
+          <div class="beauty-tips__filters" role="tablist" aria-label="Filter tips by topic">
+            <button type="button" class="beauty-tips__filter is-active" role="tab" aria-selected="true" data-filter="all">
+              #All
+            </button>
+            <button type="button" class="beauty-tips__filter" role="tab" aria-selected="false" data-filter="eyes">
+              #Eyes
+            </button>
+            <button type="button" class="beauty-tips__filter" role="tab" aria-selected="false" data-filter="base">
+              #Base
+            </button>
+            <button type="button" class="beauty-tips__filter" role="tab" aria-selected="false" data-filter="lips">
+              #Lips
+            </button>
+            <button type="button" class="beauty-tips__filter" role="tab" aria-selected="false" data-filter="hair">
+              #Hair
+            </button>
+          </div>
+
+          <ul class="beauty-tips__grid" aria-label="Beauty tip videos">
+            <li class="beauty-tips__card" data-tags="eyes hair">
+              <a class="beauty-tips__card-link" href="#" aria-label="How to do stunning hair in 3 steps">
+                <span class="beauty-tips__thumb">
+                  <img src="/images/video_BT（1）.png" alt="" width="400" height="400" />
+                  <span class="beauty-tips__play" aria-hidden="true"></span>
+                </span>
+                <span class="beauty-tips__caption">How to do stunning hair in 3…</span>
+              </a>
+            </li>
+            <li class="beauty-tips__card" data-tags="base lips">
+              <a class="beauty-tips__card-link" href="#" aria-label="Makeup for all skin tones">
+                <span class="beauty-tips__thumb">
+                  <img src="/images/video_BT（2）.png" alt="" width="400" height="400" />
+                  <span class="beauty-tips__play" aria-hidden="true"></span>
+                </span>
+                <span class="beauty-tips__caption">Make up for all skins ✨</span>
+              </a>
+            </li>
+            <li class="beauty-tips__card" data-tags="eyes">
+              <a class="beauty-tips__card-link" href="#" aria-label="Soft smoky eye tutorial">
+                <span class="beauty-tips__thumb">
+                  <img src="/images/video_BT（3）.png" alt="" width="400" height="400" />
+                  <span class="beauty-tips__play" aria-hidden="true"></span>
+                </span>
+                <span class="beauty-tips__caption">Soft smoky eye in minutes</span>
+              </a>
+            </li>
+            <li class="beauty-tips__card" data-tags="base">
+              <a class="beauty-tips__card-link" href="#" aria-label="Flawless base routine">
+                <span class="beauty-tips__thumb">
+                  <img src="/images/video_BT（4）.png" alt="" width="400" height="400" />
+                  <span class="beauty-tips__play" aria-hidden="true"></span>
+                </span>
+                <span class="beauty-tips__caption">Flawless base routine</span>
+              </a>
+            </li>
+            <li class="beauty-tips__card" data-tags="lips">
+              <a class="beauty-tips__card-link" href="#" aria-label="Lip liner and blur technique">
+                <span class="beauty-tips__thumb">
+                  <img src="/images/video_BT（5）.png" alt="" width="400" height="400" />
+                  <span class="beauty-tips__play" aria-hidden="true"></span>
+                </span>
+                <span class="beauty-tips__caption">Perfect blurred lip line</span>
+              </a>
+            </li>
+            <li class="beauty-tips__card" data-tags="hair">
+              <a class="beauty-tips__card-link" href="#" aria-label="Quick waves for events">
+                <span class="beauty-tips__thumb">
+                  <img src="/images/video_BT（6）.png" alt="" width="400" height="400" />
+                  <span class="beauty-tips__play" aria-hidden="true"></span>
+                </span>
+                <span class="beauty-tips__caption">Quick event-ready waves</span>
+              </a>
+            </li>
+            <li class="beauty-tips__card" data-tags="eyes base">
+              <a class="beauty-tips__card-link" href="#" aria-label="Bridal eye and skin prep">
+                <span class="beauty-tips__thumb">
+                  <img src="/images/video_BT（7）.png" alt="" width="400" height="400" />
+                  <span class="beauty-tips__play" aria-hidden="true"></span>
+                </span>
+                <span class="beauty-tips__caption">Bridal eye + skin prep</span>
+              </a>
+            </li>
+            <li class="beauty-tips__card" data-tags="lips base">
+              <a class="beauty-tips__card-link" href="#" aria-label="Long-wear lip and base combo">
+                <span class="beauty-tips__thumb">
+                  <img src="/images/video_BT（8）.png" alt="" width="400" height="400" />
+                  <span class="beauty-tips__play" aria-hidden="true"></span>
+                </span>
+                <span class="beauty-tips__caption">Long-wear lip &amp; base</span>
+              </a>
+            </li>
+            <li class="beauty-tips__card" data-tags="hair eyes">
+              <a class="beauty-tips__card-link" href="#" aria-label="Editorial look breakdown">
+                <span class="beauty-tips__thumb">
+                  <img src="/images/video_BT（9）.png" alt="" width="400" height="400" />
+                  <span class="beauty-tips__play" aria-hidden="true"></span>
+                </span>
+                <span class="beauty-tips__caption">Editorial look breakdown</span>
+              </a>
+            </li>
+            <li class="beauty-tips__card" data-tags="base">
+              <a class="beauty-tips__card-link" href="#" aria-label="Color correction basics">
+                <span class="beauty-tips__thumb">
+                  <img src="/images/video_BT（10）.png" alt="" width="400" height="400" />
+                  <span class="beauty-tips__play" aria-hidden="true"></span>
+                </span>
+                <span class="beauty-tips__caption">Color correction basics</span>
+              </a>
+            </li>
+            <li class="beauty-tips__card" data-tags="eyes">
+              <a class="beauty-tips__card-link" href="#" aria-label="Liner shapes for every eye">
+                <span class="beauty-tips__thumb">
+                  <img src="/images/video_BT（11）.png" alt="" width="400" height="400" />
+                  <span class="beauty-tips__play" aria-hidden="true"></span>
+                </span>
+                <span class="beauty-tips__caption">Liner shapes for every eye</span>
+              </a>
+            </li>
+            <li class="beauty-tips__card" data-tags="hair lips">
+              <a class="beauty-tips__card-link" href="#" aria-label="Full look in under 20 minutes">
+                <span class="beauty-tips__thumb">
+                  <img src="/images/video_BT（12）.png" alt="" width="400" height="400" />
+                  <span class="beauty-tips__play" aria-hidden="true"></span>
+                </span>
+                <span class="beauty-tips__caption">Full look under 20 min</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="beauty-tips__more-wrap">
+            <a
+              class="beauty-tips__btn"
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View More</a
+            >
+          </div>
         </div>
       </div>
     </main>

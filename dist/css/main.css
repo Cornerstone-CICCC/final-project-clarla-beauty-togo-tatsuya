@@ -794,7 +794,22 @@ img {
 }
 
 .beauty-tips {
-  padding: 80px 0;
+  padding-top: 5.25rem;
+  padding-bottom: 0;
+}
+@media (min-width: 768px) {
+  .beauty-tips {
+    padding-top: 5.5rem;
+  }
+}
+.beauty-tips__hero {
+  background-color: #f8f6f4;
+  padding: 32px 0 24px;
+}
+@media (min-width: 768px) {
+  .beauty-tips__hero {
+    padding: 40px 0 48px;
+  }
 }
 .beauty-tips__container {
   width: 100%;
@@ -802,25 +817,214 @@ img {
   margin: 0 auto;
   padding: 0 16px;
 }
-.beauty-tips__title {
-  text-align: center;
-  margin-bottom: 32px;
+.beauty-tips__container--main {
+  padding-top: 4.5rem;
+  padding-bottom: 6rem;
 }
-.beauty-tips__list {
-  display: grid;
-  gap: 24px;
-}
-@media (min-width: 992px) {
-  .beauty-tips__list {
-    grid-template-columns: repeat(3, 1fr);
+@media (min-width: 768px) {
+  .beauty-tips__container--main {
+    padding-top: 6rem;
+    padding-bottom: 7.5rem;
   }
 }
-.beauty-tips__article h3 {
-  margin-bottom: 8px;
+.beauty-tips__title-wrap {
+  text-align: center;
+  margin-bottom: 24px;
 }
-.beauty-tips__article p {
-  color: #535353;
-  line-height: 1.8;
+.beauty-tips__title {
+  display: inline-block;
+  font-family: Baskervville;
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  line-height: 1.15;
+  color: #725a58;
+  padding-bottom: 8px;
+  margin: 0;
+}
+.beauty-tips__title-underline {
+  width: 200px;
+  height: 1px;
+  background-color: #e3b6b1;
+  border: 1px solid #e3b6b1;
+  margin: 8px auto 0;
+}
+.beauty-tips__intro {
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.1875rem);
+  font-weight: 300;
+  text-align: center;
+  color: #191919;
+  max-width: 38rem;
+  margin: 0 auto 32px;
+  line-height: 1.65;
+  padding: 0 8px;
+}
+.beauty-tips__hero-cta {
+  text-align: center;
+}
+.beauty-tips__shell {
+  background-color: #fbe7e4;
+}
+.beauty-tips__filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 24px;
+  margin: 0 0 32px;
+}
+.beauty-tips__filter {
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #888888;
+  background: none;
+  border: none;
+  padding: 0.35rem 0.25rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.beauty-tips__filter:hover {
+  color: #191919;
+}
+.beauty-tips__filter.is-active {
+  color: #191919;
+  font-weight: 600;
+  border-bottom-color: #725a58;
+}
+.beauty-tips__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: min(100%, 52rem);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 576px) {
+  .beauty-tips__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 992px) {
+  .beauty-tips__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+.beauty-tips__card {
+  min-width: 0;
+}
+.beauty-tips__card.is-hidden {
+  display: none;
+}
+.beauty-tips__card-link {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgba(25, 25, 25, 0.06);
+  box-shadow: 0 4px 20px rgba(25, 25, 25, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.beauty-tips__card-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(25, 25, 25, 0.1);
+}
+.beauty-tips__card-link:focus-visible {
+  outline: 2px solid #725a58;
+  outline-offset: 3px;
+}
+.beauty-tips__thumb {
+  position: relative;
+  z-index: 0;
+  display: block;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+.beauty-tips__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.beauty-tips__thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(25, 25, 25, 0.55) 0%, transparent 45%);
+  pointer-events: none;
+}
+.beauty-tips__play {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 2px 8px rgba(25, 25, 25, 0.12);
+}
+.beauty-tips__play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  border-color: transparent transparent transparent #725a58;
+}
+.beauty-tips__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 16px 8px 8px;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #fff;
+  display: block;
+  text-shadow: 0 1px 3px rgba(25, 25, 25, 0.45);
+  pointer-events: none;
+}
+.beauty-tips__more-wrap {
+  text-align: center;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+.beauty-tips__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #725a58;
+  background-color: transparent;
+  border: 1px solid #725a58;
+  border-radius: 0;
+  padding: 14px 3rem;
+  min-width: 11rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.beauty-tips__btn:hover {
+  background-color: rgba(114, 90, 88, 0.06);
 }
 
 .about {
