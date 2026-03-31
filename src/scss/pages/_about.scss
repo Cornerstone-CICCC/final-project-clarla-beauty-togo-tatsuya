@@ -134,24 +134,28 @@ $about-brands-gap: 2.75rem; // 44px
     color: $color-main;
   }
 
-  // Avenir Light 18px / 150% LH / 0 tracking — 常にちょうど 5 行（各行は折り返さない／狭い幅は横スクロール）
+  // 5 行固定（改行位置は HTML の about__line）／横スクロールなし — 狭い幅は字を小さく
   &__text {
     max-width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
+    min-width: 0;
+    container-type: inline-size;
+    container-name: about-bio-copy;
 
     &-copy {
       margin: 0;
-      width: max-content;
+      width: 100%;
+      max-width: 100%;
       font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 18px;
       font-weight: 300;
       font-style: normal;
       line-height: 150%;
       letter-spacing: 0;
       color: $color-dark-grey;
+      font-size: clamp(8px, 2.9vw + 0.2rem, 1.125rem);
+
+      @supports (font-size: 1cqi) {
+        font-size: clamp(8px, 2.25cqi + 0.125rem, 1.125rem);
+      }
     }
   }
 
@@ -169,7 +173,7 @@ $about-brands-gap: 2.75rem; // 44px
     }
   }
 
-  // Figma: 160×62, padding 24×32, border 0.8px; label Baskervville 20px / 400 / 150% LH
+  // Figma: 160×62, padding 24×32, border 1.2px; label Baskervville 20px / 400 / 150% LH
   &__btn {
     box-sizing: border-box;
     display: inline-flex;
@@ -189,7 +193,7 @@ $about-brands-gap: 2.75rem; // 44px
     letter-spacing: 0;
     color: $about-btn-label;
     background-color: transparent;
-    border: 0.8px solid $color-brand;
+    border: 1.2px solid $color-brand;
     border-radius: 0;
     text-align: center;
     text-decoration: none;

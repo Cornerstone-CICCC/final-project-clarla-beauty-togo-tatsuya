@@ -332,7 +332,7 @@ img {
   letter-spacing: 0;
   color: #725a58;
   background: transparent;
-  border: 0.8px solid #725a58;
+  border: 1.2px solid #725a58;
   border-radius: 0;
   text-align: center;
   text-decoration: none;
@@ -574,7 +574,7 @@ img {
   letter-spacing: 0;
   color: #5e4a49;
   background-color: transparent;
-  border: 0.8px solid #5e4a49;
+  border: 1.2px solid #5e4a49;
   border-radius: 0;
   opacity: 1;
   text-align: center;
@@ -862,18 +862,24 @@ img {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  width: 160px;
+  width: auto;
   min-width: 160px;
   min-height: 62px;
   padding: 24px 32px;
+  white-space: nowrap;
   font-family: "Baskervville", "Georgia", serif;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: none;
+  vertical-align: middle;
+  text-box-trim: trim-start;
+  text-box-edge: cap alphabetic;
   color: #5e4a49;
   background-color: transparent;
-  border: 0.8px solid #5e4a49;
+  border: 1.2px solid #5e4a49;
   border-radius: 0;
   opacity: 1;
   text-align: center;
@@ -882,6 +888,356 @@ img {
 }
 .classes__btn:hover {
   background-color: rgba(94, 74, 73, 0.04);
+}
+
+.class-detail {
+  padding-top: 5.25rem;
+}
+@media (min-width: 768px) {
+  .class-detail {
+    padding-top: 5.5rem;
+  }
+}
+.class-detail {
+  padding-bottom: 0;
+}
+.class-detail__top {
+  background-color: #f8f6f4;
+  padding: 24px 0 16px;
+}
+@media (min-width: 768px) {
+  .class-detail__top {
+    padding: 32px 0 24px;
+  }
+}
+.class-detail__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.class-detail__back {
+  display: inline-block;
+  margin-bottom: 24px;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 100%;
+  letter-spacing: 0;
+  font-variant-numeric: lining-nums proportional-nums;
+  text-box-trim: trim-start;
+  text-box-edge: cap alphabetic;
+  color: #725a58;
+  text-decoration: none;
+}
+.class-detail__back:hover {
+  text-decoration: underline;
+}
+.class-detail__page-title {
+  margin: 0;
+  text-align: center;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(1.625rem, 4.5vw, 2.375rem);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: #725a58;
+}
+.class-detail__title-num {
+  font-family: inherit;
+  font-size: 1.05em;
+  font-weight: 400;
+  font-variant-numeric: lining-nums proportional-nums;
+  line-height: inherit;
+  display: inline;
+  vertical-align: baseline;
+}
+.class-detail__shell {
+  background-color: #f9e7e7;
+  padding: 32px 0 40px;
+}
+@media (min-width: 768px) {
+  .class-detail__shell {
+    padding: 40px 0 64px;
+  }
+}
+.class-detail__layout {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media (min-width: 768px) {
+  .class-detail__layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+  }
+}
+.class-detail__sidebar {
+  flex-shrink: 0;
+}
+@media (min-width: 768px) {
+  .class-detail__sidebar {
+    width: 32%;
+    max-width: 22rem;
+  }
+}
+.class-detail__card {
+  box-sizing: border-box;
+  background-color: #fdf2f2;
+  border: 1.2px solid #191919;
+  overflow: hidden;
+}
+.class-detail__card-media {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  background-color: rgba(25, 25, 25, 0.04);
+}
+.class-detail__card-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 328/500;
+  object-fit: cover;
+  display: block;
+}
+.class-detail__card-body {
+  padding: 24px;
+}
+.class-detail__card-title {
+  margin: 0 0 16px;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #725a58;
+}
+.class-detail__meta {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.class-detail__meta li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.class-detail__meta-icon {
+  flex-shrink: 0;
+  line-height: 0;
+  padding-top: 2px;
+}
+.class-detail__meta-img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  display: block;
+}
+.class-detail__meta-text {
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #535353;
+}
+.class-detail__join {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  padding: 18px 24px;
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: #5e4a49;
+  background-color: transparent;
+  border: 1.2px solid #5e4a49;
+  border-radius: 0;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.class-detail__join:hover {
+  background-color: rgba(94, 74, 73, 0.06);
+}
+.class-detail__main {
+  flex: 1;
+  min-width: 0;
+}
+.class-detail__section-title {
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.3;
+  color: #725a58;
+  margin: 0 0 16px;
+}
+.class-detail__overview {
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: #535353;
+  margin: 0 0 32px;
+}
+.class-detail__module {
+  margin-bottom: 24px;
+}
+.class-detail__module:last-child {
+  margin-bottom: 0;
+}
+.class-detail__module-title {
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.4;
+  color: #191919;
+  margin: 0 0 8px;
+}
+.class-detail__list {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #535353;
+  list-style-type: disc;
+}
+.class-detail__list li {
+  margin-bottom: 4px;
+}
+.class-detail__list li:last-child {
+  margin-bottom: 0;
+}
+
+.class-detail--one-to-one .class-detail__page-title,
+.class-detail--workshop .class-detail__page-title,
+.class-detail--beginner .class-detail__page-title {
+  font-size: clamp(2rem, 8vw, 5rem);
+  line-height: 1.2;
+  letter-spacing: 0;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+.class-detail--one-to-one .class-detail__page-title .class-detail__title-num,
+.class-detail--workshop .class-detail__page-title .class-detail__title-num,
+.class-detail--beginner .class-detail__page-title .class-detail__title-num {
+  font-size: 1em;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+.class-detail--one-to-one .class-detail__card,
+.class-detail--workshop .class-detail__card,
+.class-detail--beginner .class-detail__card {
+  background-color: #f9e7e7;
+  container-type: inline-size;
+  container-name: class-detail-card;
+}
+.class-detail--one-to-one .class-detail__card-body,
+.class-detail--workshop .class-detail__card-body,
+.class-detail--beginner .class-detail__card-body {
+  background-color: #f9e7e7;
+}
+.class-detail--one-to-one .class-detail__main,
+.class-detail--workshop .class-detail__main,
+.class-detail--beginner .class-detail__main {
+  text-align: left;
+}
+.class-detail--one-to-one .class-detail__section-title,
+.class-detail--workshop .class-detail__section-title,
+.class-detail--beginner .class-detail__section-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-align: left;
+}
+.class-detail--one-to-one .class-detail__main > .class-detail__section-title:first-of-type,
+.class-detail--workshop .class-detail__main > .class-detail__section-title:first-of-type,
+.class-detail--beginner .class-detail__main > .class-detail__section-title:first-of-type {
+  margin-bottom: 16px;
+}
+.class-detail--one-to-one .class-detail__overview + .class-detail__section-title,
+.class-detail--workshop .class-detail__overview + .class-detail__section-title,
+.class-detail--beginner .class-detail__overview + .class-detail__section-title {
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+.class-detail--one-to-one .class-detail__overview,
+.class-detail--workshop .class-detail__overview,
+.class-detail--beginner .class-detail__overview {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-align: left;
+  margin-bottom: 0;
+}
+.class-detail--one-to-one .class-detail__section-title + .class-detail__curriculum,
+.class-detail--workshop .class-detail__section-title + .class-detail__curriculum,
+.class-detail--beginner .class-detail__section-title + .class-detail__curriculum {
+  margin-top: 8px;
+}
+.class-detail--one-to-one .class-detail__module-title,
+.class-detail--workshop .class-detail__module-title,
+.class-detail--beginner .class-detail__module-title {
+  font-family: "Baskervville", "Georgia", serif;
+  font-size: clamp(1.125rem, 2.2vw, 1.5rem);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: #725a58;
+}
+.class-detail--one-to-one .class-detail__list,
+.class-detail--workshop .class-detail__list,
+.class-detail--beginner .class-detail__list {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.class-detail--one-to-one .class-detail__list li,
+.class-detail--workshop .class-detail__list li,
+.class-detail--beginner .class-detail__list li {
+  display: list-item;
+}
+
+.class-detail--one-to-one .class-detail__card-title {
+  text-align: center;
+  font-size: clamp(11px, min(2.25rem, 7.8cqi + 0.125rem), 2.25rem);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  min-width: 0;
+}
+.class-detail--one-to-one .class-detail__card-title-on {
+  text-transform: none;
+}
+
+.class-detail--workshop .class-detail__card-title,
+.class-detail--beginner .class-detail__card-title {
+  text-align: center;
+  text-transform: none;
+  font-size: clamp(14px, min(1.875rem, 8.5cqi + 0.15rem), 1.875rem);
+  line-height: 1.3;
+  letter-spacing: 0;
+  white-space: normal;
+  min-width: 0;
+  max-width: 22rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .beauty-tips {
@@ -1108,7 +1464,7 @@ img {
   letter-spacing: 0;
   color: #5e4a49;
   background-color: transparent;
-  border: 0.8px solid #5e4a49;
+  border: 1.2px solid #5e4a49;
   border-radius: 0;
   text-align: center;
   text-decoration: none;
@@ -1243,21 +1599,26 @@ img {
 }
 .about__text {
   max-width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
+  min-width: 0;
+  container-type: inline-size;
+  container-name: about-bio-copy;
 }
 .about__text-copy {
   margin: 0;
-  width: max-content;
+  width: 100%;
+  max-width: 100%;
   font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 18px;
   font-weight: 300;
   font-style: normal;
   line-height: 150%;
   letter-spacing: 0;
   color: #535353;
+  font-size: clamp(8px, 2.9vw + 0.2rem, 1.125rem);
+}
+@supports (font-size: 1cqi) {
+  .about__text-copy {
+    font-size: clamp(8px, 2.25cqi + 0.125rem, 1.125rem);
+  }
 }
 .about__line {
   display: block;
@@ -1291,7 +1652,7 @@ img {
   letter-spacing: 0;
   color: #5e4a49;
   background-color: transparent;
-  border: 0.8px solid #191919;
+  border: 1.2px solid #191919;
   border-radius: 0;
   text-align: center;
   text-decoration: none;
