@@ -236,7 +236,7 @@ $services-btn-label: #5e4a49;
     padding-top: $spacing-xs;
   }
 
-  // Figma: 171×62, padding 24×32, border 0.8px, Baskervville 20px / 400 / 150% LH, #5E4A49
+  // Figma: 171×62, padding 24×32, border 1.2px, Baskervville 20px / 400 / 150% LH, #5E4A49
   &__btn {
     box-sizing: border-box;
     display: inline-flex;
@@ -256,7 +256,7 @@ $services-btn-label: #5e4a49;
     letter-spacing: 0;
     color: $services-btn-label;
     background-color: transparent;
-    border: 0.8px solid $services-btn-label;
+    border: 1.2px solid $services-btn-label;
     border-radius: 0;
     opacity: 1;
     text-align: center;

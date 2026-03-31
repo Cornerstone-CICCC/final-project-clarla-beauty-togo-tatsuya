@@ -1,0 +1,378 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+$class-detail-cream: #f8f6f4;
+$class-detail-shell: #f9e7e7;
+$class-detail-card-bg: #fdf2f2;
+$class-detail-btn: #5e4a49;
+
+// Classes「View Class」詳細（ヘッダー・フッターは共通のまま）
+.class-detail {
+  padding-top: 5.25rem;
+
+  @include md {
+    padding-top: 5.5rem;
+  }
+
+  padding-bottom: 0;
+
+  &__top {
+    background-color: $class-detail-cream;
+    padding: $spacing-lg 0 $spacing-md;
+
+    @include md {
+      padding: $spacing-xl 0 $spacing-lg;
+    }
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__back {
+    display: inline-block;
+    margin-bottom: $spacing-lg;
+    font-family: $font-family-heading;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0;
+    font-variant-numeric: lining-nums proportional-nums;
+    // Figma 「leading-trim: CAP_height」相当（対応ブラウザのみ）
+    text-box-trim: trim-start;
+    text-box-edge: cap alphabetic;
+    color: $color-main;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__page-title {
+    margin: 0;
+    text-align: center;
+    font-family: $font-family-heading;
+    font-size: clamp(1.625rem, 4.5vw, 2.375rem);
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: 0;
+    color: $color-main;
+  }
+
+  &__title-num {
+    font-family: inherit;
+    font-size: 1.05em;
+    font-weight: 400;
+    font-variant-numeric: lining-nums proportional-nums;
+    line-height: inherit;
+    display: inline;
+    vertical-align: baseline;
+  }
+
+  &__shell {
+    background-color: $class-detail-shell;
+    padding: $spacing-xl 0 $spacing-2xl;
+
+    @include md {
+      padding: $spacing-2xl 0 $spacing-4xl;
+    }
+  }
+
+  &__layout {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+
+    @include md {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: $spacing-2xl;
+    }
+  }
+
+  &__sidebar {
+    flex-shrink: 0;
+
+    @include md {
+      width: 32%;
+      max-width: 22rem;
+    }
+  }
+
+  &__card {
+    box-sizing: border-box;
+    background-color: $class-detail-card-bg;
+    border: 1.2px solid $color-brand;
+    overflow: hidden;
+  }
+
+  &__card-media {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    background-color: rgba($color-black, 0.04);
+
+    img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 328 / 500;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__card-body {
+    padding: $spacing-lg;
+  }
+
+  &__card-title {
+    margin: 0 0 $spacing-md;
+    font-family: $font-family-heading;
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: $color-main;
+  }
+
+  &__meta {
+    list-style: none;
+    margin: 0 0 $spacing-lg;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  &__meta li {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-sm;
+  }
+
+  &__meta-icon {
+    flex-shrink: 0;
+    line-height: 0;
+    padding-top: 2px;
+  }
+
+  &__meta-img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    display: block;
+  }
+
+  &__meta-text {
+    font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: $color-dark-grey;
+  }
+
+  &__join {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 52px;
+    padding: 18px 24px;
+    font-family: $font-family-heading;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: $class-detail-btn;
+    background-color: transparent;
+    border: 1.2px solid $class-detail-btn;
+    border-radius: 0;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: rgba($class-detail-btn, 0.06);
+    }
+  }
+
+  &__main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__section-title {
+    font-family: $font-family-heading;
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 400;
+    line-height: 1.3;
+    color: $color-main;
+    margin: 0 0 $spacing-md;
+  }
+
+  &__overview {
+    font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: $color-dark-grey;
+    margin: 0 0 $spacing-xl;
+  }
+
+  &__module {
+    margin-bottom: $spacing-lg;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__module-title {
+    font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.4;
+    color: $color-black;
+    margin: 0 0 $spacing-sm;
+  }
+
+  &__list {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: $color-dark-grey;
+    list-style-type: disc;
+
+    li {
+      margin-bottom: $spacing-xs;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// クラス詳細デザイン統一（1-on-1 / Workshop / Beginner）
+.class-detail--one-to-one,
+.class-detail--workshop,
+.class-detail--beginner {
+  .class-detail__page-title {
+    font-size: clamp(2rem, 8vw, 5rem);
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-variant-numeric: lining-nums proportional-nums;
+  }
+
+  .class-detail__page-title .class-detail__title-num {
+    font-size: 1em;
+    font-variant-numeric: lining-nums proportional-nums;
+  }
+
+  .class-detail__card {
+    background-color: $class-detail-shell;
+    container-type: inline-size;
+    container-name: class-detail-card;
+  }
+
+  .class-detail__card-body {
+    background-color: $class-detail-shell;
+  }
+
+  .class-detail__main {
+    text-align: left;
+  }
+
+  .class-detail__section-title {
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-align: left;
+  }
+
+  .class-detail__main > .class-detail__section-title:first-of-type {
+    margin-bottom: $spacing-md;
+  }
+
+  .class-detail__overview + .class-detail__section-title {
+    margin-top: $spacing-2xl;
+    margin-bottom: $spacing-md;
+  }
+
+  .class-detail__overview {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .class-detail__section-title + .class-detail__curriculum {
+    margin-top: $spacing-sm;
+  }
+
+  .class-detail__module-title {
+    font-family: $font-family-heading;
+    font-size: clamp(1.125rem, 2.2vw, 1.5rem);
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: 0;
+    color: $color-main;
+  }
+
+  .class-detail__list {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 0;
+
+    li {
+      display: list-item;
+    }
+  }
+}
+
+// 1-on-1: カード見出しは uppercase・1行・「-on-」だけ小文字
+.class-detail--one-to-one {
+  .class-detail__card-title {
+    text-align: center;
+    font-size: clamp(11px, min(2.25rem, 7.8cqi + 0.125rem), 2.25rem);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    min-width: 0;
+  }
+
+  .class-detail__card-title-on {
+    text-transform: none;
+  }
+}
+
+// Workshop / Beginner: 写真どおりタイトルケース・中央・複数行可
+.class-detail--workshop,
+.class-detail--beginner {
+  .class-detail__card-title {
+    text-align: center;
+    text-transform: none;
+    font-size: clamp(14px, min(1.875rem, 8.5cqi + 0.15rem), 1.875rem);
+    line-height: 1.3;
+    letter-spacing: 0;
+    white-space: normal;
+    min-width: 0;
+    max-width: 22rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

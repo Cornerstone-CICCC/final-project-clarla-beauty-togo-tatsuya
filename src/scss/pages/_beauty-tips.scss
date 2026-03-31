@@ -235,7 +235,7 @@ $bt-btn-label: #5e4a49;
     margin-top: clamp(2.5rem, 6vw, 4rem);
   }
 
-  // Figma: View More 161×62, Baskervville 20px / 400 / 150% LH; padding 24×32; border 0.8px
+  // Figma: View More 161×62, Baskervville 20px / 400 / 150% LH; padding 24×32; border 1.2px
   &__btn {
     box-sizing: border-box;
     display: inline-flex;
@@ -255,7 +255,7 @@ $bt-btn-label: #5e4a49;
     letter-spacing: 0;
     color: $bt-btn-label;
     background-color: transparent;
-    border: 0.8px solid $bt-btn-label;
+    border: 1.2px solid $bt-btn-label;
     border-radius: 0;
     text-align: center;
     text-decoration: none;
