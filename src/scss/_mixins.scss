@@ -68,11 +68,14 @@
   margin: 0;
 }
 
+// 装飾線: width 200 / height 0 / border 1px / opacity 1（Figma 相当）
 @mixin page-hero-h1-rule {
   width: 200px;
-  height: 1px;
+  height: 0;
   margin: $spacing-sm auto 0;
   padding: 0;
-  border: 1px solid $color-accent;
-  background-color: $color-accent;
+  border: none;
+  border-top: 1px solid $color-accent;
+  background: none;
+  opacity: 1;
 }

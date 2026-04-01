@@ -196,11 +196,13 @@ img {
 }
 .my-work__title-underline {
   width: 200px;
-  height: 1px;
+  height: 0;
   margin: 8px auto 0;
   padding: 0;
-  border: 1px solid #e3b6b1;
-  background-color: #e3b6b1;
+  border: none;
+  border-top: 1px solid #e3b6b1;
+  background: none;
+  opacity: 1;
 }
 .my-work__subtitle {
   font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -332,7 +334,7 @@ img {
   letter-spacing: 0;
   color: #725a58;
   background: transparent;
-  border: 1.2px solid #725a58;
+  border: 1px solid #725a58;
   border-radius: 0;
   text-align: center;
   text-decoration: none;
@@ -403,11 +405,13 @@ img {
 }
 .services__title-underline {
   width: 200px;
-  height: 1px;
+  height: 0;
   margin: 8px auto 0;
   padding: 0;
-  border: 1px solid #e3b6b1;
-  background-color: #e3b6b1;
+  border: none;
+  border-top: 1px solid #e3b6b1;
+  background: none;
+  opacity: 1;
 }
 .services__intro {
   font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -574,7 +578,7 @@ img {
   letter-spacing: 0;
   color: #5e4a49;
   background-color: transparent;
-  border: 1.2px solid #5e4a49;
+  border: 1px solid #5e4a49;
   border-radius: 0;
   opacity: 1;
   text-align: center;
@@ -648,11 +652,13 @@ img {
 }
 .classes__title-underline {
   width: 200px;
-  height: 1px;
+  height: 0;
   margin: 8px auto 0;
   padding: 0;
-  border: 1px solid #e3b6b1;
-  background-color: #e3b6b1;
+  border: none;
+  border-top: 1px solid #e3b6b1;
+  background: none;
+  opacity: 1;
 }
 .classes__intro {
   box-sizing: border-box;
@@ -879,7 +885,7 @@ img {
   text-box-edge: cap alphabetic;
   color: #5e4a49;
   background-color: transparent;
-  border: 1.2px solid #5e4a49;
+  border: 1px solid #5e4a49;
   border-radius: 0;
   opacity: 1;
   text-align: center;
@@ -987,7 +993,7 @@ img {
 .class-detail__card {
   box-sizing: border-box;
   background-color: #fdf2f2;
-  border: 1.2px solid #191919;
+  border: 1px solid #191919;
   overflow: hidden;
 }
 .class-detail__card-media {
@@ -1060,7 +1066,7 @@ img {
   letter-spacing: 0;
   color: #5e4a49;
   background-color: transparent;
-  border: 1.2px solid #5e4a49;
+  border: 1px solid #5e4a49;
   border-radius: 0;
   text-align: center;
   text-decoration: none;
@@ -1294,11 +1300,13 @@ img {
 }
 .beauty-tips__title-underline {
   width: 200px;
-  height: 1px;
+  height: 0;
   margin: 8px auto 0;
   padding: 0;
-  border: 1px solid #e3b6b1;
-  background-color: #e3b6b1;
+  border: none;
+  border-top: 1px solid #e3b6b1;
+  background: none;
+  opacity: 1;
 }
 .beauty-tips__intro {
   box-sizing: border-box;
@@ -1464,7 +1472,7 @@ img {
   letter-spacing: 0;
   color: #5e4a49;
   background-color: transparent;
-  border: 1.2px solid #5e4a49;
+  border: 1px solid #5e4a49;
   border-radius: 0;
   text-align: center;
   text-decoration: none;
@@ -1538,11 +1546,13 @@ img {
 }
 .about__title-underline {
   width: 200px;
-  height: 1px;
+  height: 0;
   margin: 8px auto 0;
   padding: 0;
-  border: 1px solid #e3b6b1;
-  background-color: #e3b6b1;
+  border: none;
+  border-top: 1px solid #e3b6b1;
+  background: none;
+  opacity: 1;
 }
 .about__shell {
   background-color: #fbe7e4;
@@ -1652,7 +1662,7 @@ img {
   letter-spacing: 0;
   color: #5e4a49;
   background-color: transparent;
-  border: 1.2px solid #191919;
+  border: 1px solid #191919;
   border-radius: 0;
   text-align: center;
   text-decoration: none;

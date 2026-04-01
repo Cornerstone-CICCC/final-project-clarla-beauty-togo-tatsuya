@@ -173,7 +173,7 @@ $about-brands-gap: 2.75rem; // 44px
     }
   }
 
-  // Figma: 160×62, padding 24×32, border 1.2px; label Baskervville 20px / 400 / 150% LH
+  // Figma: 160×62, padding 24×32, border 1px; label Baskervville 20px / 400 / 150% LH
   &__btn {
     box-sizing: border-box;
     display: inline-flex;
@@ -193,7 +193,7 @@ $about-brands-gap: 2.75rem; // 44px
     letter-spacing: 0;
     color: $about-btn-label;
     background-color: transparent;
-    border: 1.2px solid $color-brand;
+    border: 1px solid $color-brand;
     border-radius: 0;
     text-align: center;
     text-decoration: none;

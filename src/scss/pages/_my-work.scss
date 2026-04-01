@@ -178,7 +178,7 @@ $my-work-view-more-w: 10.0625rem; // 161px
     }
   }
 
-  // Figma: 161×62, padding 24×32, border 1.2px, Baskervville 20px / 400 / 150% LH, #725A58
+  // Figma: 161×62, padding 24×32, border 1px, Baskervville 20px / 400 / 150% LH, #725A58
   &__view-more {
     box-sizing: border-box;
     display: inline-flex;
@@ -198,7 +198,7 @@ $my-work-view-more-w: 10.0625rem; // 161px
     letter-spacing: 0;
     color: $color-main;
     background: transparent;
-    border: 1.2px solid $color-main;
+    border: 1px solid $color-main;
     border-radius: 0;
     text-align: center;
     text-decoration: none;

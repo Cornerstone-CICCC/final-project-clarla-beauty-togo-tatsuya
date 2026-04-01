@@ -105,7 +105,7 @@ $class-detail-btn: #5e4a49;
   &__card {
     box-sizing: border-box;
     background-color: $class-detail-card-bg;
-    border: 1.2px solid $color-brand;
+    border: 1px solid $color-brand;
     overflow: hidden;
   }
 
@@ -188,7 +188,7 @@ $class-detail-btn: #5e4a49;
     letter-spacing: 0;
     color: $class-detail-btn;
     background-color: transparent;
-    border: 1.2px solid $class-detail-btn;
+    border: 1px solid $class-detail-btn;
     border-radius: 0;
     text-align: center;
     text-decoration: none;
