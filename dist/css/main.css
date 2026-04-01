@@ -171,7 +171,28 @@ img {
 }
 @media (min-width: 768px) {
   .my-work__hero {
-    padding: 40px 0 48px;
+    padding: 40px 0 32px;
+  }
+}
+@media (min-width: 992px) {
+  .my-work__hero {
+    box-sizing: border-box;
+    width: 100%;
+    height: 270px;
+    min-height: 270px;
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+  }
+}
+@media (min-width: 992px) {
+  .my-work__hero .my-work__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
   }
 }
 .my-work__container {
@@ -183,6 +204,11 @@ img {
 .my-work__title-wrap {
   text-align: center;
   margin-bottom: 32px;
+}
+@media (min-width: 992px) {
+  .my-work__title-wrap {
+    margin-bottom: 0;
+  }
 }
 .my-work__title {
   margin: 0;

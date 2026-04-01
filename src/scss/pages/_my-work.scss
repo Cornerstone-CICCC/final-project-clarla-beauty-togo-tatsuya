@@ -9,6 +9,10 @@ $my-work-title-max: 5rem; // 80px — Figma hero
 $my-work-gallery-max: 63.875rem; // 1022px
 $my-work-tabs-width: 30.25rem; // 484px
 $my-work-view-more-w: 10.0625rem; // 161px
+// Services ヒーローと同じタイトル帯（Figma 270 高さ / padding 24 / gap 32）
+$my-work-hero-h-lg: 270px;
+$my-work-hero-pad-y-lg: 24px;
+$my-work-hero-gap-lg: 32px;
 
 .my-work {
   padding-top: 5.25rem;
@@ -22,7 +26,28 @@ $my-work-view-more-w: 10.0625rem; // 161px
     padding: $spacing-xl 0 $spacing-lg;
 
     @include md {
-      padding: $spacing-2xl 0 $spacing-3xl;
+      padding: $spacing-2xl 0 $spacing-xl;
+    }
+
+    @include lg {
+      box-sizing: border-box;
+      width: 100%;
+      height: $my-work-hero-h-lg;
+      min-height: $my-work-hero-h-lg;
+      padding: $my-work-hero-pad-y-lg 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+    }
+  }
+
+  &__hero &__container {
+    @include lg {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: $my-work-hero-gap-lg;
     }
   }
 
@@ -33,6 +58,10 @@ $my-work-view-more-w: 10.0625rem; // 161px
   &__title-wrap {
     text-align: center;
     margin-bottom: $spacing-xl;
+
+    @include lg {
+      margin-bottom: 0;
+    }
   }
 
   // Figma: Baskerville 80px / 400 / 130% LH / 13% tracking / #725A58
