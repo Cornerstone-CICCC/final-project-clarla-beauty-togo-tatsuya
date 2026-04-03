@@ -2,6 +2,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
+:root {
+  --brand: #{$color-brand};
+  --dark-brown: #{$color-main};
+  --accent: #{$color-accent};
+  --light-pink: #{$color-light-pink};
+  --snow-white: #{$color-pale-white};
+  --paper-white: #{$color-paper-white};
+  --mid-grey: #{$color-mid-grey};
+  --dark-grey: #{$color-dark-grey};
+  --black: #{$color-black};
+  --dark-pink: #{$color-dark-pink};
+  --brown: #{$color-brown};
+}
+
 *,
 *::before,
 *::after {
@@ -17,8 +31,8 @@ html {
 
 body {
   font-family: $font-family-base;
-  color: $color-brand;
-  background-color: $color-paper-white;
+  color: var(--color-brand);
+  background-color: var(--color-paper-white);
 }
 
 ul,
@@ -35,18 +49,4 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
-}
-
-:root {
-  --color-brand: #{$color-brand};
-  --color-main: #{$color-main};
-  --color-accent: #{$color-accent};
-  --color-light-pink: #{$color-light-pink};
-  --color-pale-white: #{$color-pale-white};
-  --color-paper-white: #{$color-paper-white};
-  --color-mid-grey: #{$color-mid-grey};
-  --color-dark-grey: #{$color-dark-grey};
-  --color-black: #{$color-black};
-  --color-dark-pink: #{$color-dark-pink};
-  --color-brown: #{$color-brown};
 }

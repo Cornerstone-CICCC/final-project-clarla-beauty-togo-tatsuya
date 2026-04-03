@@ -1,3 +1,6 @@
+import { contactFormHandler } from './modules/contact-form.js'
+import { toggleHeaderMenu } from './modules/toggle-header-menu.js'
+import { initHeader } from './modules/header.js'
 // Beauty Tips: category filters
 const beautyTipsRoot = document.querySelector('.beauty-tips')
 
@@ -57,26 +60,10 @@ if (myWorkRoot) {
 const hamburger = document.querySelector('.header__hamburger')
 const nav = document.querySelector('.header__nav')
 
-if (hamburger && nav) {
-  hamburger.addEventListener('click', () => {
-    nav.classList.toggle('is-open')
-    hamburger.classList.toggle('is-active')
-  })
+function init() {
+  toggleHeaderMenu()
+  contactFormHandler()
+  initHeader()
 }
 
-// Contact form handling
-const contactForm = document.getElementById('contact-form')
-
-if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault()
-
-    const formData = new FormData(contactForm)
-    const data = Object.fromEntries(formData)
-
-    console.log('Form submitted:', data)
-    alert('Thank you for your message!')
-
-    contactForm.reset()
-  })
-}
+init()
