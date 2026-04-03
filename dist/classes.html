@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Classes | Clarla Beauty</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/main.css" />
     <script type="module" src="/js/main.js"></script>
   </head>
@@ -28,10 +34,182 @@
     </header>
 
     <main class="classes">
-      <div class="classes__container">
-        <h1 class="classes__title">Classes</h1>
-        <div class="classes__grid">
-          <!-- Class cards will go here -->
+      <div class="classes__hero">
+        <div class="classes__container">
+          <div class="classes__title-wrap">
+            <h1 class="classes__title">Classes</h1>
+            <hr class="classes__title-underline" />
+          </div>
+          <p class="classes__intro">
+            <span class="classes__intro-line">We offer classes for all skill levels, from beginners to</span>
+            <span class="classes__intro-line">future professionals.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="classes__shell">
+        <div class="classes__container classes__container--list">
+          <section class="classes__list" aria-label="Available classes">
+            <article class="classes__card">
+              <div class="classes__media">
+                <img src="/images/FrameC%20(1).png" alt="1-on-1 Master Class" />
+              </div>
+              <div class="classes__body">
+                <h2 class="classes__name">
+                  <span class="classes__name-num">1</span>-on-<span class="classes__name-num">1</span> Master Class
+                </h2>
+                <ul class="classes__meta">
+                  <li>
+                    <span class="classes__meta-icon" aria-hidden="true">
+                      <img class="classes__meta-img" src="/images/dollar_sign.png" alt="" width="18" height="18" />
+                    </span>
+                    <span class="classes__meta-text">CAD 1,500</span>
+                  </li>
+                  <li>
+                    <span class="classes__meta-icon" aria-hidden="true">
+                      <img class="classes__meta-img" src="/images/clock.png" alt="" width="18" height="18" />
+                    </span>
+                    <span class="classes__meta-text">On-demand Mentorship</span>
+                  </li>
+                  <li>
+                    <span class="classes__meta-icon" aria-hidden="true">
+                      <img class="classes__meta-img" src="/images/person.png" alt="" width="18" height="18" />
+                    </span>
+                    <span class="classes__meta-text">Future Professionals</span>
+                  </li>
+                </ul>
+                <div class="classes__block">
+                  <h3 class="classes__section-title">Who should take this class</h3>
+                  <p class="classes__text">
+                    A future professional that needs a customized learning experience to excel in their<br />
+                    chosen areas, at their own pace.
+                  </p>
+                </div>
+                <div class="classes__block">
+                  <h3 class="classes__section-title">Curriculum</h3>
+                  <ul class="classes__bullets">
+                    <li>Personal Consultation</li>
+                    <li>Customized Makeup Theory</li>
+                    <li>Hands-On Practical Application</li>
+                    <li>Specialized Topics (based on participant's interests)</li>
+                    <li>Business and Career Guidance</li>
+                    <li>Conclusion and Future Support</li>
+                  </ul>
+                </div>
+                <div class="classes__actions">
+                  <a class="classes__btn" href="/class-one-to-one.html">View Class</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="classes__card">
+              <div class="classes__media">
+                <img src="/images/FrameC%20(2).png" alt="Professional 1-Day Makeup Workshop" />
+              </div>
+              <div class="classes__body">
+                <h2 class="classes__name">
+                  Professional <span class="classes__name-num">1</span>-Day Makeup Workshop
+                </h2>
+                <ul class="classes__meta">
+                  <li>
+                    <span class="classes__meta-icon" aria-hidden="true">
+                      <img class="classes__meta-img" src="/images/dollar_sign.png" alt="" width="18" height="18" />
+                    </span>
+                    <span class="classes__meta-text">CAD 800</span>
+                  </li>
+                  <li>
+                    <span class="classes__meta-icon" aria-hidden="true">
+                      <img class="classes__meta-img" src="/images/clock.png" alt="" width="18" height="18" />
+                    </span>
+                    <span class="classes__meta-text">8 hours</span>
+                  </li>
+                  <li>
+                    <span class="classes__meta-icon" aria-hidden="true">
+                      <img class="classes__meta-img" src="/images/person.png" alt="" width="18" height="18" />
+                    </span>
+                    <span class="classes__meta-text">Emerging Professionals</span>
+                  </li>
+                </ul>
+                <div class="classes__block">
+                  <h3 class="classes__section-title">Who should take this class</h3>
+                  <p class="classes__text">
+                    A makeup enthusiast who wants to discover popular and practical techniques to<br />
+                    apply right away!
+                  </p>
+                </div>
+                <div class="classes__block">
+                  <h3 class="classes__section-title">Curriculum</h3>
+                  <ul class="classes__bullets">
+                    <li>Introduction to Makeup Artistry</li>
+                    <li>Essential Tools and Products</li>
+                    <li>Foundation and Base Techniques</li>
+                    <li>Eye Makeup Techniques</li>
+                    <li>Contouring, Highlighting, and Blush</li>
+                    <li>Lip Makeup</li>
+                    <li>Hands-On Practice with Feedback</li>
+                    <li>Business and Professionalism</li>
+                    <li>Conclusion and Certificate</li>
+                  </ul>
+                </div>
+                <div class="classes__actions">
+                  <a class="classes__btn" href="/class-workshop.html">View Class</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="classes__card">
+              <div class="classes__media">
+                <img src="/images/FrameC%20(3).png" alt="Self-Makeup Beginner Class" />
+              </div>
+              <div class="classes__body">
+                <h2 class="classes__name">Self-Makeup Beginner Class</h2>
+                <ul class="classes__meta">
+                  <li>
+                    <span class="classes__meta-icon" aria-hidden="true">
+                      <img class="classes__meta-img" src="/images/dollar_sign.png" alt="" width="18" height="18" />
+                    </span>
+                    <span class="classes__meta-text">CAD 80</span>
+                  </li>
+                  <li>
+                    <span class="classes__meta-icon" aria-hidden="true">
+                      <img class="classes__meta-img" src="/images/clock.png" alt="" width="18" height="18" />
+                    </span>
+                    <span class="classes__meta-text">3-4 hours</span>
+                  </li>
+                  <li>
+                    <span class="classes__meta-icon" aria-hidden="true">
+                      <img class="classes__meta-img" src="/images/person.png" alt="" width="18" height="18" />
+                    </span>
+                    <span class="classes__meta-text">Beginner and Enthusiast</span>
+                  </li>
+                </ul>
+                <div class="classes__block">
+                  <h3 class="classes__section-title">Who should take this class</h3>
+                  <p class="classes__text">
+                    A makeup enthusiast that wants to learn the basics, practice doing their<br />
+                    own makeup and make new friends in the process!
+                  </p>
+                </div>
+                <div class="classes__block">
+                  <h3 class="classes__section-title">Curriculum</h3>
+                  <ul class="classes__bullets">
+                    <li>Introduction to Makeup Artistry</li>
+                    <li>Essential Tools and Products</li>
+                    <li>Skin prep and Applying Foundation</li>
+                    <li>Enhancing eyes, brows, and lashes</li>
+                    <li>Blush and Contouring</li>
+                    <li>Perfecting Lips</li>
+                    <li>Hands-On Practice with Feedback</li>
+                    <li>Tips for Everyday Makeup</li>
+                    <li>Conclusion and Q&amp;A Session</li>
+                  </ul>
+                </div>
+                <div class="classes__actions">
+                  <a class="classes__btn" href="/class-beginner.html">View Class</a>
+                </div>
+              </div>
+            </article>
+          </section>
         </div>
       </div>
     </main>

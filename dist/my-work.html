@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Work | Clarla Beauty</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400;0,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/main.css" />
     <script type="module" src="/js/main.js"></script>
   </head>
@@ -28,10 +34,60 @@
     </header>
 
     <main class="my-work">
-      <div class="my-work__container">
-        <h1 class="my-work__title">My Work</h1>
-        <div class="my-work__gallery">
-          <!-- Gallery items will go here -->
+      <div class="my-work__hero">
+        <div class="my-work__container">
+          <div class="my-work__title-wrap">
+            <h1 class="my-work__title">My Work</h1>
+            <hr class="my-work__title-underline" />
+          </div>
+          <p class="my-work__subtitle">
+            With a decade of experience, each look highlights my passion for enhancing your individual beauty.
+          </p>
+        </div>
+      </div>
+
+      <div class="my-work__inner">
+        <div class="my-work__container">
+          <div class="my-work__tabs-wrap">
+            <div class="my-work__tabs" role="tablist" aria-label="Portfolio category">
+              <button type="button" class="my-work__tab is-active" role="tab" aria-selected="true" data-tab="makeup">
+                Makeup
+              </button>
+              <button type="button" class="my-work__tab" role="tab" aria-selected="false" data-tab="hairstyle">
+                Hairstyle
+              </button>
+            </div>
+          </div>
+
+          <div class="my-work__panel is-active" role="tabpanel" data-panel="makeup" id="my-work-panel-makeup">
+            <div class="my-work__gallery">
+              <div class="my-work__item"><img src="/images/Img3%20(1).png" alt="Makeup portfolio 1" /></div>
+              <div class="my-work__item"><img src="/images/Img3%20(2).png" alt="Makeup portfolio 2" /></div>
+              <div class="my-work__item"><img src="/images/Img3%20(3).png" alt="Makeup portfolio 3" /></div>
+              <div class="my-work__item"><img src="/images/Img3%20(4).png" alt="Makeup portfolio 4" /></div>
+              <div class="my-work__item"><img src="/images/Img3%20(5).png" alt="Makeup portfolio 5" /></div>
+              <div class="my-work__item"><img src="/images/Img3%20(6).png" alt="Makeup portfolio 6" /></div>
+              <div class="my-work__item"><img src="/images/Img3%20(7).png" alt="Makeup portfolio 7" /></div>
+              <div class="my-work__item"><img src="/images/Img3%20(8).png" alt="Makeup portfolio 8" /></div>
+              <div class="my-work__item"><img src="/images/Img3%20(9).png" alt="Makeup portfolio 9" /></div>
+            </div>
+            <a class="my-work__view-more" href="#">View More</a>
+          </div>
+
+          <div class="my-work__panel" role="tabpanel" data-panel="hairstyle" id="my-work-panel-hairstyle" hidden>
+            <div class="my-work__gallery">
+              <div class="my-work__item"><img src="/images/Img3%20(10).png" alt="Hairstyle portfolio 1" /></div>
+              <div class="my-work__item"><img src="/images/Img3%20(11).png" alt="Hairstyle portfolio 2" /></div>
+              <div class="my-work__item"><img src="/images/Img3%20(12).png" alt="Hairstyle portfolio 3" /></div>
+              <div class="my-work__item"><img src="/images/Img3%20(13).png" alt="Hairstyle portfolio 4" /></div>
+              <div class="my-work__item"><img src="/images/Img3%20(14).png" alt="Hairstyle portfolio 5" /></div>
+              <div class="my-work__item"><img src="/images/Img3%20(15).png" alt="Hairstyle portfolio 6" /></div>
+              <div class="my-work__item"><img src="/images/Img3%20(16).png" alt="Hairstyle portfolio 7" /></div>
+              <div class="my-work__item"><img src="/images/Img3%20(17).png" alt="Hairstyle portfolio 8" /></div>
+              <div class="my-work__item"><img src="/images/Img3%20(18).png" alt="Hairstyle portfolio 9" /></div>
+            </div>
+            <a class="my-work__view-more" href="#">View More</a>
+          </div>
         </div>
       </div>
     </main>

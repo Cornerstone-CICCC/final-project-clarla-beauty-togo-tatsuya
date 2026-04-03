@@ -21,7 +21,7 @@
             <li><a href="/contact.html" class="header__nav-link">Contact</a></li>
           </ul>
         </nav>
-        <button class="header__hamburger" aria-label="Menu">
+        <button class="header__hamburger">
           <span></span>
         </button>
       </div>
@@ -29,22 +29,416 @@
 
     <main class="contact">
       <div class="contact__container">
-        <h1 class="contact__title">Contact</h1>
+        <section class="contact__intro">
+          <h1 class="contact__title">CONTACT</h1>
+          <hr class="contact__title-underline" />
+          <p class="contact__lead">
+            Get a quote and schedule a free consultation for your special day or our academy services
+          </p>
+          <ul class="contact__quick-links">
+            <li>
+              <img src="/images/icon_phone.svg" alt="" class="contact__quick-icon" />
+              <span>+1 0000000000</span>
+            </li>
+            <li>
+              <img src="/images/icon-whatapp.svg" alt="" class="contact__quick-icon" />
+              <span>+1 0000000000</span>
+            </li>
+            <li>
+              <img src="/images/icon_instagram.svg" alt="" class="contact__quick-icon" />
+              <span>carlabeatrizs_</span>
+            </li>
+          </ul>
+        </section>
+
         <form class="contact__form" id="contact-form">
-          <div class="contact__field">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required />
+          <div class="contact__tabs">
+            <button type="button" class="contact__tab contact__tab--active" data-tab="services"> Services </button>
+            <button type="button" class="contact__tab" data-tab="classes"> Classes </button>
           </div>
-          <div class="contact__field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
+
+          <div class="contact__panel contact__panel--active" data-panel="services">
+            <div class="contact__step contact__step--active" data-service-step="1">
+              <div class="contact__group">
+                <h2 class="contact__group-title">Event Type</h2>
+                <div class="contact__chips">
+                  <label class="contact__chip">
+                    <input type="radio" name="event_type" value="wedding" checked />
+                    <span class="contact__chip-label">Wedding</span>
+                    <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                  </label>
+                  <label class="contact__chip">
+                    <input type="radio" name="event_type" value="party" />
+                    <span class="contact__chip-label">Party</span>
+                    <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                  </label>
+                  <label class="contact__chip">
+                    <input type="radio" name="event_type" value="photoshoot" />
+                    <span class="contact__chip-label">Photoshoot</span>
+                    <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                  </label>
+                </div>
+              </div>
+
+              <div class="contact__row">
+                <div class="contact__field">
+                  <label for="event-date">Event Date</label>
+                  <input type="date" id="event-date" name="event_date" />
+                  <label class="contact__check">
+                    <input type="checkbox" name="date_not_decided" />
+                    Not decided
+                  </label>
+                </div>
+                <div class="contact__field">
+                  <label for="event-time">Event Time</label>
+                  <select id="event-time" name="event_time">
+                    <option>Full day</option>
+                    <option>Morning</option>
+                    <option>Afternoon</option>
+                    <option>Evening</option>
+                  </select>
+                  <label class="contact__check">
+                    <input type="checkbox" name="time_not_decided" />
+                    Not decided
+                  </label>
+                </div>
+              </div>
+
+              <div class="contact__field">
+                <label for="service-name">Name</label>
+                <input type="text" id="service-name" name="name" placeholder="Your name" />
+              </div>
+
+              <div class="contact__group">
+                <h2 class="contact__group-title">Contact</h2>
+                <div class="contact__choices">
+                  <label class="contact__choice">
+                    <input type="radio" name="service_contact_method" value="call" checked />
+                    Call
+                  </label>
+                </div>
+                <input type="tel" name="service_phone" placeholder="+1  Your mobile number" />
+                <div class="contact__choices contact__choices--stack">
+                  <label class="contact__choice">
+                    <input type="radio" name="service_contact_method" value="whatsapp" />
+                    WhatsApp
+                  </label>
+                  <label class="contact__choice">
+                    <input type="radio" name="service_contact_method" value="sms" />
+                    SMS
+                  </label>
+                  <label class="contact__choice">
+                    <input type="radio" name="service_contact_method" value="email" />
+                    Email
+                  </label>
+                </div>
+              </div>
+
+              <div class="contact__group">
+                <h2 class="contact__group-title">When do you want us to call?</h2>
+                <div class="contact__choices contact__choices--stack">
+                  <label class="contact__choice">
+                    <input type="radio" name="call_time" value="any" checked />
+                    I don't mind
+                  </label>
+                  <label class="contact__choice">
+                    <input type="radio" name="call_time" value="morning" />
+                    Morning
+                  </label>
+                  <label class="contact__choice">
+                    <input type="radio" name="call_time" value="afternoon" />
+                    Afternoon
+                  </label>
+                  <label class="contact__choice">
+                    <input type="radio" name="call_time" value="evening" />
+                    Evening
+                  </label>
+                </div>
+              </div>
+
+              <button type="button" class="contact__submit contact__next" data-service-next>Next</button>
+            </div>
+
+            <div class="contact__step" data-service-step="2" hidden>
+              <button type="button" class="contact__back" data-service-back>&lt; Back</button>
+
+              <div class="contact__group">
+                <h2 class="contact__group-title">Bridal Service</h2>
+                <div class="contact__chips contact__chips--two">
+                  <label class="contact__chip">
+                    <input type="radio" name="bridal_service" value="makeup" checked />
+                    <span class="contact__chip-label">Makeup</span>
+                    <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                  </label>
+                  <label class="contact__chip">
+                    <input type="radio" name="bridal_service" value="hairstyle" />
+                    <span class="contact__chip-label">Hairstyle</span>
+                    <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                  </label>
+                </div>
+              </div>
+
+              <div class="contact__field">
+                <label for="event-location">Event Location</label>
+                <input type="text" id="event-location" name="event_location" placeholder="Search address" />
+                <label class="contact__check">
+                  <input type="checkbox" name="location_not_decided" />
+                  Not decided
+                </label>
+              </div>
+
+              <div class="contact__group">
+                <h2 class="contact__group-title">Premium service</h2>
+                <div class="contact__premium-grid">
+                  <label class="contact__check"
+                    ><input type="checkbox" name="premium[]" value="deep-skin-cleansing" />Deep skin cleansing</label
+                  >
+                  <label class="contact__check"
+                    ><input type="checkbox" name="premium[]" value="bleach-body-hair" />Bleach body hair</label
+                  >
+                  <label class="contact__check"
+                    ><input type="checkbox" name="premium[]" value="hydromassage" />Hydromassage</label
+                  >
+                  <label class="contact__check"
+                    ><input type="checkbox" name="premium[]" value="hair-moisture" />Hair Moisture</label
+                  >
+                  <label class="contact__check"><input type="checkbox" name="premium[]" value="waxing" />Waxing</label>
+                  <label class="contact__check"
+                    ><input type="checkbox" name="premium[]" value="foot-and-hand-spa" />Foot and hand SPA</label
+                  >
+                  <label class="contact__check"
+                    ><input type="checkbox" name="premium[]" value="relaxing-massage" />Relaxing massage</label
+                  >
+                  <label class="contact__check"
+                    ><input type="checkbox" name="premium[]" value="gommage" />Gommage (body exfoliation and
+                    hydration)</label
+                  >
+                </div>
+              </div>
+
+              <div class="contact__group">
+                <h2 class="contact__group-title">Anyone else need service?</h2>
+                <div class="contact__guest-list">
+                  <div class="contact__guest-row">
+                    <span>Groom</span>
+                    <div class="contact__guest-counter" data-guest-counter>
+                      <button type="button" class="contact__guest-counter-button" data-counter-action="decrease"
+                        >-</button
+                      >
+                      <span class="contact__guest-counter-value" data-counter-value>0</span>
+                      <button type="button" class="contact__guest-counter-button" data-counter-action="increase"
+                        >+</button
+                      >
+                    </div>
+                    <span class="contact__guest-counter-divider"></span>
+                    <label class="contact__check"
+                      ><input type="checkbox" name="guest_groom_makeup" checked />Makeup</label
+                    >
+                  </div>
+                  <div class="contact__guest-row">
+                    <span>Bridesmaid</span>
+                    <div class="contact__guest-counter" data-guest-counter>
+                      <button type="button" class="contact__guest-counter-button" data-counter-action="decrease"
+                        >-</button
+                      >
+                      <span class="contact__guest-counter-value" data-counter-value>0</span>
+                      <button type="button" class="contact__guest-counter-button" data-counter-action="increase"
+                        >+</button
+                      >
+                    </div>
+                    <span class="contact__guest-counter-divider"></span>
+                    <label class="contact__check"
+                      ><input type="checkbox" name="guest_bridesmaid_hair" checked />Hairstyle</label
+                    >
+                    <label class="contact__check"
+                      ><input type="checkbox" name="guest_bridesmaid_makeup" checked />Makeup</label
+                    >
+                  </div>
+                  <div class="contact__guest-row">
+                    <span>Flower girl</span>
+                    <div class="contact__guest-counter" data-guest-counter>
+                      <button type="button" class="contact__guest-counter-button" data-counter-action="decrease"
+                        >-</button
+                      >
+                      <span class="contact__guest-counter-value" data-counter-value>0</span>
+                      <button type="button" class="contact__guest-counter-button" data-counter-action="increase"
+                        >+</button
+                      >
+                    </div>
+                    <span class="contact__guest-counter-divider"></span>
+                    <label class="contact__check"
+                      ><input type="checkbox" name="guest_flower_hair" checked />Hairstyle</label
+                    >
+                    <label class="contact__check"
+                      ><input type="checkbox" name="guest_flower_makeup" checked />Makeup</label
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact__field">
+                <label for="service-message">Anything you want us to know?</label>
+                <textarea id="service-message" name="service_message" placeholder="Your message"></textarea>
+              </div>
+
+              <div class="contact__actions">
+                <button type="button" class="contact__submit" data-service-submit>Submit</button>
+              </div>
+            </div>
+
+            <div class="contact__step" data-service-step="3" hidden>
+              <div class="contact__result">
+                <h2 class="contact__result-title">
+                  Thanks <span data-result-name>Janny</span>,<br />we will contact you soon!
+                </h2>
+                <p class="contact__result-subtitle">
+                  We will call <span data-result-contact>+1-123-4567-890</span> to confirm the appointment details with
+                  you.
+                </p>
+                <button type="button" class="contact__result-edit" data-service-edit> Edit Details &gt; </button>
+
+                <div class="contact__result-card">
+                  <img src="/images/form-complete.png" alt="Beauty tools" class="contact__result-image" />
+                  <p class="contact__result-note">Your estimated price will be:</p>
+                  <p class="contact__result-price">CAD 1,000 - 1,200</p>
+
+                  <div class="contact__result-columns">
+                    <div>
+                      <h3>Basic services</h3>
+                      <ul data-result-basic-services></ul>
+                    </div>
+                    <div>
+                      <h3>Premium services</h3>
+                      <ul data-result-premium-services></ul>
+
+                      <h3>Additional attendees</h3>
+                      <ul data-result-attendees></ul>
+                    </div>
+                  </div>
+
+                  <div class="contact__result-footer">
+                    <div>
+                      <img src="/images/CB_logo.svg" alt="Clarla Beauty logo" class="contact__result-logo-image" />
+                    </div>
+                    <button type="button" class="contact__submit contact__result-share">Share</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="contact__field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
+
+          <div class="contact__panel" data-panel="classes" hidden>
+            <div class="contact__step contact__step--active" data-class-step="1">
+              <div class="contact__group">
+                <h2 class="contact__group-title">Class</h2>
+                <div class="contact__chips">
+                  <label class="contact__chip">
+                    <input type="radio" name="class_type" value="master-subscription" checked />
+                    <span class="contact__chip-label">1-on-1 Master Subscription</span>
+                    <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                  </label>
+                  <label class="contact__chip">
+                    <input type="radio" name="class_type" value="1day-workshop" />
+                    <span class="contact__chip-label">1-day Makeup workshop</span>
+                    <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                  </label>
+                  <label class="contact__chip">
+                    <input type="radio" name="class_type" value="self-makeup" />
+                    <span class="contact__chip-label">Self-Makeup beginner class</span>
+                    <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                  </label>
+                </div>
+              </div>
+
+              <div class="contact__field">
+                <label for="class-date">Class Date</label>
+                <p class="contact__hint">When you would like to take your class?</p>
+                <input type="date" id="class-date" name="class_date" />
+                <label class="contact__check">
+                  <input type="checkbox" name="class_date_flexible" />
+                  Doesn't matter
+                </label>
+              </div>
+
+              <div class="contact__field">
+                <label for="class-question">Any questions?</label>
+                <textarea id="class-question" name="class_question" placeholder="Your message"></textarea>
+              </div>
+
+              <div class="contact__field">
+                <label for="class-name">Name</label>
+                <input type="text" id="class-name" name="class_name" placeholder="Your name" />
+              </div>
+
+              <div class="contact__group">
+                <h2 class="contact__group-title">Contact</h2>
+                <div class="contact__choices">
+                  <label class="contact__choice">
+                    <input type="radio" name="class_contact_method" value="call" checked />
+                    Call
+                  </label>
+                </div>
+                <input type="tel" name="class_phone" placeholder="+ +1  Your mobile number" />
+                <div class="contact__choices contact__choices--stack">
+                  <label class="contact__choice">
+                    <input type="radio" name="class_contact_method" value="whatsapp" />
+                    WhatsApp
+                  </label>
+                  <label class="contact__choice">
+                    <input type="radio" name="class_contact_method" value="sms" />
+                    SMS
+                  </label>
+                  <label class="contact__choice">
+                    <input type="radio" name="class_contact_method" value="email" />
+                    Email
+                  </label>
+                </div>
+              </div>
+
+              <button type="button" class="contact__submit" data-class-submit>Next</button>
+            </div>
+
+            <div class="contact__step" data-class-step="2" hidden>
+              <div class="contact__class-result">
+                <h2 class="contact__result-title">
+                  Thanks <span data-class-result-name>Janny</span>,<br />we will contact you soon!
+                </h2>
+                <p class="contact__result-subtitle">
+                  We will call <span data-class-result-contact>+1-0000000000</span> to get back to your enquiry
+                </p>
+                <img src="/images/form-complete.png" alt="Beauty tools" class="contact__result-image" />
+
+                <h3 class="contact__class-result-talk"
+                  >Talk soon <span data-class-result-name-second>Janny</span> :)</h3
+                >
+                <ul class="contact__class-result-links">
+                  <li>
+                    <img src="/images/icon_phone.svg" alt="" class="contact__quick-icon" />
+                    <span>+1 0000000000</span>
+                  </li>
+                  <li>
+                    <img src="/images/icon-whatapp.svg" alt="" class="contact__quick-icon" />
+                    <span>+1 0000000000</span>
+                  </li>
+                  <li>
+                    <img src="/images/icon_instagram.svg" alt="" class="contact__quick-icon" />
+                    <span>carlabeatrizs_</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <button type="submit" class="contact__submit">Send Message</button>
         </form>
+
+        <section class="contact__signature">
+          <img src="/images/CB_logo.svg" alt="Clarla Beauty logo" class="contact__signature-logo" />
+          <p class="contact__signature-note">Expert Makeup and Hairstyle Studio</p>
+          <ul class="contact__signature-links">
+            <li><img src="/images/icon_phone.svg" alt="Phone" class="contact__signature-icon" /></li>
+            <li><img src="/images/icon-whatapp.svg" alt="WhatsApp" class="contact__signature-icon" /></li>
+            <li><img src="/images/icon_instagram.svg" alt="Instagram" class="contact__signature-icon" /></li>
+          </ul>
+        </section>
       </div>
     </main>
 
@@ -73,5 +467,8 @@
         <p class="footer__copyright">&copy; 2024 Clarla Beauty. All rights reserved.</p>
       </div>
     </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/contact.js"></script>
   </body>
 </html>

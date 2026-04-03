@@ -1,47 +1,359 @@
 @use '../variables' as *;
 @use '../mixins' as *;
 
+$classes-shell-pink: $color-light-pink;
+$classes-page-cream: #f8f6f4;
+$classes-text-muted: $color-dark-grey;
+$classes-card-gap: 9rem;
+$classes-hero-title-max: 5rem; // 80px
+// Figma class card image (Frame 430)
+$classes-media-width: 20.5rem; // 328px
+$classes-media-height: 31.25rem; // 500px
+$classes-btn-label: #5e4a49;
+// Figma Classes フレーム: width 1440 / height 2220 / top 448 / left -2 / opacity 1（top はキャンバス座標のため main 余白には使わない）
+$classes-layout-max-w: 90rem; // 1440px
+$classes-layout-min-h-lg: 2220px;
+$classes-layout-nudge-x: -2px; // left -2
+
 .classes {
-  padding: $spacing-2xl 0;
+  padding-top: 5.25rem;
+
+  @include md {
+    padding-top: 5.5rem;
+  }
+
+  padding-bottom: 0;
+
+  @include lg {
+    box-sizing: border-box;
+    max-width: $classes-layout-max-w;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: $classes-layout-min-h-lg;
+    transform: translateX($classes-layout-nudge-x);
+  }
+
+  &__hero {
+    background-color: $classes-page-cream;
+    padding: $spacing-xl 0 $spacing-lg;
+
+    @include md {
+      padding: $spacing-2xl 0 $spacing-xl;
+    }
+  }
+
+  &__shell {
+    background-color: $classes-shell-pink;
+    padding-bottom: $spacing-2xl;
+  }
 
   &__container {
     @include container;
   }
 
-  &__title {
+  &__container--list {
+    padding-top: $spacing-lg;
+    padding-bottom: 0;
+
+    @include md {
+      padding-top: $spacing-xl;
+    }
+  }
+
+  &__title-wrap {
     text-align: center;
     margin-bottom: $spacing-xl;
   }
 
-  &__grid {
-    display: grid;
-    gap: $spacing-lg;
+  // Figma: 417×78, Baskervville 80px / 400 / 130% LH / 13% tracking
+  &__title {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 26.0625rem; // 417px
+    min-height: 4.875rem; // 78px
+    margin: 0 auto;
+    font-family: $font-family-heading;
+    font-size: clamp(2.5rem, 10vw, $classes-hero-title-max);
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: 0.13em;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-main;
+    opacity: 1;
+  }
 
-    @include md {
-      grid-template-columns: repeat(2, 1fr);
+  &__title-underline {
+    @include page-hero-h1-rule;
+  }
+
+  // Figma: 437×54, Avenir Light 18px / 150% LH — 常に 2 行（行内は折り返さない／幅に応じて字詰め）
+  &__intro {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 27.3125rem; // 437px
+    min-height: 3.375rem; // 54px
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+    font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-align: center;
+    color: $color-black;
+    opacity: 1;
+    container-type: inline-size;
+    container-name: classes-intro;
+    font-size: clamp(11px, 5.2cqi + 0.2rem, 18px);
+
+    @supports not (font-size: 1cqi) {
+      font-size: clamp(11px, 3.2vw + 0.35rem, 18px);
     }
+
+    &-line {
+      display: block;
+      white-space: nowrap;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $classes-card-gap;
+    margin: 0;
+    padding: 0;
   }
 
   &__card {
-    border: 1px solid rgba($color-brand, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
     overflow: hidden;
 
-    img {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
+    @include md {
+      flex-direction: row;
+      align-items: stretch;
     }
   }
 
-  &__card-content {
-    padding: $spacing-lg;
+  &__media {
+    width: 100%;
+    max-width: $classes-media-width;
+    flex-shrink: 0;
+    margin: 0 auto;
+    padding: 0;
+    line-height: 0;
+    background-color: $classes-shell-pink;
+    overflow: hidden;
+    border-radius: 0;
 
-    h3 {
-      margin-bottom: $spacing-sm;
+    @include md {
+      width: $classes-media-width;
+      max-width: $classes-media-width;
+      margin: 0;
+      align-self: flex-start;
     }
 
-    p {
-      color: var(--color-dark-grey);
+    img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 328 / 500;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+
+      @include md {
+        width: $classes-media-width;
+        height: $classes-media-height;
+        aspect-ratio: auto;
+      }
+    }
+  }
+
+  &__body {
+    flex: 1;
+    background-color: $classes-shell-pink;
+    padding: $spacing-lg $spacing-md $spacing-xl;
+    text-align: left;
+
+    @include md {
+      padding: $spacing-xl $spacing-xl $spacing-xl $spacing-2xl;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+
+  // Baskervville 36px / 400 / 120% LH / 0 tracking（長い見出しはカラム幅いっぱいで1行に近づける）
+  &__name {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 $spacing-md;
+    font-family: $font-family-heading;
+    font-size: 36px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: 0;
+    color: $color-main;
+    opacity: 1;
+  }
+
+  // 見出し内の「1」だけやや大きく — サイズは据え置き、ベースラインを周りの文字と揃える
+  &__name-num {
+    font-family: inherit;
+    font-size: 1.05em;
+    font-weight: 400;
+    font-variant-numeric: lining-nums proportional-nums;
+    line-height: inherit;
+    display: inline;
+    vertical-align: baseline;
+  }
+
+  &__meta {
+    list-style: none;
+    margin: 0 0 $spacing-lg;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: clamp($spacing-md, 3vw, $spacing-xl);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  &__meta li {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  &__meta-text {
+    font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: $classes-text-muted;
+  }
+
+  &__meta-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    line-height: 0;
+  }
+
+  &__meta-img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    display: block;
+  }
+
+  &__block {
+    margin-bottom: $spacing-md;
+
+    &:last-of-type {
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  &__section-title {
+    font-family: $font-family-heading;
+    font-size: 24px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: 0;
+    font-variant-numeric: lining-nums proportional-nums;
+    margin: 0 0 $spacing-sm;
+    color: $color-main;
+  }
+
+  &__text {
+    font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: $classes-text-muted;
+    margin: 0;
+  }
+
+  &__bullets {
+    font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding-left: 1.125rem;
+    color: $classes-text-muted;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: 0;
+    list-style-type: disc;
+
+    li {
+      margin-bottom: $spacing-xs;
+      padding-left: $spacing-xs;
+    }
+  }
+
+  // スクリーンショット：本文カラム左寄せ・ボタンは左下（中央揃えではない）
+  &__actions {
+    text-align: left;
+    margin-top: $spacing-md;
+    padding-top: $spacing-sm;
+  }
+
+  &__btn {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: auto;
+    min-width: 160px;
+    min-height: 62px;
+    padding: 24px 32px;
+    white-space: nowrap;
+    font-family: $font-family-heading;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-transform: none;
+    vertical-align: middle;
+    text-box-trim: trim-start;
+    text-box-edge: cap alphabetic;
+    color: $classes-btn-label;
+    background-color: transparent;
+    border: 1px solid $classes-btn-label;
+    border-radius: 0;
+    opacity: 1;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: rgba($classes-btn-label, 0.04);
     }
   }
 }

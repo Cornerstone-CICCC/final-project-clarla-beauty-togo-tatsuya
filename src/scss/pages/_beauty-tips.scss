@@ -1,35 +1,276 @@
 @use '../variables' as *;
 @use '../mixins' as *;
 
+$bt-shell-pink: #fbe7e4;
+$bt-shell-bottom: 6rem;
+$bt-shell-bottom-md: 7.5rem;
+$bt-list-pad-top: 4.5rem;
+$bt-list-pad-top-md: 6rem;
+$bt-hero-title-max: 5rem; // 80px
+$bt-btn-hero-w: 13.125rem; // 210px — hero のみやや小さく
+$bt-btn-more-w: 10.0625rem; // 161px
+$bt-btn-label: #5e4a49;
+
 .beauty-tips {
-  padding: $spacing-2xl 0;
+  padding-top: 5.25rem;
+  padding-bottom: 0;
+
+  @include md {
+    padding-top: 5.5rem;
+  }
+
+  &__hero {
+    background-color: $color-pale-white;
+    padding: $spacing-xl 0 $spacing-lg;
+
+    @include md {
+      padding: $spacing-2xl 0 $spacing-3xl;
+    }
+  }
 
   &__container {
     @include container;
   }
 
-  &__title {
-    text-align: center;
-    margin-bottom: $spacing-xl;
+  &__container--main {
+    padding-top: $bt-list-pad-top;
+    padding-bottom: $bt-shell-bottom;
+
+    @include md {
+      padding-top: $bt-list-pad-top-md;
+      padding-bottom: $bt-shell-bottom-md;
+    }
   }
 
-  &__list {
+  &__title-wrap {
+    text-align: center;
+    margin-bottom: $spacing-lg;
+  }
+
+  // Figma: Baskervville 80px / 400 / 130% LH / 13% tracking / center / uppercase
+  &__title {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    font-family: $font-family-heading;
+    font-size: clamp(2.5rem, 10vw, $bt-hero-title-max);
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: 0.13em;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-main;
+  }
+
+  &__title-underline {
+    @include page-hero-h1-rule;
+  }
+
+  // Figma: Avenir Light 18px / 150% LH / center
+  &__intro {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto $spacing-xl;
+    padding: 0 $spacing-md;
+    font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-align: center;
+    color: $color-black;
+  }
+
+  &__hero-cta {
+    text-align: center;
+  }
+
+  &__shell {
+    background-color: $bt-shell-pink;
+  }
+
+  // Figma: gap 32px; tabs Baskervville 24px / 400 / 130% LH — 常に一行（狭い幅は横スクロール）
+  &__filters {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    max-width: 100%;
+    min-height: 1.9375rem; // 31px
+    margin: 0 auto $spacing-xl;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  &__filter {
+    flex-shrink: 0;
+    font-family: $font-family-heading;
+    font-size: 24px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: 0;
+    color: $color-mid-grey;
+    background: none;
+    border: none;
+    padding: 0;
+    white-space: nowrap;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease;
+
+    &:hover {
+      color: $color-black;
+    }
+
+    &.is-active {
+      color: $color-black;
+      font-weight: 400;
+      border-bottom-color: $color-main;
+    }
+  }
+
+  &__grid {
     display: grid;
-    gap: $spacing-lg;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+    max-width: min(100%, 52rem);
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+
+    @include sm {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 
     @include lg {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: $spacing-lg;
     }
   }
 
-  &__article {
-    h3 {
-      margin-bottom: $spacing-sm;
+  &__card {
+    min-width: 0;
+
+    &.is-hidden {
+      display: none;
+    }
+  }
+
+  &__card-link {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgba($color-black, 0.06);
+    box-shadow: 0 4px 20px rgba($color-black, 0.06);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba($color-black, 0.1);
     }
 
-    p {
-      color: var(--color-dark-grey);
-      line-height: 1.8;
+    &:focus-visible {
+      outline: 2px solid $color-main;
+      outline-offset: 3px;
+    }
+  }
+
+  &__thumb {
+    position: relative;
+    z-index: 0;
+    display: block;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__play {
+    position: absolute;
+    top: $spacing-sm;
+    right: $spacing-sm;
+    z-index: 2;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    background-color: rgba(#fff, 0.92);
+    box-shadow: 0 2px 8px rgba($color-black, 0.12);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 52%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 5px 0 5px 8px;
+      border-color: transparent transparent transparent $color-main;
+    }
+  }
+
+  &__more-wrap {
+    text-align: center;
+    margin-top: clamp(2.5rem, 6vw, 4rem);
+  }
+
+  // Figma: View More 161×62, Baskervville 20px / 400 / 150% LH; padding 24×32; border 1px
+  &__btn {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: $bt-btn-more-w;
+    max-width: 100%;
+    min-width: 160px;
+    min-height: 62px;
+    padding: 24px 32px;
+    font-family: $font-family-heading;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: $bt-btn-label;
+    background-color: transparent;
+    border: 1px solid $bt-btn-label;
+    border-radius: 0;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: rgba($bt-btn-label, 0.04);
+    }
+
+    // More on Instagram のみやや小さく（View More は据え置き）
+    &--hero {
+      width: $bt-btn-hero-w;
+      min-height: 56px;
+      padding: 20px 28px;
+      font-size: 18px;
     }
   }
 }

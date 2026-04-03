@@ -1,43 +1,317 @@
 @use '../variables' as *;
 @use '../mixins' as *;
 
+$services-hero-bg: #f8f6f4;
+$services-shell-pink: #fbe7e4;
+$services-copy: #4a4a4a;
+$services-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+$services-font-body: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+$services-hero-title-max: 5rem; // 80px — Figma
+$services-card-title-max: 2.5rem; // 40px
+$services-card-gap: 3.75rem;
+$services-list-pad-top: 4.5rem;
+$services-list-pad-top-md: 6rem;
+$services-shell-pad-bottom: 6rem;
+$services-shell-pad-bottom-md: 7.5rem;
+$services-btn-w: 10.6875rem; // 171px
+$services-btn-label: #5e4a49;
+// Figma Services フレーム: width 1440 / height 1565 / top 479（ピンク開始 Y）/ opacity 1
+$services-layout-max-w: 90rem; // 1440px
+$services-shell-min-h-lg: 1565px;
+// Figma Services タイトル（ヒーロー）: 1440×270 / padding 24 上下 / gap 32（top 196 はキャンバス座標のため main 上余白には使わない）
+$services-hero-h-lg: 270px;
+$services-hero-pad-y-lg: 24px;
+$services-hero-gap-lg: 32px;
+
 .services {
-  padding: $spacing-2xl 0;
+  padding-top: 5.25rem;
+
+  @include md {
+    padding-top: 5.5rem;
+  }
+
+  padding-bottom: 0;
+
+  @include lg {
+    box-sizing: border-box;
+    max-width: $services-layout-max-w;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__hero {
+    background-color: $services-hero-bg;
+    padding: $spacing-xl 0 $spacing-lg;
+
+    @include md {
+      padding: $spacing-2xl 0 $spacing-xl;
+    }
+
+    @include lg {
+      box-sizing: border-box;
+      width: 100%;
+      height: $services-hero-h-lg;
+      min-height: $services-hero-h-lg;
+      padding: $services-hero-pad-y-lg 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+    }
+  }
+
+  // タイトル行とイントロの間隔（Figma gap 32）
+  &__hero &__container {
+    @include lg {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: $services-hero-gap-lg;
+    }
+  }
+
+  &__shell {
+    background-color: $services-shell-pink;
+    padding-bottom: $services-shell-pad-bottom;
+
+    @include md {
+      padding-bottom: $services-shell-pad-bottom-md;
+    }
+
+    @include lg {
+      box-sizing: border-box;
+      min-height: $services-shell-min-h-lg;
+    }
+  }
 
   &__container {
     @include container;
   }
 
-  &__title {
+  &__container--list {
+    padding-top: $services-list-pad-top;
+    padding-bottom: 0;
+
+    @include md {
+      padding-top: $services-list-pad-top-md;
+    }
+  }
+
+  &__title-wrap {
     text-align: center;
     margin-bottom: $spacing-xl;
+
+    @include lg {
+      margin-bottom: 0;
+    }
+  }
+
+  // Figma Services_desktop: Baskerville 80px / 400 / 130% LH / 13% / #725A58
+  &__title {
+    margin: 0;
+    font-family: $font-family-heading;
+    font-size: clamp(2.5rem, 10vw, $services-hero-title-max);
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: $color-main;
+  }
+
+  &__title-underline {
+    @include page-hero-h1-rule;
+  }
+
+  &__intro {
+    font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: $color-black;
+    text-align: center;
+    max-width: 36.5625rem;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+  }
+
+  &__intro-line {
+    display: inline;
   }
 
   &__list {
-    display: grid;
-    gap: $spacing-lg;
+    display: flex;
+    flex-direction: column;
+    gap: $services-card-gap;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    overflow: hidden;
 
     @include md {
-      grid-template-columns: repeat(2, 1fr);
+      flex-direction: row;
+      align-items: stretch;
     }
   }
 
-  &__item {
-    padding: $spacing-lg;
-    border: 1px solid rgba($color-brand, 0.1);
+  &__media {
+    width: 100%;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    background-color: $services-shell-pink;
 
-    h3 {
-      margin-bottom: $spacing-sm;
+    @include md {
+      width: 42%;
+      max-width: 400px;
+      align-self: stretch;
     }
 
-    p {
-      color: var(--color-dark-grey);
-      margin-bottom: $spacing-md;
+    img {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
+      display: block;
+
+      @include md {
+        min-height: 100%;
+      }
     }
   }
 
-  &__price {
-    font-size: $font-size-body;
-    color: var(--color-accent);
+  &__body {
+    flex: 1;
+    background-color: $services-shell-pink;
+    padding: $spacing-lg $spacing-md $spacing-xl;
+    text-align: left;
+
+    @include md {
+      padding: $spacing-xl $spacing-xl $spacing-xl $spacing-2xl;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  // Figma cards: Baskerville ~40px / 400 / #725A58
+  &__name {
+    font-family: $font-family-heading;
+    font-size: clamp(1.5rem, 3vw, $services-card-title-max);
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.2;
+    color: $color-main;
+    margin: 0 0 $spacing-md;
+  }
+
+  &__meta {
+    list-style: none;
+    margin: 0 0 $spacing-md;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm $spacing-xl;
+  }
+
+  &__meta li {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  &__meta-text {
+    font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: $services-copy;
+    line-height: 1.55;
+  }
+
+  &__meta-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    line-height: 0;
+    opacity: 0.9;
+  }
+
+  &__meta-img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    display: block;
+  }
+
+  &__tagline {
+    font-family: $font-family-heading;
+    font-size: 24px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: 0;
+    font-variant-numeric: lining-nums proportional-nums;
+    color: $services-copy;
+    margin: 0 0 $spacing-md;
+  }
+
+  &__text {
+    font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: $services-copy;
+    margin: 0 0 $spacing-lg;
+  }
+
+  &__actions {
+    text-align: left;
+    margin-top: auto;
+    padding-top: $spacing-xs;
+  }
+
+  // Figma: 171×62, padding 24×32, border 1px, Baskervville 20px / 400 / 150% LH, #5E4A49
+  &__btn {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: $services-btn-w;
+    max-width: 100%;
+    min-width: 160px;
+    min-height: 62px;
+    padding: 24px 32px;
+    font-family: $font-family-heading;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 150%;
+    letter-spacing: 0;
+    color: $services-btn-label;
+    background-color: transparent;
+    border: 1px solid $services-btn-label;
+    border-radius: 0;
+    opacity: 1;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: rgba($services-btn-label, 0.04);
+    }
   }
 }

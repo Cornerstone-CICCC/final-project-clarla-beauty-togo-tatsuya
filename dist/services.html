@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Services | Clarla Beauty</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400;0,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/main.css" />
     <script type="module" src="/js/main.js"></script>
   </head>
@@ -28,10 +34,119 @@
     </header>
 
     <main class="services">
-      <div class="services__container">
-        <h1 class="services__title">Services</h1>
-        <div class="services__list">
-          <!-- Service items will go here -->
+      <div class="services__hero">
+        <div class="services__container">
+          <div class="services__title-wrap">
+            <h1 class="services__title">Services</h1>
+            <hr class="services__title-underline" />
+          </div>
+          <p class="services__intro">
+            <span class="services__intro-line">We offer fully customizable plan to meet </span><br />
+            <span class="services__intro-line">your unique requirements</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="services__shell">
+        <div class="services__container services__container--list">
+          <section class="services__list" aria-label="Our services">
+            <article class="services__card">
+              <div class="services__media">
+                <img src="/images/FrameS%20(1).png" alt="Wedding Day service" />
+              </div>
+              <div class="services__body">
+                <h2 class="services__name">Wedding Day</h2>
+                <ul class="services__meta">
+                  <li>
+                    <span class="services__meta-icon" aria-hidden="true">
+                      <img class="services__meta-img" src="/images/dollar_sign.png" alt="" width="18" height="18" />
+                    </span>
+                    <span class="services__meta-text">Starting from CAD 1,000</span>
+                  </li>
+                  <li>
+                    <span class="services__meta-icon" aria-hidden="true">
+                      <img class="services__meta-img" src="/images/clock.png" alt="" width="18" height="18" />
+                    </span>
+                    <span class="services__meta-text">On-demand</span>
+                  </li>
+                </ul>
+                <p class="services__tagline">Welcome to our spoiled bride service!</p>
+                <p class="services__text">
+                  Elevate your special day with our expert hairstyling, makeup, and beauty<br />
+                  treatments. Enjoy exclusive access to our luxurious lounge while indulging in<br />
+                  complimentary coffee or tea with sweet treats. Relax with a soothing bath and<br />
+                  receive assistance with dressing. Pamper yourself and feel radiant on your big day!
+                </p>
+                <div class="services__actions">
+                  <a class="services__btn" href="/contact.html">Get a Quote</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="services__card">
+              <div class="services__media">
+                <img src="/images/FrameS%20(2).png" alt="Party Time service" />
+              </div>
+              <div class="services__body">
+                <h2 class="services__name">Party Time!</h2>
+                <ul class="services__meta">
+                  <li>
+                    <span class="services__meta-icon" aria-hidden="true">
+                      <img class="services__meta-img" src="/images/dollar_sign.png" alt="" width="18" height="18" />
+                    </span>
+                    <span class="services__meta-text">Starting from CAD 200</span>
+                  </li>
+                  <li>
+                    <span class="services__meta-icon" aria-hidden="true">
+                      <img class="services__meta-img" src="/images/clock.png" alt="" width="18" height="18" />
+                    </span>
+                    <span class="services__meta-text">1 - 2 hours</span>
+                  </li>
+                </ul>
+                <p class="services__tagline">Your go-to everyday social make up</p>
+                <p class="services__text">
+                  Discover our additional services! Elevate your look for any occasion with our expert<br />
+                  makeup and hairstyle services. From birthdays to corporate events, our team<br />
+                  creates stunning looks to suit your style. Book now and get ready to dazzle!
+                </p>
+                <div class="services__actions">
+                  <a class="services__btn" href="/contact.html">Get a Quote</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="services__card">
+              <div class="services__media">
+                <img src="/images/FrameS%20(3).png" alt="Photoshoot service" />
+              </div>
+              <div class="services__body">
+                <h2 class="services__name">Photoshoot</h2>
+                <ul class="services__meta">
+                  <li>
+                    <span class="services__meta-icon" aria-hidden="true">
+                      <img class="services__meta-img" src="/images/dollar_sign.png" alt="" width="18" height="18" />
+                    </span>
+                    <span class="services__meta-text">Starting from CAD 800</span>
+                  </li>
+                  <li>
+                    <span class="services__meta-icon" aria-hidden="true">
+                      <img class="services__meta-img" src="/images/clock.png" alt="" width="18" height="18" />
+                    </span>
+                    <span class="services__meta-text">2 - 3 hours</span>
+                  </li>
+                </ul>
+                <p class="services__tagline">Be ready to create glamorous memories</p>
+                <p class="services__text">
+                  Our Photoshoot and Editorial Makeup Service will help you shine in the spotlight.<br />
+                  We provide tailored looks to captivate the camera. Whether you're a model or an<br />
+                  influencer, we'll highlight your natural beauty with precision and style.
+                </p>
+                <div class="services__actions">
+                  <a class="services__btn" href="/contact.html">Get a Quote</a>
+                </div>
+              </div>
+            </article>
+          </section>
         </div>
       </div>
     </main>
