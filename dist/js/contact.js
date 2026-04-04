@@ -141,7 +141,9 @@ const renderResultList = (targetList, items) => {
 const updateServiceResult = () => {
   const nameValue = document.getElementById('service-name')?.value?.trim()
   const contactValue = document.querySelector('input[name="service_phone"]')?.value?.trim()
-  const bridalServiceValue = document.querySelector('input[name="bridal_service"]:checked')?.value
+  const bridalServiceValues = [...document.querySelectorAll('input[name="bridal_service[]"]:checked')].map(
+    (input) => bridalServiceLabelMap[input.value] || input.value
+  )
 
   const premiumValues = [...document.querySelectorAll('input[name="premium[]"]:checked')].map(
     (input) => premiumLabelMap[input.value] || input.value
@@ -159,10 +161,7 @@ const updateServiceResult = () => {
     resultContact.textContent = contactValue || 'your contact number'
   }
 
-  renderResultList(
-    resultBasicServices,
-    bridalServiceValue ? [bridalServiceLabelMap[bridalServiceValue] || bridalServiceValue] : []
-  )
+  renderResultList(resultBasicServices, bridalServiceValues)
   renderResultList(resultPremiumServices, premiumValues)
   renderResultList(resultAttendees, attendeeValues)
 }

@@ -86,12 +86,14 @@
     border: 0;
     background: transparent;
     @include text(clamp(1.125rem, 2vw, 1.75rem), normal);
+    color: $color-mid-grey;
     padding: 0 0 $spacing-sm;
     border-bottom: 1px solid transparent;
     cursor: pointer;
   }
 
   &__tab--active {
+    color: black;
     border-bottom-color: black;
   }
 
@@ -162,6 +164,7 @@
 
   &__chip-label {
     flex: 1;
+    color: $color-dark-grey;
   }
 
   &__chip-check {
@@ -176,6 +179,10 @@
 
   .contact__chip:has(input:checked) {
     border: 1px solid $color-dark-pink;
+  }
+
+  .contact__chip:has(input:checked) .contact__chip-label {
+    color: black;
   }
 
   &__row {
@@ -194,7 +201,7 @@
   &__premium-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $spacing-sm $spacing-lg;
+    gap: $spacing-md $spacing-lg;
 
     @include sm {
       grid-template-columns: 1fr 1fr;
@@ -233,6 +240,10 @@
     }
   }
 
+  &__guest-row > span:first-child {
+    @include text(clamp(0.9375rem, 1.2vw, 1rem), normal, black, 'Avenir');
+  }
+
   &__guest-row:last-child {
     border-bottom: none;
   }
@@ -261,7 +272,7 @@
     width: 24px;
     height: 24px;
     padding: 0;
-    @include text(clamp(1.25rem, 2vw, 1.5rem), normal, rgba($color-brand, 0.75), 'Avenir');
+    @include text(clamp(1.125rem, 1.8vw, 1.375rem), 300, $color-dark-grey, 'Avenir');
     line-height: 1;
     cursor: pointer;
   }
@@ -272,7 +283,7 @@
   }
 
   &__guest-counter-value {
-    @include text(clamp(1.25rem, 2vw, 1.5rem), normal, $color-brand, 'Avenir');
+    @include text(clamp(1rem, 1.6vw, 1.25rem), 300, $color-brand, 'Avenir');
     line-height: 1;
     min-width: 16px;
     text-align: center;
