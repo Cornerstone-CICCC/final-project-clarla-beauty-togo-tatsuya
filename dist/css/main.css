@@ -2782,12 +2782,8 @@ img {
 .contact {
   padding: 5.25rem 0 40px;
 }
-<<<<<<< HEAD
-.contact__intro, .contact__signature {
-=======
 .contact__intro,
 .contact__signature {
->>>>>>> main
   display: none;
 }
 .contact__container {
@@ -2815,14 +2811,9 @@ img {
 .contact__tab--active {
   color: #2f2727;
 }
-<<<<<<< HEAD
-.contact__group-title, .contact__field > label:not(.contact__check) {
-  font-family: "Baskervville", serif;
-=======
 .contact__group-title,
 .contact__field > label:not(.contact__check) {
   font-family: 'Baskervville', serif;
->>>>>>> main
   font-size: 24px;
   line-height: 1.1;
   color: #2f2727;
@@ -2831,34 +2822,16 @@ img {
 .contact__hint {
   display: none;
 }
-<<<<<<< HEAD
-.contact__panel[data-panel=classes] .contact__chips {
-  grid-template-columns: 1fr;
-  gap: 8px;
-}
-.contact__panel[data-panel=classes] .contact__chip {
-=======
 .contact__panel[data-panel='classes'] .contact__chips {
   grid-template-columns: 1fr;
   gap: 8px;
 }
 .contact__panel[data-panel='classes'] .contact__chip {
->>>>>>> main
   min-height: 42px;
   background: #f3f3f3;
   border: 1px solid #e5d9d9;
   padding: 10px 12px;
 }
-<<<<<<< HEAD
-.contact__panel[data-panel=classes] .contact__chip-label {
-  font-size: 14px;
-}
-.contact__panel[data-panel=services] .contact__chips, .contact__panel[data-panel=services] .contact__chips--two {
-  grid-template-columns: 1fr;
-  gap: 8px;
-}
-.contact__panel[data-panel=services] .contact__chip {
-=======
 .contact__panel[data-panel='classes'] .contact__chip-label {
   font-size: 14px;
 }
@@ -2868,18 +2841,11 @@ img {
   gap: 8px;
 }
 .contact__panel[data-panel='services'] .contact__chip {
->>>>>>> main
   min-height: 42px;
   background: #f3f3f3;
   border: 1px solid #e5d9d9;
   padding: 10px 12px;
 }
-<<<<<<< HEAD
-.contact__panel[data-panel=services] .contact__chip-label {
-  font-size: 14px;
-}
-.contact__field input, .contact__field select, .contact__field textarea, .contact__group > input[type=tel], .contact__phone-row input {
-=======
 .contact__panel[data-panel='services'] .contact__chip-label {
   font-size: 14px;
 }
@@ -2888,7 +2854,6 @@ img {
 .contact__field textarea,
 .contact__group > input[type='tel'],
 .contact__phone-row input {
->>>>>>> main
   width: 100%;
   border: 1px solid #cfbcbc;
   border-radius: 0;
@@ -2914,11 +2879,7 @@ img {
 }
 .contact__choice {
   font-size: 16px;
-<<<<<<< HEAD
-  font-family: "Baskervville", serif;
-=======
   font-family: 'Baskervville', serif;
->>>>>>> main
   color: #2f2727;
 }
 .contact__phone-row {
@@ -2947,29 +2908,12 @@ img {
   background: transparent;
   color: #7a6666;
   font-size: 24px;
-<<<<<<< HEAD
-  font-family: "Baskervville", serif;
-=======
   font-family: 'Baskervville', serif;
->>>>>>> main
 }
 .contact__back {
   font-size: 12px;
   font-weight: normal;
   color: #8f7f7f;
-<<<<<<< HEAD
-  font-family: "Avenir";
-  margin-bottom: 2px;
-}
-.contact__panel[data-panel=services] .contact__group-title {
-  font-size: 24px;
-}
-.contact__panel[data-panel=services] .contact__premium-grid {
-  grid-template-columns: 1fr;
-  gap: 8px;
-}
-.contact__panel[data-panel=services] .contact__premium-grid .contact__check {
-=======
   font-family: 'Avenir';
   margin-bottom: 2px;
 }
@@ -2981,31 +2925,20 @@ img {
   gap: 8px;
 }
 .contact__panel[data-panel='services'] .contact__premium-grid .contact__check {
->>>>>>> main
   margin-top: 0;
   font-size: 12px;
   font-weight: normal;
   color: #4f4141;
-<<<<<<< HEAD
-  font-family: "Avenir";
-}
-.contact__panel[data-panel=services] .contact__guest-list {
-=======
   font-family: 'Avenir';
 }
 .contact__panel[data-panel='services'] .contact__guest-list {
->>>>>>> main
   border: 0;
   background: transparent;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-<<<<<<< HEAD
-.contact__panel[data-panel=services] .contact__guest-row {
-=======
 .contact__panel[data-panel='services'] .contact__guest-row {
->>>>>>> main
   border: 1px solid #e7d8d8;
   padding: 8px 10px;
   background: #f4ecec;
@@ -3013,16 +2946,6 @@ img {
   gap: 8px;
   align-items: start;
 }
-<<<<<<< HEAD
-.contact__panel[data-panel=services] .contact__guest-row:last-child {
-  border-bottom: 1px solid #e7d8d8;
-}
-.contact__panel[data-panel=services] .contact__guest-row > span:first-child {
-  font-size: 16px;
-  line-height: 1.1;
-}
-.contact__panel[data-panel=services] .contact__guest-counter {
-=======
 .contact__panel[data-panel='services'] .contact__guest-row:last-child {
   border-bottom: 1px solid #e7d8d8;
 }
@@ -3031,20 +2954,10 @@ img {
   line-height: 1.1;
 }
 .contact__panel[data-panel='services'] .contact__guest-counter {
->>>>>>> main
   grid-template-columns: 26px 26px 26px;
   height: 26px;
   background: #eedfdf;
 }
-<<<<<<< HEAD
-.contact__panel[data-panel=services] .contact__guest-counter-button, .contact__panel[data-panel=services] .contact__guest-counter-value {
-  font-size: 12px;
-}
-.contact__panel[data-panel=services] .contact__guest-counter-divider {
-  display: none;
-}
-.contact__panel[data-panel=services] .contact__guest-row .contact__check {
-=======
 .contact__panel[data-panel='services'] .contact__guest-counter-button,
 .contact__panel[data-panel='services'] .contact__guest-counter-value {
   font-size: 12px;
@@ -3053,38 +2966,10 @@ img {
   display: none;
 }
 .contact__panel[data-panel='services'] .contact__guest-row .contact__check {
->>>>>>> main
   margin-top: 0;
   grid-column: 1/-1;
   font-size: 13px;
 }
-<<<<<<< HEAD
-.contact__panel[data-panel=services] .contact__result {
-  gap: 10px;
-}
-.contact__panel[data-panel=services] .contact__result-title {
-  font-size: 24px;
-  font-weight: normal;
-  color: #4d3e3e;
-  font-family: "Baskervville";
-  line-height: 1.5;
-}
-.contact__panel[data-panel=services] .contact__result-subtitle {
-  font-size: 14px;
-  font-weight: normal;
-  color: #4d3e3e;
-  font-family: "Avenir";
-  line-height: 1.45;
-}
-.contact__panel[data-panel=services] .contact__result-edit {
-  font-size: 18px;
-  font-weight: normal;
-  color: #716161;
-  font-family: "Baskervville";
-  line-height: 1;
-}
-.contact__panel[data-panel=services] .contact__result-card {
-=======
 .contact__panel[data-panel='services'] .contact__result {
   gap: 10px;
 }
@@ -3110,52 +2995,12 @@ img {
   line-height: 1;
 }
 .contact__panel[data-panel='services'] .contact__result-card {
->>>>>>> main
   border: 1px solid #cfbdbd;
   background: transparent;
   padding: 10px;
   gap: 10px;
   margin-top: 20px;
 }
-<<<<<<< HEAD
-.contact__panel[data-panel=services] .contact__result-image {
-  height: 138px;
-}
-.contact__panel[data-panel=services] .contact__result-note {
-  font-size: 16px;
-  font-weight: normal;
-  color: #5c4f4f;
-  font-family: "Avenir";
-  margin-top: 20px;
-}
-.contact__panel[data-panel=services] .contact__result-price {
-  font-size: 36px;
-  font-weight: normal;
-  color: #5a4a4a;
-  font-family: "Baskervville";
-  line-height: 1.3;
-  margin-top: -2px;
-}
-.contact__panel[data-panel=services] .contact__result-columns {
-  grid-template-columns: 1fr;
-  gap: 32px;
-}
-.contact__panel[data-panel=services] .contact__result-columns h3 {
-  font-size: 28px;
-  font-weight: normal;
-  color: #3d3030;
-  font-family: "Baskervville";
-  margin-bottom: 2px;
-}
-.contact__panel[data-panel=services] .contact__result-columns ul {
-  font-size: 16px;
-  font-weight: normal;
-  color: #3d3030;
-  font-family: "Avenir";
-  gap: 4px;
-}
-.contact__panel[data-panel=services] .contact__result-footer {
-=======
 .contact__panel[data-panel='services'] .contact__result-image {
   height: 138px;
 }
@@ -3193,18 +3038,13 @@ img {
   gap: 4px;
 }
 .contact__panel[data-panel='services'] .contact__result-footer {
->>>>>>> main
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
   margin-top: 2px;
   gap: 10px;
 }
-<<<<<<< HEAD
-.contact__panel[data-panel=services] .contact__result-share {
-=======
 .contact__panel[data-panel='services'] .contact__result-share {
->>>>>>> main
   min-width: 0;
   width: 100%;
 }
@@ -3214,11 +3054,7 @@ img {
   align-items: center;
   gap: 8px;
 }
-<<<<<<< HEAD
-.contact__panel[data-panel=services] .contact__result-logo-image {
-=======
 .contact__panel[data-panel='services'] .contact__result-logo-image {
->>>>>>> main
   width: 54px;
 }
 .contact__result-socials {
@@ -3250,15 +3086,6 @@ img {
   .contact__tab {
     font-size: 40px;
   }
-<<<<<<< HEAD
-  .contact__group-title, .contact__field > label:not(.contact__check) {
-    font-size: 42px;
-  }
-  .contact__panel[data-panel=services] .contact__result-title {
-    font-size: 32px;
-  }
-  .contact__panel[data-panel=services] .contact__result-columns {
-=======
   .contact__group-title,
   .contact__field > label:not(.contact__check) {
     font-size: 24px;
@@ -3267,7 +3094,6 @@ img {
     font-size: 32px;
   }
   .contact__panel[data-panel='services'] .contact__result-columns {
->>>>>>> main
     grid-template-columns: 1fr 1fr;
   }
   .contact__field textarea {
