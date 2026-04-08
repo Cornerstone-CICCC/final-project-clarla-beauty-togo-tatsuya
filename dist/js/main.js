@@ -56,10 +56,6 @@ if (myWorkRoot) {
   })
 }
 
-// Hamburger menu toggle
-const hamburger = document.querySelector('.header__hamburger')
-const nav = document.querySelector('.header__nav')
-
 function init() {
   toggleHeaderMenu()
   contactFormHandler()
