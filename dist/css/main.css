@@ -2748,14 +2748,316 @@ img {
   font-family: "Lora", "Georgia", serif;
   text-transform: lowercase;
 }
-@media (min-width: 576px) {
-  .contact {
-    padding-top: 2.5rem;
-  }
+.contact {
+  padding: 5.25rem 0 40px;
+}
+.contact__intro, .contact__signature {
+  display: none;
+}
+.contact__container {
+  max-width: 390px;
+  padding: 0 10px;
+}
+.contact__form {
+  max-width: 100%;
+  padding: 10px 8px 16px;
+  background: #f2e8e8;
+  border: 1px solid #d7c8c8;
+  gap: 18px;
+}
+.contact__tabs {
+  gap: 14px;
+  border-bottom: 1px solid rgba(66, 57, 57, 0.45);
+}
+.contact__tab {
+  text-align: center;
+  padding-bottom: 8px;
+  font-size: 28px;
+  line-height: 1;
+  color: #a49999;
+}
+.contact__tab--active {
+  color: #2f2727;
+}
+.contact__group-title, .contact__field > label:not(.contact__check) {
+  font-family: "Baskervville", serif;
+  font-size: 24px;
+  line-height: 1.1;
+  color: #2f2727;
+  margin-bottom: 8px;
+}
+.contact__hint {
+  display: none;
+}
+.contact__panel[data-panel=classes] .contact__chips {
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.contact__panel[data-panel=classes] .contact__chip {
+  min-height: 42px;
+  background: #f3f3f3;
+  border: 1px solid #e5d9d9;
+  padding: 10px 12px;
+}
+.contact__panel[data-panel=classes] .contact__chip-label {
+  font-size: 14px;
+}
+.contact__panel[data-panel=services] .contact__chips, .contact__panel[data-panel=services] .contact__chips--two {
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.contact__panel[data-panel=services] .contact__chip {
+  min-height: 42px;
+  background: #f3f3f3;
+  border: 1px solid #e5d9d9;
+  padding: 10px 12px;
+}
+.contact__panel[data-panel=services] .contact__chip-label {
+  font-size: 14px;
+}
+.contact__field input, .contact__field select, .contact__field textarea, .contact__group > input[type=tel], .contact__phone-row input {
+  width: 100%;
+  border: 1px solid #cfbcbc;
+  border-radius: 0;
+  background: #f3f3f3;
+  min-height: 40px;
+  padding: 9px 11px;
+  font-size: 15px;
+}
+.contact__field textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+.contact__check {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #5b4c4c;
+}
+.contact__group {
+  gap: 10px;
+}
+.contact__choices--stack {
+  gap: 10px;
+}
+.contact__choice {
+  font-size: 16px;
+  font-family: "Baskervville", serif;
+  color: #2f2727;
+}
+.contact__phone-row {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+}
+.contact__country-code {
+  border: 1px solid #cfbcbc;
+  border-right: 0;
+  background: #f3f3f3;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #6e6060;
+  font-size: 13px;
+}
+.contact__phone-row input {
+  border-left: 0;
+}
+.contact__submit {
+  margin-top: 6px;
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid #c7b3b3;
+  background: transparent;
+  color: #7a6666;
+  font-size: 24px;
+  font-family: "Baskervville", serif;
+}
+.contact__back {
+  font-size: 12px;
+  font-weight: normal;
+  color: #8f7f7f;
+  font-family: "Avenir";
+  margin-bottom: 2px;
+}
+.contact__panel[data-panel=services] .contact__group-title {
+  font-size: 24px;
+}
+.contact__panel[data-panel=services] .contact__premium-grid {
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.contact__panel[data-panel=services] .contact__premium-grid .contact__check {
+  margin-top: 0;
+  font-size: 12px;
+  font-weight: normal;
+  color: #4f4141;
+  font-family: "Avenir";
+}
+.contact__panel[data-panel=services] .contact__guest-list {
+  border: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.contact__panel[data-panel=services] .contact__guest-row {
+  border: 1px solid #e7d8d8;
+  padding: 8px 10px;
+  background: #f4ecec;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: start;
+}
+.contact__panel[data-panel=services] .contact__guest-row:last-child {
+  border-bottom: 1px solid #e7d8d8;
+}
+.contact__panel[data-panel=services] .contact__guest-row > span:first-child {
+  font-size: 16px;
+  line-height: 1.1;
+}
+.contact__panel[data-panel=services] .contact__guest-counter {
+  grid-template-columns: 26px 26px 26px;
+  height: 26px;
+  background: #eedfdf;
+}
+.contact__panel[data-panel=services] .contact__guest-counter-button, .contact__panel[data-panel=services] .contact__guest-counter-value {
+  font-size: 12px;
+}
+.contact__panel[data-panel=services] .contact__guest-counter-divider {
+  display: none;
+}
+.contact__panel[data-panel=services] .contact__guest-row .contact__check {
+  margin-top: 0;
+  grid-column: 1/-1;
+  font-size: 13px;
+}
+.contact__panel[data-panel=services] .contact__result {
+  gap: 10px;
+}
+.contact__panel[data-panel=services] .contact__result-title {
+  font-size: 24px;
+  font-weight: normal;
+  color: #4d3e3e;
+  font-family: "Baskervville";
+  line-height: 1.5;
+}
+.contact__panel[data-panel=services] .contact__result-subtitle {
+  font-size: 14px;
+  font-weight: normal;
+  color: #4d3e3e;
+  font-family: "Avenir";
+  line-height: 1.45;
+}
+.contact__panel[data-panel=services] .contact__result-edit {
+  font-size: 18px;
+  font-weight: normal;
+  color: #716161;
+  font-family: "Baskervville";
+  line-height: 1;
+}
+.contact__panel[data-panel=services] .contact__result-card {
+  border: 1px solid #cfbdbd;
+  background: transparent;
+  padding: 10px;
+  gap: 10px;
+  margin-top: 20px;
+}
+.contact__panel[data-panel=services] .contact__result-image {
+  height: 138px;
+}
+.contact__panel[data-panel=services] .contact__result-note {
+  font-size: 16px;
+  font-weight: normal;
+  color: #5c4f4f;
+  font-family: "Avenir";
+  margin-top: 20px;
+}
+.contact__panel[data-panel=services] .contact__result-price {
+  font-size: 36px;
+  font-weight: normal;
+  color: #5a4a4a;
+  font-family: "Baskervville";
+  line-height: 1.3;
+  margin-top: -2px;
+}
+.contact__panel[data-panel=services] .contact__result-columns {
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+.contact__panel[data-panel=services] .contact__result-columns h3 {
+  font-size: 28px;
+  font-weight: normal;
+  color: #3d3030;
+  font-family: "Baskervville";
+  margin-bottom: 2px;
+}
+.contact__panel[data-panel=services] .contact__result-columns ul {
+  font-size: 16px;
+  font-weight: normal;
+  color: #3d3030;
+  font-family: "Avenir";
+  gap: 4px;
+}
+.contact__panel[data-panel=services] .contact__result-footer {
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  gap: 10px;
+}
+.contact__panel[data-panel=services] .contact__result-share {
+  min-width: 0;
+  width: 100%;
+}
+.contact__result-brand-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.contact__panel[data-panel=services] .contact__result-logo-image {
+  width: 54px;
+}
+.contact__result-socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.contact__result-socials .contact__signature-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.9;
 }
 @media (min-width: 768px) {
   .contact {
-    padding-top: 3rem;
+    padding: 5.5rem 0 60px;
+  }
+  .contact__container {
+    max-width: 720px;
+    padding: 0 20px;
+  }
+  .contact__form {
+    padding: 22px 20px 28px;
+  }
+  .contact__tabs {
+    gap: 28px;
+  }
+  .contact__tab {
+    font-size: 40px;
+  }
+  .contact__group-title, .contact__field > label:not(.contact__check) {
+    font-size: 24px;
+  }
+  .contact__panel[data-panel=services] .contact__result-title {
+    font-size: 32px;
+  }
+  .contact__panel[data-panel=services] .contact__result-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact__field textarea {
+    min-height: 160px;
   }
 }
 
