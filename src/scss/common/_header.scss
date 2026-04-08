@@ -58,6 +58,30 @@
       @include flex-center;
       gap: $spacing-4xl;
     }
+
+    // モバイル: ハンバーガーで .is-open のとき表示（JS は main.js）
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      &.is-open {
+        display: block;
+        position: fixed;
+        z-index: 99;
+        // 固定ヘッダー（padding + ロゴ行）のすぐ下
+        top: 4rem;
+        left: 0;
+        right: 0;
+        box-sizing: border-box;
+        padding: $spacing-lg $spacing-md ($spacing-lg + $spacing-sm);
+        background-color: $color-paper-white;
+        border-top: 1px solid rgba($color-brand, 0.08);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+
+        .header__nav-list {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: $spacing-md;
+        }
+      }
+    }
   }
 
   &__nav-link {

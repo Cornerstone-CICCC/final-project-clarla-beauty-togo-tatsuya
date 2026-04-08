@@ -114,6 +114,26 @@ img {
     gap: 4rem;
   }
 }
+@media (max-width: 767px) {
+  .header__nav.is-open {
+    display: block;
+    position: fixed;
+    z-index: 99;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    padding: 1.5rem 1rem 2rem;
+    background-color: #fbfafa;
+    border-top: 1px solid rgba(25, 25, 25, 0.08);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+  }
+  .header__nav.is-open .header__nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
 .header__nav-link {
   font-size: 1.25rem;
   font-weight: 400;
@@ -2209,11 +2229,13 @@ img {
   font-weight: normal;
   color: #191919;
   font-family: "Lora", "Georgia", serif;
+  color: #888888;
   padding: 0 0 0.5rem;
   border-bottom: 1px solid transparent;
   cursor: pointer;
 }
 .contact__tab--active {
+  color: black;
   border-bottom-color: black;
 }
 .contact__panel {
@@ -2281,6 +2303,7 @@ img {
 }
 .contact__chip-label {
   flex: 1;
+  color: #535353;
 }
 .contact__chip-check {
   width: 24px;
@@ -2292,6 +2315,9 @@ img {
 }
 .contact .contact__chip:has(input:checked) {
   border: 1px solid #b99692;
+}
+.contact .contact__chip:has(input:checked) .contact__chip-label {
+  color: black;
 }
 .contact__row {
   display: grid;
@@ -2311,7 +2337,7 @@ img {
 .contact__premium-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.5rem 1.5rem;
+  gap: 1rem 1.5rem;
 }
 @media (min-width: 576px) {
   .contact__premium-grid {
@@ -2349,6 +2375,12 @@ img {
     grid-template-columns: minmax(90px, 1fr) 78px 1px 1fr 1fr;
   }
 }
+.contact__guest-row > span:first-child {
+  font-size: clamp(0.9375rem, 1.2vw, 1rem);
+  font-weight: normal;
+  color: black;
+  font-family: "Avenir";
+}
 .contact__guest-row:last-child {
   border-bottom: none;
 }
@@ -2374,9 +2406,9 @@ img {
   width: 24px;
   height: 24px;
   padding: 0;
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
-  font-weight: normal;
-  color: rgba(25, 25, 25, 0.75);
+  font-size: clamp(1.125rem, 1.8vw, 1.375rem);
+  font-weight: 300;
+  color: #535353;
   font-family: "Avenir";
   line-height: 1;
   cursor: pointer;
@@ -2386,8 +2418,8 @@ img {
   cursor: default;
 }
 .contact__guest-counter-value {
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
-  font-weight: normal;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-weight: 300;
   color: #191919;
   font-family: "Avenir";
   line-height: 1;
