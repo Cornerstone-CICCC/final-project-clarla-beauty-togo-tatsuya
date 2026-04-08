@@ -29,7 +29,7 @@ html {
 body {
   font-family: "Lora", "Georgia", serif;
   color: var(--color-brand);
-  background-color: var(--color-paper-white);
+  background-color: var(--snow-white);
 }
 
 ul,
@@ -375,12 +375,15 @@ img {
 }
 
 .my-work {
-  padding-top: 5.25rem;
+  padding-top: 112px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .my-work {
-    padding-top: 5.5rem;
+    padding-top: 184px;
   }
+}
+.my-work {
+  padding-bottom: 0;
 }
 .my-work__hero {
   background-color: #f8f6f4;
@@ -589,11 +592,11 @@ img {
 }
 
 .services {
-  padding-top: 5.25rem;
+  padding-top: 112px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .services {
-    padding-top: 5.5rem;
+    padding-top: 184px;
   }
 }
 .services {
@@ -875,11 +878,11 @@ img {
 }
 
 .classes {
-  padding-top: 5.25rem;
+  padding-top: 112px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .classes {
-    padding-top: 5.5rem;
+    padding-top: 184px;
   }
 }
 .classes {
@@ -1203,11 +1206,11 @@ img {
 }
 
 .class-detail {
-  padding-top: 5.25rem;
+  padding-top: 112px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .class-detail {
-    padding-top: 5.5rem;
+    padding-top: 184px;
   }
 }
 .class-detail {
@@ -1646,13 +1649,15 @@ img {
 }
 
 .beauty-tips {
-  padding-top: 5.25rem;
-  padding-bottom: 0;
+  padding-top: 112px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .beauty-tips {
-    padding-top: 5.5rem;
+    padding-top: 184px;
   }
+}
+.beauty-tips {
+  padding-bottom: 0;
 }
 .beauty-tips__hero {
   background-color: #f8f6f4;
@@ -1889,13 +1894,15 @@ img {
 }
 
 .about {
-  padding-top: 5.25rem;
-  padding-bottom: 0;
+  padding-top: 112px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .about {
-    padding-top: 5.5rem;
+    padding-top: 184px;
   }
+}
+.about {
+  padding-bottom: 0;
 }
 .about__hero {
   background-color: #f8f6f4;

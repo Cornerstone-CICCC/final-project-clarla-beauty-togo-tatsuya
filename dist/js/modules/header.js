@@ -2,7 +2,7 @@ export function initHeader() {
   const header = document.getElementById('header')
   if (!header) return
 
-  const SCROLL_THRESHOLD = 50
+  const SCROLL_THRESHOLD = 300
 
   function handleScroll() {
     const currentScrollY = window.scrollY

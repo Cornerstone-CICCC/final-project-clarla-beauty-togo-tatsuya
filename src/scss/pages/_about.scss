@@ -14,12 +14,8 @@ $about-brands-min-h: 22.375rem; // 358px
 $about-brands-gap: 2.75rem; // 44px
 
 .about {
-  padding-top: 5.25rem;
+  @include header-padding;
   padding-bottom: 0;
-
-  @include md {
-    padding-top: 5.5rem;
-  }
 
   &__hero {
     background-color: $color-pale-white;

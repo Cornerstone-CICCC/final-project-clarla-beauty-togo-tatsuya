@@ -79,3 +79,11 @@
   background: none;
   opacity: 1;
 }
+
+@mixin header-padding {
+  padding-top: $header-base-height;
+
+  @include xl {
+    padding-top: $header-lg-height;
+  }
+}

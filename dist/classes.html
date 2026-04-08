@@ -14,23 +14,57 @@
     <script type="module" src="/js/main.js"></script>
   </head>
   <body>
-    <header class="header">
-      <div class="header__container">
-        <a href="/" class="header__logo">Clarla Beauty</a>
+    <!-- header -->
+    <header id="header" class="header">
+      <div class="header__inner">
+        <!-- lattop navigation -->
         <nav class="header__nav">
-          <ul class="header__nav-list">
-            <li><a href="/my-work.html" class="header__nav-link">My Work</a></li>
-            <li><a href="/services.html" class="header__nav-link">Services</a></li>
-            <li><a href="/classes.html" class="header__nav-link">Classes</a></li>
-            <li><a href="/beauty-tips.html" class="header__nav-link">Beauty Tips</a></li>
-            <li><a href="/about.html" class="header__nav-link">About</a></li>
-            <li><a href="/contact.html" class="header__nav-link">Contact</a></li>
-          </ul>
+          <a href="/" class="header__nav-link">Home</a>
+          <a href="/my-work.html" class="header__nav-link">My Work</a>
+          <a href="/services.html" class="header__nav-link">Services</a>
+          <a href="/classes.html" class="header__nav-link">Classes</a>
         </nav>
-        <button class="header__hamburger" aria-label="Menu">
-          <span></span>
-        </button>
+
+        <!-- hamburger menu for tablet and mobile -->
+        <div id="headerToggleBtn" class="header__toggle">
+          <span class="header__toggle-bar"></span>
+          <span class="header__toggle-bar"></span>
+          <span class="header__toggle-bar"></span>
+        </div>
+
+        <!-- logo -->
+        <img src="/images/logo-black.svg" alt="Clarla Beauty Logo" class="header__logo" />
+
+        <!-- lattop navigation -->
+        <nav class="header__nav">
+          <a href="/beauty-tips.html" class="header__nav-link">Beauty Tips</a>
+          <a href="/about.html" class="header__nav-link">About</a>
+          <a href="/contact.html" class="header__nav-link">Contact</a>
+          <a href="#" target="_blank" class="header__nav-link header__nav-link--external">
+            <img src="/images/logo-instagram.svg" alt="Instagram" />
+          </a>
+        </nav>
+
+        <!-- instagram link for tablet and mobile -->
+        <div class="header__btn">
+          <a href="#" target="_blank" class="header__sns-link">
+            <img src="/images/logo-instagram.svg" alt="Instagram" />
+          </a>
+        </div>
       </div>
+
+      <!-- sidebar menu for tablet and mobile -->
+      <aside id="headerSidebar" class="header__sidebar">
+        <nav class="header__sidebar-nav">
+          <a href="/" class="header__sidebar-link">Home</a>
+          <a href="/my-work.html" class="header__sidebar-link">My Work</a>
+          <a href="/services.html" class="header__sidebar-link">Services</a>
+          <a href="/classes.html" class="header__sidebar-link">Classes</a>
+          <a href="/beauty-tips.html" class="header__sidebar-link">Beauty Tips</a>
+          <a href="/about.html" class="header__sidebar-link">About</a>
+          <a href="/contact.html" class="header__sidebar-link">Contact</a>
+        </nav>
+      </aside>
     </header>
 
     <main class="classes">

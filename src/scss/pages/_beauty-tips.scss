@@ -12,12 +12,8 @@ $bt-btn-more-w: 10.0625rem; // 161px
 $bt-btn-label: #5e4a49;
 
 .beauty-tips {
-  padding-top: 5.25rem;
+  @include header-padding;
   padding-bottom: 0;
-
-  @include md {
-    padding-top: 5.5rem;
-  }
 
   &__hero {
     background-color: $color-pale-white;

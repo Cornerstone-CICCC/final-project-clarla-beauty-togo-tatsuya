@@ -15,11 +15,8 @@ $my-work-hero-pad-y-lg: 24px;
 $my-work-hero-gap-lg: 32px;
 
 .my-work {
-  padding-top: 5.25rem;
-
-  @include md {
-    padding-top: 5.5rem;
-  }
+  @include header-padding;
+  padding-bottom: 0;
 
   &__hero {
     background-color: $my-work-bg-page;

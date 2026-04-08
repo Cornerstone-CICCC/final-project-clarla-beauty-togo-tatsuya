@@ -16,12 +16,7 @@ $classes-layout-min-h-lg: 2220px;
 $classes-layout-nudge-x: -2px; // left -2
 
 .classes {
-  padding-top: 5.25rem;
-
-  @include md {
-    padding-top: 5.5rem;
-  }
-
+  @include header-padding;
   padding-bottom: 0;
 
   @include lg {
