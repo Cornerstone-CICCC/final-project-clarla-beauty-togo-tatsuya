@@ -616,11 +616,357 @@
     text-transform: lowercase;
   }
 
-  @include sm {
-    padding-top: $spacing-2xl;
+  // Contact page: mobile-first tuning to match provided design mock.
+  padding: 5.25rem 0 40px;
+
+  &__intro,
+  &__signature {
+    display: none;
+  }
+
+  &__container {
+    max-width: 390px;
+    padding: 0 10px;
+  }
+
+  &__form {
+    max-width: 100%;
+    padding: 10px 8px 16px;
+    background: #f2e8e8;
+    border: 1px solid #d7c8c8;
+    gap: 18px;
+  }
+
+  &__tabs {
+    gap: 14px;
+    border-bottom: 1px solid rgba(66, 57, 57, 0.45);
+  }
+
+  &__tab {
+    text-align: center;
+    padding-bottom: 8px;
+    font-size: 28px;
+    line-height: 1;
+    color: #a49999;
+  }
+
+  &__tab--active {
+    color: #2f2727;
+  }
+
+  &__group-title,
+  &__field > label:not(.contact__check) {
+    font-family: 'Baskervville', serif;
+    font-size: 24px;
+    line-height: 1.1;
+    color: #2f2727;
+    margin-bottom: 8px;
+  }
+
+  &__hint {
+    display: none;
+  }
+
+  &__panel[data-panel='classes'] &__chips {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  &__panel[data-panel='classes'] &__chip {
+    min-height: 42px;
+    background: #f3f3f3;
+    border: 1px solid #e5d9d9;
+    padding: 10px 12px;
+  }
+
+  &__panel[data-panel='classes'] &__chip-label {
+    font-size: 14px;
+  }
+
+  &__panel[data-panel='services'] &__chips,
+  &__panel[data-panel='services'] &__chips--two {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  &__panel[data-panel='services'] &__chip {
+    min-height: 42px;
+    background: #f3f3f3;
+    border: 1px solid #e5d9d9;
+    padding: 10px 12px;
+  }
+
+  &__panel[data-panel='services'] &__chip-label {
+    font-size: 14px;
+  }
+
+  &__field input,
+  &__field select,
+  &__field textarea,
+  &__group > input[type='tel'],
+  &__phone-row input {
+    width: 100%;
+    border: 1px solid #cfbcbc;
+    border-radius: 0;
+    background: #f3f3f3;
+    min-height: 40px;
+    padding: 9px 11px;
+    font-size: 15px;
+  }
+
+  &__field textarea {
+    min-height: 110px;
+    resize: vertical;
+  }
+
+  &__check {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #5b4c4c;
+  }
+
+  &__group {
+    gap: 10px;
+  }
+
+  &__choices--stack {
+    gap: 10px;
+  }
+
+  &__choice {
+    font-size: 16px;
+    font-family: 'Baskervville', serif;
+    color: #2f2727;
+  }
+
+  &__phone-row {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+  }
+
+  &__country-code {
+    border: 1px solid #cfbcbc;
+    border-right: 0;
+    background: #f3f3f3;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #6e6060;
+    font-size: 13px;
+  }
+
+  &__phone-row input {
+    border-left: 0;
+  }
+
+  &__submit {
+    margin-top: 6px;
+    width: 100%;
+    min-height: 42px;
+    border: 1px solid #c7b3b3;
+    background: transparent;
+    color: #7a6666;
+    font-size: 24px;
+    font-family: 'Baskervville', serif;
+  }
+
+  &__back {
+    @include text(12px, normal, #8f7f7f, 'Avenir');
+    margin-bottom: 2px;
+  }
+
+  &__panel[data-panel='services'] &__group-title {
+    font-size: 24px;
+  }
+
+  &__panel[data-panel='services'] &__premium-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  &__panel[data-panel='services'] &__premium-grid .contact__check {
+    margin-top: 0;
+    @include text(12px, normal, #4f4141, 'Avenir');
+  }
+
+  &__panel[data-panel='services'] &__guest-list {
+    border: 0;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__panel[data-panel='services'] &__guest-row {
+    border: 1px solid #e7d8d8;
+    padding: 8px 10px;
+    background: #f4ecec;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    align-items: start;
+  }
+
+  &__panel[data-panel='services'] &__guest-row:last-child {
+    border-bottom: 1px solid #e7d8d8;
+  }
+
+  &__panel[data-panel='services'] &__guest-row > span:first-child {
+    font-size: 16px;
+    line-height: 1.1;
+  }
+
+  &__panel[data-panel='services'] &__guest-counter {
+    grid-template-columns: 26px 26px 26px;
+    height: 26px;
+    background: #eedfdf;
+  }
+
+  &__panel[data-panel='services'] &__guest-counter-button,
+  &__panel[data-panel='services'] &__guest-counter-value {
+    font-size: 12px;
+  }
+
+  &__panel[data-panel='services'] &__guest-counter-divider {
+    display: none;
+  }
+
+  &__panel[data-panel='services'] &__guest-row .contact__check {
+    margin-top: 0;
+    grid-column: 1 / -1;
+    font-size: 13px;
+  }
+
+  &__panel[data-panel='services'] &__result {
+    gap: 10px;
+  }
+
+  &__panel[data-panel='services'] &__result-title {
+    @include text(24px, normal, #4d3e3e, 'Baskervville');
+    line-height: 1.5;
+  }
+
+  &__panel[data-panel='services'] &__result-subtitle {
+    @include text(14px, normal, #4d3e3e, 'Avenir');
+    line-height: 1.45;
+  }
+
+  &__panel[data-panel='services'] &__result-edit {
+    @include text(18px, normal, #716161, 'Baskervville');
+    line-height: 1;
+  }
+
+  &__panel[data-panel='services'] &__result-card {
+    border: 1px solid #cfbdbd;
+    background: transparent;
+    padding: 10px;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  &__panel[data-panel='services'] &__result-image {
+    height: 138px;
+  }
+
+  &__panel[data-panel='services'] &__result-note {
+    @include text(16px, normal, #5c4f4f, 'Avenir');
+    margin-top: 20px;
+  }
+
+  &__panel[data-panel='services'] &__result-price {
+    @include text(36px, normal, #5a4a4a, 'Baskervville');
+    line-height: 1.3;
+    margin-top: -2px;
+  }
+
+  &__panel[data-panel='services'] &__result-columns {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  &__panel[data-panel='services'] &__result-columns h3 {
+    @include text(28px, normal, #3d3030, 'Baskervville');
+    margin-bottom: 2px;
+  }
+
+  &__panel[data-panel='services'] &__result-columns ul {
+    @include text(16px, normal, #3d3030, 'Avenir');
+    gap: 4px;
+  }
+
+  &__panel[data-panel='services'] &__result-footer {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+    gap: 10px;
+  }
+
+  &__panel[data-panel='services'] &__result-share {
+    min-width: 0;
+    width: 100%;
+  }
+
+  &__result-brand-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__panel[data-panel='services'] &__result-logo-image {
+    width: 54px;
+  }
+
+  &__result-socials {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  &__result-socials .contact__signature-icon {
+    width: 16px;
+    height: 16px;
+    opacity: 0.9;
   }
 
   @include md {
-    padding-top: $spacing-3xl;
+    padding: 5.5rem 0 60px;
+
+    &__container {
+      max-width: 720px;
+      padding: 0 20px;
+    }
+
+    &__form {
+      padding: 22px 20px 28px;
+    }
+
+    &__tabs {
+      gap: 28px;
+    }
+
+    &__tab {
+      font-size: 40px;
+    }
+
+    &__group-title,
+    &__field > label:not(.contact__check) {
+      font-size: 42px;
+    }
+
+    &__panel[data-panel='services'] &__result-title {
+      font-size: 32px;
+    }
+
+    &__panel[data-panel='services'] &__result-columns {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__field textarea {
+      min-height: 160px;
+    }
   }
 }

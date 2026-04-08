@@ -310,15 +310,21 @@
                     <div>
                       <h3>Premium services</h3>
                       <ul data-result-premium-services></ul>
-
+                    </div>
+                    <div>
                       <h3>Additional attendees</h3>
                       <ul data-result-attendees></ul>
                     </div>
                   </div>
 
                   <div class="contact__result-footer">
-                    <div>
+                    <div class="contact__result-brand-block">
                       <img src="/images/CB_logo.svg" alt="Clarla Beauty logo" class="contact__result-logo-image" />
+                      <ul class="contact__result-socials">
+                        <li><img src="/images/icon_phone.svg" alt="Phone" class="contact__signature-icon" /></li>
+                        <li><img src="/images/icon-whatapp.svg" alt="WhatsApp" class="contact__signature-icon" /></li>
+                        <li><img src="/images/icon_instagram.svg" alt="Instagram" class="contact__signature-icon" /></li>
+                      </ul>
                     </div>
                     <button type="button" class="contact__submit contact__result-share">Share</button>
                   </div>
@@ -378,7 +384,10 @@
                     Call
                   </label>
                 </div>
-                <input type="tel" name="class_phone" placeholder="+ +1  Your mobile number" />
+                <div class="contact__phone-row">
+                  <span class="contact__country-code">&#709; +1</span>
+                  <input type="tel" name="class_phone" placeholder="Your mobile number" />
+                </div>
                 <div class="contact__choices contact__choices--stack">
                   <label class="contact__choice">
                     <input type="radio" name="class_contact_method" value="whatsapp" />
@@ -395,7 +404,7 @@
                 </div>
               </div>
 
-              <button type="button" class="contact__submit" data-class-submit>Next</button>
+              <button type="button" class="contact__submit" data-class-submit>Submit</button>
             </div>
 
             <div class="contact__step" data-class-step="2" hidden>
