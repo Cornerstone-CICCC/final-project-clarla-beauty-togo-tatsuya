@@ -938,6 +938,7 @@
   @include md {
     @include header-padding;
     padding-bottom: 0;
+    margin-bottom: $spacing-2xl;
 
     &__container {
       max-width: 720px;
