@@ -1,15 +1,15 @@
 @use '../variables' as *;
 @use '../mixins' as *;
 
-$my-work-bg-page: $color-pale-white; // 他ページのヒーロー／クリームと同じ #f8f6f4
-$my-work-bg-pink: #fbe7e4; // Services / About / Beauty Tips のシェルと同じ
+$my-work-bg-page: $color-pale-white; // Shares the soft cream (#f8f6f4) we use on other heroes
+$my-work-bg-pink: #fbe7e4; // That rosy shell pink from Services / About / Beauty Tips, for consistency
 $my-work-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
 $my-work-font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
 $my-work-title-max: 5rem; // 80px — Figma hero
 $my-work-gallery-max: 63.875rem; // 1022px
 $my-work-tabs-width: 30.25rem; // 484px
 $my-work-view-more-w: 10.0625rem; // 161px
-// Services ヒーローと同じタイトル帯（Figma 270 高さ / padding 24 / gap 32）
+// Mirror the Services hero treatment — ~270px band, 24px padding, 32px internal gap
 $my-work-hero-h-lg: 270px;
 $my-work-hero-pad-y-lg: 24px;
 $my-work-hero-gap-lg: 32px;

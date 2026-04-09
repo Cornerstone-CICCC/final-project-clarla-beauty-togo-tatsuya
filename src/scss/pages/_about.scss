@@ -104,7 +104,7 @@ $about-brands-gap: 2.75rem; // 44px
     }
   }
 
-  // Figma portrait frame 351×424（モバイルは写真のみ画面幅いっぱい）
+  // Portrait block is 351×424 in the file; on mobile we let the photo kiss the viewport edges.
   &__media {
     flex-shrink: 0;
     width: 100%;
@@ -211,7 +211,7 @@ $about-brands-gap: 2.75rem; // 44px
     }
   }
 
-  // Figma: frame 1440×358, gap 44px（座標はキャンバス基準のため CSS では未使用）
+  // Logo strip is 1440×358 with 44px gaps in Figma — those raw canvas numbers never land 1:1 in CSS, FYI.
   &__brands {
     background-color: $color-pale-white;
     padding: clamp(2.5rem, 6vw, 5rem) 0 $about-shell-bottom;
@@ -273,7 +273,7 @@ $about-brands-gap: 2.75rem; // 44px
 
     img {
       width: auto;
-      max-width: 120px; // Figma 幅 120px（親を広げない／引き伸ばし防止）
+      max-width: 120px; // Keep partner logos honest at 120px so the row doesn’t balloon the section
       height: auto;
       max-height: 3rem;
       object-fit: contain;

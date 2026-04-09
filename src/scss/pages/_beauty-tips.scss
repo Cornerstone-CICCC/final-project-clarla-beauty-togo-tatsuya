@@ -7,7 +7,7 @@ $bt-shell-bottom-md: 7.5rem;
 $bt-list-pad-top: 4.5rem;
 $bt-list-pad-top-md: 6rem;
 $bt-hero-title-max: 5rem; // 80px
-$bt-btn-hero-w: 13.125rem; // 210px — hero のみやや小さく
+$bt-btn-hero-w: 13.125rem; // 210px — Instagram hero CTA is a hair smaller than the grid “View More”
 $bt-btn-more-w: 10.0625rem; // 161px
 $bt-btn-label: #5e4a49;
 
@@ -91,7 +91,7 @@ $bt-btn-label: #5e4a49;
     background-color: $bt-shell-pink;
   }
 
-  // ハッシュタグは常に1行（はみ出しは横スクロール）。wrap だとモバイルで2行になりやすいため使わない。
+  // One horizontal row of hashtag filters; if it doesn’t fit, swipe. Wrapping turned into an ugly second line on phones.
   &__filters {
     box-sizing: border-box;
     display: flex;
@@ -197,7 +197,7 @@ $bt-btn-label: #5e4a49;
       display: none;
     }
 
-    // JS: モバイルのみフィルター後「上から3件」を隠す（main.js の COLLAPSE_QUERY と同じ 767px）
+    // After filtering, small screens only show three tiles — the rest get this class until “View More” (see COLLAPSE_QUERY in main.js).
     &.is-beyond-mobile-preview {
       @media (max-width: #{$breakpoint-md - 1px}) {
         display: none;
@@ -305,7 +305,7 @@ $bt-btn-label: #5e4a49;
       background-color: rgba($bt-btn-label, 0.04);
     }
 
-    // More on Instagram のみやや小さく（View More は据え置き）
+    // Tweak the hero Instagram button; leave the gallery’s View More as the big sibling.
     &--hero {
       width: $bt-btn-hero-w;
       min-height: 56px;

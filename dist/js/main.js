@@ -3,8 +3,9 @@ import { toggleHeaderMenu } from './modules/toggle-header-menu.js'
 import { initHeader } from './modules/header.js'
 
 /**
- * Beauty Tips: hashtag filters + モバイルのみ「上から3件 + View More で全表示」
- * （767px 以下。ワイドでは常に全件・View More は Instagram）
+ * Beauty Tips — hashtag filters behave like tabs. On a narrow phone we only tease the first three
+ * thumbnails; tapping “View More” reveals the full set. On wider screens you already see everything,
+ * and that same control just sends people to Instagram.
  */
 function initBeautyTips(root) {
   if (!root) {
@@ -130,7 +131,7 @@ if (beautyTipsRoot) {
   initBeautyTips(beautyTipsRoot)
 }
 
-// My Work: Makeup / Hairstyle tabs
+// My Work — simple tab swap between makeup and hairstyle galleries
 const myWorkRoot = document.querySelector('.my-work')
 
 if (myWorkRoot) {

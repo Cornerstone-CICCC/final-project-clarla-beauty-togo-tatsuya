@@ -15,10 +15,10 @@ $services-shell-pad-bottom: 6rem;
 $services-shell-pad-bottom-md: 7.5rem;
 $services-btn-w: 10.6875rem; // 171px
 $services-btn-label: #5e4a49;
-// Figma Services フレーム: width 1440 / height 1565 / top 479（ピンク開始 Y）/ opacity 1
+// Services artboard: 1440×1565 — note where the pink block kicks in (y ≈ 479), even if we re-stage it in code
 $services-layout-max-w: 90rem; // 1440px
 $services-shell-min-h-lg: 1565px;
-// Figma Services タイトル（ヒーロー）: 1440×270 / padding 24 上下 / gap 32（top 196 はキャンバス座標のため main 上余白には使わない）
+// Hero title band mocked at 1440×270 with 24px vertical padding + 32px gap — ignore the raw “top 196” canvas number
 $services-hero-h-lg: 270px;
 $services-hero-pad-y-lg: 24px;
 $services-hero-gap-lg: 32px;
@@ -56,7 +56,7 @@ $services-hero-gap-lg: 32px;
     }
   }
 
-  // タイトル行とイントロの間隔（Figma gap 32）
+  // Same 32px exhale between the eyebrow stack and the intro copy as in the comp
   &__hero &__container {
     @include lg {
       display: flex;

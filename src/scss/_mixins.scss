@@ -68,7 +68,7 @@
   margin: 0;
 }
 
-// 装飾線: width 200 / height 0 / border 1px / opacity 1（Figma 相当）
+// Skinny 200px accent rule under big serif headings — lifted straight from the Figma kit.
 @mixin page-hero-h1-rule {
   width: 200px;
   height: 0;

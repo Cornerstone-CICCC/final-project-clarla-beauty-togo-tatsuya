@@ -59,13 +59,13 @@
       gap: $spacing-4xl;
     }
 
-    // モバイル: ハンバーガーで .is-open のとき表示（JS は main.js）
+    // Slide-over nav on small screens — .is-open is flipped by the hamburger routine in main.js
     @media (max-width: #{$breakpoint-md - 1px}) {
       &.is-open {
         display: block;
         position: fixed;
         z-index: 99;
-        // 固定ヘッダー（padding + ロゴ行）のすぐ下
+        // Sit just under the fixed chrome (logo row + vertical padding)
         top: 4rem;
         left: 0;
         right: 0;

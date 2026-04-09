@@ -5,15 +5,15 @@ $classes-shell-pink: $color-light-pink;
 $classes-page-cream: #f8f6f4;
 $classes-text-muted: $color-dark-grey;
 $classes-card-gap: 9rem;
-$classes-card-gap-mobile: 30px; // モバイル: 前カードのボタン〜次カードの写真
+$classes-card-gap-mobile: 30px; // Breathing room between “View Class” and the next class photo on small screens
 $classes-hero-title-max: 5rem; // 80px
 // Figma class card image (Frame 430)
 $classes-media-width: 20.5rem; // 328px
 $classes-media-height: 31.25rem; // 500px
 $classes-btn-label: #5e4a49;
-// モバイル: 写真下〜本文（説明）開始までの空き
+// Gap between the class photo and the paragraph stack on phones
 $classes-mobile-gap-btn-photo: 48px;
-// Figma Classes フレーム: width 1440 / height 2220 / top 448 / left -2 / opacity 1（top はキャンバス座標のため main 余白には使わない）
+// The 1440×2220 Classes frame records top/left in canvas space — we don’t literally pipe that into main padding
 $classes-layout-max-w: 90rem; // 1440px
 $classes-layout-min-h-lg: 2220px;
 $classes-layout-nudge-x: -2px; // left -2
@@ -54,11 +54,11 @@ $classes-layout-nudge-x: -2px; // left -2
     padding-top: $spacing-lg;
     padding-bottom: 0;
 
-    // モバイル: 写真を画面端まで（横パディングなし）。本文は &__body の横 padding で確保。
+    // Let each class photo bleed to the screen edge, then lean on &__body for readable side padding
     @media (max-width: #{$breakpoint-md - 1px}) {
       padding-left: 0;
       padding-right: 0;
-      // 1枚目の写真の上に見えていたシェル色の余白をなくす
+      // Nuke the stray shell-tinted gutter that used to sit above the very first image
       padding-top: 0;
     }
 
@@ -95,7 +95,7 @@ $classes-layout-nudge-x: -2px; // left -2
     @include page-hero-h1-rule;
   }
 
-  // ウェブ（md+）: 1行目 We…to／2行目 future…（各スパンを nowrap で常に2行）｜ モバイル: 1行目 We…from／2行目 beginners…
+  // Desktop keeps the hero line break tidy with nowrap spans; mobile swaps in a friendlier pair of lines.
   &__intro {
     box-sizing: border-box;
     width: 100%;
@@ -120,7 +120,7 @@ $classes-layout-nudge-x: -2px; // left -2
     }
 
     @include md {
-      max-width: 33.4375rem; // Figma ウェブ幅 ~535px — 2行 nowrap が収まるよう拡張
+      max-width: 33.4375rem; // ~535px so both hero lines can stay nowrap without feeling cramped
     }
   }
 
@@ -231,7 +231,7 @@ $classes-layout-nudge-x: -2px; // left -2
     }
   }
 
-  // Baskervville 36px / 400 / 120% LH / 0 tracking（長い見出しはカラム幅いっぱいで1行に近づける）
+  // Card titles: Baskervville 36/400; let long names breathe across the column instead of ellipsizing.
   &__name {
     box-sizing: border-box;
     display: block;
@@ -248,7 +248,7 @@ $classes-layout-nudge-x: -2px; // left -2
     opacity: 1;
   }
 
-  // 見出し内の「1」だけやや大きく — サイズは据え置き、ベースラインを周りの文字と揃える
+  // Pop the “1” a touch for drama, but keep it sitting on the same baseline as the siblings.
   &__name-num {
     font-family: inherit;
     font-size: 1.05em;
@@ -366,7 +366,7 @@ $classes-layout-nudge-x: -2px; // left -2
     margin-top: $spacing-md;
     padding-top: $spacing-sm;
 
-    // モバイル: View Class 中央寄せ
+    // Center the CTA on narrow layouts — feels more tap-friendly than hugging one side.
     @media (max-width: #{$breakpoint-md - 1px}) {
       text-align: center;
       padding-top: $spacing-xs;
@@ -380,7 +380,7 @@ $classes-layout-nudge-x: -2px; // left -2
     align-items: center;
     justify-content: center;
     gap: 10px;
-    // モバイル（Figma）: 328×53 目安・padding 20×32・枠 0.8px
+    // Mobile spec is roughly 328×53 with 20×32 padding and a hairline 0.8px border
     width: 100%;
     max-width: 328px;
     min-width: 160px;

@@ -5,12 +5,12 @@ $class-detail-cream: #f8f6f4;
 $class-detail-shell: #f9e7e7;
 $class-detail-card-bg: #fdf2f2;
 $class-detail-btn: #5e4a49;
-// Figma: フレーム 1024×1864 / top 60 / gap 60 / 上境界 1px（left 208 は 1440 上で中央相当）
+// Main artboard is 1024×1864 with 60px top/gap; that odd 208px inset is “centered” on a 1440 canvas in Figma.
 $class-detail-frame-max: 64rem; // 1024px
 $class-detail-shell-padding-top: 60px;
 $class-detail-column-gap: 60px;
 
-// Classes「View Class」詳細（ヘッダー・フッターは共通のまま）
+// Deep-dive pages for each class — header/footer are the global chrome, everything else is bespoke here.
 .class-detail {
   @include header-padding;
   padding-bottom: 0;
@@ -24,7 +24,7 @@ $class-detail-column-gap: 60px;
     }
   }
 
-  // モバイル: Figma ヒーロー内 24px（container デフォルト 16px を上書き）
+  // Give the cream hero a bit more breathing room on phones than the default 16px gutters.
   &__top &__container {
     @media (max-width: #{$breakpoint-md - 1px}) {
       padding-left: $spacing-lg;
@@ -59,7 +59,7 @@ $class-detail-column-gap: 60px;
     line-height: 100%;
     letter-spacing: 0;
     font-variant-numeric: lining-nums proportional-nums;
-    // Figma 「leading-trim: CAP_height」相当（対応ブラウザのみ）
+    // Modern browsers can mimic Figma’s “trim cap height” for the back link; everyone else just ignores it.
     text-box-trim: trim-start;
     text-box-edge: cap alphabetic;
     color: $color-main;
@@ -108,14 +108,14 @@ $class-detail-column-gap: 60px;
       padding: $class-detail-shell-padding-top 0 $spacing-4xl;
     }
 
-    // モバイル: ヒーロー直下のピンク帯をなくし、クリームのカード本文直下に接続
+    // Stack the pink section flush under the hero on small screens so it doesn’t read like a random band of color.
     @media (max-width: #{$breakpoint-md - 1px}) {
       padding-top: 0;
       border-top: none;
     }
   }
 
-  // ピンク内 2 カラムを Figma どおり最大 1024px で中央寄せ（left 208 ≒ 1440 上で中央）
+  // Cap the two-column layout at ~1024px and park it in the middle — same story as on the widescreen mockup.
   &__shell > &__container.class-detail__layout {
     max-width: $class-detail-frame-max;
     margin-left: auto;
@@ -168,7 +168,7 @@ $class-detail-column-gap: 60px;
       border: 1px solid $color-brand;
     }
 
-    // モバイル: ヒーロー直下で本文 → 写真 →（カード外）Overview が続く見え方
+    // On phones the story goes: read the summary, scroll past the portrait, then hit the long-form overview.
     @media (max-width: #{$breakpoint-md - 1px}) {
       > .class-detail__card-body {
         order: 1;
@@ -203,7 +203,7 @@ $class-detail-column-gap: 60px;
   &__card-body {
     padding: $spacing-lg;
 
-    // モバイル: Figma Frame 88 — padding 24 / 24 / 40 / 24、ブロック間 gap 40px
+    // Frame 88 on mobile: comfy 24px sides, 40px bottom, 40px between stacked pieces.
     @media (max-width: #{$breakpoint-md - 1px}) {
       box-sizing: border-box;
       width: 100%;
@@ -296,7 +296,7 @@ $class-detail-column-gap: 60px;
     }
   }
 
-  // モバイルのみ: Curriculum 下の Join Class（カード内ボタンに加えページ末尾）
+  // Extra Join Class under the syllabus on phones — you still keep the button in the pricing card up top.
   &__join-wrap {
     display: none;
 
@@ -398,7 +398,7 @@ $class-detail-column-gap: 60px;
   }
 }
 
-// クラス詳細デザイン統一（1-on-1 / Workshop / Beginner）
+// The three templates share this skin; swap the modifier on <main> to change the vibe.
 .class-detail--one-to-one,
 .class-detail--workshop,
 .class-detail--beginner {
@@ -419,7 +419,7 @@ $class-detail-column-gap: 60px;
     container-type: inline-size;
     container-name: class-detail-card;
 
-    // モバイル: ピンクのカード地が本文〜写真のあいだに見えないよう全体をクリームに統一
+    // Paint the whole card cream on mobile — stops a sliver of “card pink” peeking between copy and portrait.
     @media (max-width: #{$breakpoint-md - 1px}) {
       background-color: $class-detail-cream;
       gap: 0;
@@ -430,13 +430,13 @@ $class-detail-column-gap: 60px;
     background-color: $class-detail-shell;
 
     @media (max-width: #{$breakpoint-md - 1px}) {
-      background-color: $class-detail-cream; // #F8F6F4（写真上ブロックのみ）
+      background-color: $class-detail-cream; // #F8F6F4 for the strip above the photo
     }
   }
 
   .class-detail__main {
     text-align: left;
-    // 右カラム幅を基準に cqi（Overview / リストの可変サイズ — 画像列とのバランス）
+    // Container queries read off the text column so the type scales with the image/narrow layout tug-of-war.
     container-type: inline-size;
     container-name: class-detail-main;
   }
@@ -474,7 +474,7 @@ $class-detail-column-gap: 60px;
     margin-bottom: 0;
   }
 
-  // Overview を常に 2 行 — 字詰めは .class-detail__main の幅基準（画像 : 本文 ≈ 調整しやすい）
+  // Two-line overview blurb — the clamp tracks the main column width so it plays nice with the hero photo column.
   .class-detail__overview--two-lines {
     box-sizing: border-box;
     max-width: 100%;
@@ -486,7 +486,7 @@ $class-detail-column-gap: 60px;
     }
   }
 
-  // 1-on-1 など: Overview を常に 3 行（Figma body 18px 寄せ・狭い幅だけ字詰め）
+  // Three-line variant: still ~18px on a good monitor, then squeezes a bit when the viewport gets stingy.
   .class-detail__overview--three-lines {
     box-sizing: border-box;
     max-width: 100%;
@@ -538,7 +538,7 @@ $class-detail-column-gap: 60px;
     }
   }
 
-  // モバイル: Overview が字詰め・nowrap で途切れやすいので読みやすさ優先（768px 以上は既存のまま）
+  // On phones, loosened line breaks beat microscopic type; from md upward we go back to the stricter spec.
   @media (max-width: #{$breakpoint-md - 1px}) {
     .class-detail__overview--two-lines,
     .class-detail__overview--three-lines {
@@ -553,7 +553,7 @@ $class-detail-column-gap: 60px;
   }
 }
 
-// 1-on-1: カード見出しは uppercase・1行・「-on-」だけ小文字
+// 1-on-1 marketing headline: shouty uppercase, single line, tiny lowercase bridge inside “1-on-1”.
 .class-detail--one-to-one {
   .class-detail__card-title {
     text-align: center;
@@ -570,10 +570,10 @@ $class-detail-column-gap: 60px;
   }
 }
 
-// Workshop / Beginner: 写真どおりタイトルケース・中央・複数行可
+// Workshop & beginner cards relax into title case, center alignment, and however many lines they need.
 .class-detail--workshop,
 .class-detail--beginner {
-  // カリキュラムの特定 li：2 行固定 — 点と左端をそろえ、ピンク背景からはみ出さない
+  // Some syllabus bullets are authored as two tidy lines — keep the bullets lined up and text off the pink edge.
   .class-detail__list-item--fit {
     list-style-position: outside;
     width: 100%;
@@ -608,7 +608,7 @@ $class-detail-column-gap: 60px;
     margin-right: auto;
   }
 
-  // モバイル: カリキュラムの 2 行固定 li が極小・はみ出し — 768px 以上は cqi ベースのまま
+  // Those cqi-driven sizes got punishing on actual devices — bump them back to 16px and allow wrapping here.
   @media (max-width: #{$breakpoint-md - 1px}) {
     .class-detail__list-item--fit {
       font-size: 16px;
