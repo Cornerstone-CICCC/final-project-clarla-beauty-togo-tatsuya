@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,400..700;1,400..700&display=swap");
 :root {
   --brand: #191919;
   --dark-brown: #725a58;
@@ -53,7 +53,6 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--snow-white);
   z-index: 10;
   padding: 1rem 1.5rem;
   transition: transform 0.3s ease;
@@ -70,6 +69,13 @@ img {
 }
 .header.is-scrolled {
   animation: headerSlide 0.6s ease;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem 1.5rem;
+}
+@media (min-width: 1280px) {
+  .header.is-scrolled {
+    padding: 1.5rem 2.5rem;
+  }
 }
 .header__inner {
   display: flex;
@@ -316,47 +322,104 @@ img {
   }
 }
 .footer {
-  background-color: var(--color-brand);
-  color: var(--color-paper-white);
-  padding: 2.5rem 0 1.5rem;
-}
-.footer__container {
-  width: 100%;
+  width: calc(100% - 1rem * 2);
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1rem;
-}
-.footer__content {
-  display: grid;
-  gap: 1.5rem;
+  padding: 2.5rem 0;
 }
 @media (min-width: 768px) {
-  .footer__content {
-    grid-template-columns: repeat(3, 1fr);
+  .footer {
+    padding-bottom: 2rem;
   }
 }
-.footer__section h3 {
-  font-size: 1.125rem;
-  margin-bottom: 1rem;
-}
-.footer__links {
+.footer__inner {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  gap: 0.5rem;
 }
-.footer__link {
+.footer__top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.footer__logo {
+  height: 132px;
+  width: auto;
+}
+.footer__sentence {
   font-size: 0.875rem;
-  transition: color 0.3s;
+  font-weight: 300;
+  color: var(--brand);
+  font-family: "Nunito", "Arial", sans-serif;
+  letter-spacing: 0.02em;
 }
-.footer__link:hover {
-  color: var(--color-accent);
+.footer__sns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
 }
-.footer__copyright {
+.footer__nav {
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  padding: 1.5rem 0;
+  border-top: 0.5px solid var(--brand);
+  border-bottom: 0.5px solid var(--brand);
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 576px) {
+  .footer__nav {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .footer__nav {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .footer__nav {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+.footer__nav-link {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--dark-brown);
+  font-family: "Baskervville", "Georgia", serif;
+  position: relative;
   text-align: center;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(251, 250, 250, 0.2);
+  display: inline-block;
+  cursor: pointer;
+}
+.footer__nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--dark-brown);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.footer__nav-link:hover::before {
+  transform: scaleX(1);
+}
+.footer__copy {
   font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--dark-brown);
+  font-family: "Nunito", "Arial", sans-serif;
+  letter-spacing: 0.02em;
 }
 
 .home__hero {
@@ -2478,9 +2541,6 @@ img {
   opacity: 0.95;
 }
 
-.contact {
-  padding: 2rem 0 4rem;
-}
 .contact__container {
   width: 100%;
   max-width: 1280px;
@@ -3089,14 +3149,19 @@ img {
   text-transform: lowercase;
 }
 .contact {
-  padding: 5.25rem 0 40px;
+  padding-top: 112px;
 }
-.contact__intro, .contact__signature {
-  display: none;
+@media (min-width: 1280px) {
+  .contact {
+    padding-top: 184px;
+  }
+}
+.contact {
+  padding-bottom: 0;
 }
 .contact__container {
   max-width: 390px;
-  padding: 0 10px;
+  padding: 2.5rem 10px 0;
 }
 .contact__form {
   max-width: 100%;
@@ -3372,11 +3437,19 @@ img {
 }
 @media (min-width: 768px) {
   .contact {
-    padding: 5.5rem 0 60px;
+    padding-top: 112px;
+    padding-bottom: 0;
   }
+}
+@media (min-width: 768px) and (min-width: 1280px) {
+  .contact {
+    padding-top: 184px;
+  }
+}
+@media (min-width: 768px) {
   .contact__container {
     max-width: 720px;
-    padding: 0 20px;
+    padding: 2.5rem 20px 0;
   }
   .contact__form {
     padding: 22px 20px 28px;

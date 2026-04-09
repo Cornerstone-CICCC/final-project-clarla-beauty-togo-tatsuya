@@ -2,50 +2,95 @@
 @use '../mixins' as *;
 
 .footer {
-  background-color: var(--color-brand);
-  color: var(--color-paper-white);
-  padding: $spacing-2xl 0 $spacing-lg;
+  width: calc(100% - #{$spacing-md} * 2);
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-2xl 0;
 
-  &__container {
-    @include container;
+  @include md {
+    padding-bottom: $spacing-xl;
   }
 
-  &__content {
-    display: grid;
+  &__inner {
+    @include flex-center;
+    flex-direction: column;
+  }
+
+  &__top {
+    @include flex-center;
+    flex-direction: column;
+    gap: $spacing-md;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__logo {
+    height: 132px;
+    width: auto;
+  }
+
+  &__sentence {
+    @include text($font-size-caption, 300, var(--brand), $font-family-extra);
+    letter-spacing: 0.02em;
+  }
+
+  &__sns {
+    @include flex-center;
     gap: $spacing-lg;
+  }
+
+  &__nav {
+    width: 100%;
+    display: grid;
+    gap: $spacing-md;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    padding: $spacing-lg 0;
+    border-top: 0.5px solid var(--brand);
+    border-bottom: 0.5px solid var(--brand);
+    margin-bottom: $spacing-lg;
+
+    @include sm {
+      grid-template-columns: repeat(4, 1fr);
+    }
 
     @include md {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    @include lg {
+      grid-template-columns: repeat(7, 1fr);
     }
   }
 
-  &__section {
-    h3 {
-      font-size: $font-size-body;
-      margin-bottom: $spacing-md;
+  &__nav-link {
+    @include text($font-size-button, 400, var(--dark-brown), $font-family-heading);
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--dark-brown);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s ease;
     }
-  }
-
-  &__links {
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-sm;
-  }
-
-  &__link {
-    font-size: $font-size-caption;
-    transition: color 0.3s;
 
     &:hover {
-      color: var(--color-accent);
+      &::before {
+        transform: scaleX(1);
+      }
     }
   }
 
-  &__copyright {
-    text-align: center;
-    margin-top: $spacing-xl;
-    padding-top: $spacing-lg;
-    border-top: 1px solid rgba($color-paper-white, 0.2);
-    font-size: $font-size-caption;
+  &__copy {
+    @include text($font-size-caption, 300, var(--dark-brown), $font-family-extra);
+    letter-spacing: 0.02em;
   }
 }

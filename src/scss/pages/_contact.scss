@@ -2,8 +2,6 @@
 @use '../mixins' as *;
 
 .contact {
-  padding: $spacing-xl 0 $spacing-4xl;
-
   &__container {
     @include container;
     max-width: 760px;
@@ -621,16 +619,17 @@
   }
 
   // Contact page: mobile-first tuning to match provided design mock.
-  padding: 5.25rem 0 40px;
+  @include header-padding;
+  padding-bottom: 0;
 
-  &__intro,
-  &__signature {
-    display: none;
-  }
+  // &__intro,
+  // &__signature {
+  //   display: none;
+  // }
 
   &__container {
     max-width: 390px;
-    padding: 0 10px;
+    padding: $spacing-2xl 10px 0;
   }
 
   &__form {
@@ -937,11 +936,12 @@
   }
 
   @include md {
-    padding: 5.5rem 0 60px;
+    @include header-padding;
+    padding-bottom: 0;
 
     &__container {
       max-width: 720px;
-      padding: 0 20px;
+      padding: $spacing-2xl 20px 0;
     }
 
     &__form {

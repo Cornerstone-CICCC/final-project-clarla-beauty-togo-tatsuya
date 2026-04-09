@@ -6,7 +6,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--snow-white);
   z-index: 10;
   padding: $spacing-md $spacing-lg;
   transition: transform 0.3s ease;
@@ -21,6 +20,12 @@
 
   &.is-scrolled {
     animation: headerSlide 0.6s ease;
+    background: rgba(255, 255, 255, 0.8);
+    padding: $spacing-sm $spacing-lg;
+
+    @include xl {
+      padding: $spacing-lg $spacing-2xl;
+    }
   }
 
   &__inner {
