@@ -244,15 +244,15 @@ $overlay-fade-duration: 1.5s;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: $spacing-4xl $spacing-md;
+    padding: $spacing-2xl $spacing-md;
     background-color: var(--light-pink);
 
     @include md {
-      padding: $spacing-5xl $spacing-2xl;
+      padding: $spacing-6xl 0;
     }
 
     .customer__title {
-      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-size: clamp(2.5rem, 5vw, 5rem);
       font-family: $font-family-heading;
       font-weight: 400;
       color: var(--dark-brown);
@@ -265,8 +265,8 @@ $overlay-fade-duration: 1.5s;
         content: '';
         display: block;
         width: 120px;
-        height: 1px;
-        background-color: var(--dark-brown);
+        height: 0.5px;
+        background-color: var(--accent);
         margin: $spacing-md auto 0;
 
         @include md {
@@ -280,19 +280,26 @@ $overlay-fade-duration: 1.5s;
       text-align: center;
       max-width: 400px;
       margin-bottom: $spacing-xl;
+
+      @include md {
+        @include text($font-size-body, 300, var(--dark-grey), $font-family-extra);
+      }
     }
 
     .customer__btn {
       @include btn-outline;
       margin-bottom: $spacing-2xl;
+
+      @include md {
+        margin-bottom: $spacing-4xl;
+      }
     }
 
     .customer__list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: $spacing-sm;
+      gap: $spacing-md;
       width: 100%;
-      max-width: $breakpoint-lg;
       margin: 0 auto $spacing-2xl;
       list-style: none;
 
@@ -303,8 +310,12 @@ $overlay-fade-duration: 1.5s;
     }
 
     .customer__item {
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 2 / 3;
       overflow: hidden;
+
+      @include md {
+        aspect-ratio: 4 / 5;
+      }
     }
 
     .customer__image {
@@ -317,24 +328,29 @@ $overlay-fade-duration: 1.5s;
       display: flex;
       flex-direction: column;
       align-items: center;
-      max-width: 600px;
+      width: 100%;
+      max-width: $breakpoint-md;
       margin: 0 auto;
 
       &::before {
-        content: '\201C\201C';
-        font-size: 2.5rem;
-        font-family: $font-family-base;
-        color: var(--accent);
+        content: '';
+        display: block;
+        width: 32px;
+        height: 32px;
+        background: url('/images/icon-quote.svg') center / contain no-repeat;
         margin-bottom: $spacing-md;
       }
     }
 
     .customer__comment {
       @include text($font-size-body, 400, var(--dark-brown), $font-family-base);
-      font-style: italic;
       text-align: center;
       line-height: 1.8;
       margin-bottom: $spacing-lg;
+
+      @include md {
+        @include text($font-size-h6, 400, var(--dark-brown), $font-family-base);
+      }
     }
 
     .customer__switch-btn {

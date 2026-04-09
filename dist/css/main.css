@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 :root {
   --brand: #191919;
@@ -688,16 +687,16 @@ img {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 4rem 1rem;
+  padding: 2.5rem 1rem;
   background-color: var(--light-pink);
 }
 @media (min-width: 768px) {
   .home .home__customer {
-    padding: 5rem 2.5rem;
+    padding: 6rem 0;
   }
 }
 .home .home__customer .customer__title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.5rem, 5vw, 5rem);
   font-family: "Cormorant Garamond", "Georgia", serif;
   font-weight: 400;
   color: var(--dark-brown);
@@ -710,8 +709,8 @@ img {
   content: "";
   display: block;
   width: 120px;
-  height: 1px;
-  background-color: var(--dark-brown);
+  height: 0.5px;
+  background-color: var(--accent);
   margin: 1rem auto 0;
 }
 @media (min-width: 768px) {
@@ -727,6 +726,14 @@ img {
   text-align: center;
   max-width: 400px;
   margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .home .home__customer .customer__description {
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: var(--dark-grey);
+    font-family: "Nunito", "Arial", sans-serif;
+  }
 }
 .home .home__customer .customer__btn {
   font-size: 1.125rem;
@@ -752,12 +759,16 @@ img {
 .home .home__customer .customer__btn {
   margin-bottom: 2.5rem;
 }
+@media (min-width: 768px) {
+  .home .home__customer .customer__btn {
+    margin-bottom: 4rem;
+  }
+}
 .home .home__customer .customer__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
+  gap: 1rem;
   width: 100%;
-  max-width: 992px;
   margin: 0 auto 2.5rem;
   list-style: none;
 }
@@ -768,8 +779,13 @@ img {
   }
 }
 .home .home__customer .customer__item {
-  aspect-ratio: 1/1;
+  aspect-ratio: 2/3;
   overflow: hidden;
+}
+@media (min-width: 768px) {
+  .home .home__customer .customer__item {
+    aspect-ratio: 4/5;
+  }
 }
 .home .home__customer .customer__image {
   width: 100%;
@@ -780,14 +796,16 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 600px;
+  width: 100%;
+  max-width: 768px;
   margin: 0 auto;
 }
 .home .home__customer .customer__body::before {
-  content: "““";
-  font-size: 2.5rem;
-  font-family: "Lora", "Georgia", serif;
-  color: var(--accent);
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url("/images/icon-quote.svg") center/contain no-repeat;
   margin-bottom: 1rem;
 }
 .home .home__customer .customer__comment {
@@ -795,10 +813,17 @@ img {
   font-weight: 400;
   color: var(--dark-brown);
   font-family: "Lora", "Georgia", serif;
-  font-style: italic;
   text-align: center;
   line-height: 1.8;
   margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+  .home .home__customer .customer__comment {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--dark-brown);
+    font-family: "Lora", "Georgia", serif;
+  }
 }
 .home .home__customer .customer__switch-btn {
   display: flex;
