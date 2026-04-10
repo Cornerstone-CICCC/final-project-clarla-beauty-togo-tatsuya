@@ -240,10 +240,177 @@
 
       <!-- talk section -->
       <section class="home-talk">
-        <h2 class="home-talk__title">LET'S TALK</h2>
-        <p class="home-talk__description">
-          Check availability, pricing, and schedule a meeting for your special day or our academy services.
-        </p>
+        <div class="home-talk__inner">
+          <h2 class="home-talk__title">LET'S TALK</h2>
+          <p class="home-talk__description">
+            Check availability, pricing, and schedule a meeting for your special day or our academy services.
+          </p>
+
+          <form class="contact__form" id="home-contact-form">
+            <div class="contact__tabs">
+              <button type="button" class="contact__tab contact__tab--active" data-tab="services">Services</button>
+              <button type="button" class="contact__tab" data-tab="classes">Classes</button>
+            </div>
+
+            <div class="contact__panel" data-panel="services">
+              <div class="contact__step" data-service-step="1">
+                <div class="contact__group">
+                  <h3 class="contact__group-title">Event Type</h3>
+                  <div class="contact__chips">
+                    <label class="contact__chip">
+                      <input type="radio" name="home_event_type" value="wedding" checked />
+                      <span class="contact__chip-label">Wedding</span>
+                      <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                    </label>
+                    <label class="contact__chip">
+                      <input type="radio" name="home_event_type" value="party" />
+                      <span class="contact__chip-label">Party</span>
+                      <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                    </label>
+                    <label class="contact__chip">
+                      <input type="radio" name="home_event_type" value="photoshoot" />
+                      <span class="contact__chip-label">Photoshoot</span>
+                      <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                    </label>
+                  </div>
+                </div>
+
+                <div class="contact__row">
+                  <div class="contact__field">
+                    <label for="home-event-date">Event Date</label>
+                    <input type="date" id="home-event-date" name="home_event_date" />
+                    <label class="contact__check">
+                      <input type="checkbox" name="home_date_not_decided" />
+                      Not decided
+                    </label>
+                  </div>
+                  <div class="contact__field">
+                    <label for="home-event-time">Event Time</label>
+                    <select id="home-event-time" name="home_event_time">
+                      <option>Full day</option>
+                      <option>Morning</option>
+                      <option>Afternoon</option>
+                      <option>Evening</option>
+                    </select>
+                    <label class="contact__check">
+                      <input type="checkbox" name="home_time_not_decided" />
+                      Not decided
+                    </label>
+                  </div>
+                </div>
+
+                <div class="contact__field">
+                  <label for="home-service-name">Name</label>
+                  <input type="text" id="home-service-name" name="home_name" placeholder="Your name" />
+                </div>
+
+                <div class="contact__group">
+                  <h3 class="contact__group-title">Contact</h3>
+                  <div class="contact__choices">
+                    <label class="contact__choice">
+                      <input type="radio" name="home_contact_method" value="call" checked />
+                      Call
+                    </label>
+                  </div>
+                  <div class="contact__phone-row">
+                    <span class="contact__country-code">&#709; +1</span>
+                    <input type="tel" name="home_phone" placeholder="Your mobile number" />
+                  </div>
+                  <div class="contact__choices contact__choices--stack">
+                    <label class="contact__choice">
+                      <input type="radio" name="home_contact_method" value="whatsapp" />
+                      WhatsApp
+                    </label>
+                    <label class="contact__choice">
+                      <input type="radio" name="home_contact_method" value="sms" />
+                      SMS
+                    </label>
+                    <label class="contact__choice">
+                      <input type="radio" name="home_contact_method" value="email" />
+                      Email
+                    </label>
+                  </div>
+                </div>
+
+                <button type="button" class="contact__submit">Next</button>
+              </div>
+            </div>
+
+            <div class="contact__panel" data-panel="classes" hidden>
+              <div class="contact__step" data-class-step="1">
+                <div class="contact__group">
+                  <h3 class="contact__group-title">Class</h3>
+                  <div class="contact__chips">
+                    <label class="contact__chip">
+                      <input type="radio" name="home_class_type" value="master-subscription" checked />
+                      <span class="contact__chip-label">1-on-1 Master Subscription</span>
+                      <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                    </label>
+                    <label class="contact__chip">
+                      <input type="radio" name="home_class_type" value="1day-workshop" />
+                      <span class="contact__chip-label">1-day Makeup workshop</span>
+                      <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                    </label>
+                    <label class="contact__chip">
+                      <input type="radio" name="home_class_type" value="self-makeup" />
+                      <span class="contact__chip-label">Self-Makeup beginner class</span>
+                      <img src="/images/icon-check-pink.svg" alt="" class="contact__chip-check" />
+                    </label>
+                  </div>
+                </div>
+
+                <div class="contact__field">
+                  <label for="home-class-date">Class Date</label>
+                  <input type="date" id="home-class-date" name="home_class_date" />
+                  <label class="contact__check">
+                    <input type="checkbox" name="home_class_date_flexible" />
+                    Doesn't matter
+                  </label>
+                </div>
+
+                <div class="contact__field">
+                  <label for="home-class-question">Any questions?</label>
+                  <textarea id="home-class-question" name="home_class_question" placeholder="Your message"></textarea>
+                </div>
+
+                <div class="contact__field">
+                  <label for="home-class-name">Name</label>
+                  <input type="text" id="home-class-name" name="home_class_name" placeholder="Your name" />
+                </div>
+
+                <div class="contact__group">
+                  <h3 class="contact__group-title">Contact</h3>
+                  <div class="contact__choices">
+                    <label class="contact__choice">
+                      <input type="radio" name="home_class_contact_method" value="call" checked />
+                      Call
+                    </label>
+                  </div>
+                  <div class="contact__phone-row">
+                    <span class="contact__country-code">&#709; +1</span>
+                    <input type="tel" name="home_class_phone" placeholder="Your mobile number" />
+                  </div>
+                  <div class="contact__choices contact__choices--stack">
+                    <label class="contact__choice">
+                      <input type="radio" name="home_class_contact_method" value="whatsapp" />
+                      WhatsApp
+                    </label>
+                    <label class="contact__choice">
+                      <input type="radio" name="home_class_contact_method" value="sms" />
+                      SMS
+                    </label>
+                    <label class="contact__choice">
+                      <input type="radio" name="home_class_contact_method" value="email" />
+                      Email
+                    </label>
+                  </div>
+                </div>
+
+                <button type="button" class="contact__submit">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </section>
     </main>
 
