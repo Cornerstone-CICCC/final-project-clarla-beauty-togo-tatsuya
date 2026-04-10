@@ -1,6 +1,6 @@
-import { contactFormHandler } from './modules/contact-form.js'
-import { toggleHeaderMenu } from './modules/toggle-header-menu.js'
 import { initHeader } from './modules/header.js'
+import { homeForm } from './modules/home-form.js'
+import { toggleHeaderMenu } from './modules/toggle-header-menu.js'
 
 /**
  * Beauty Tips — hashtag filters behave like tabs. On a narrow phone we only tease the first three
@@ -157,36 +157,10 @@ if (myWorkRoot) {
   })
 }
 
-// Home Talk section — tab switch for contact form
-function initHomeTalkForm() {
-  const homeTalkForm = document.getElementById('home-contact-form')
-  if (!homeTalkForm) return
-
-  const tabs = homeTalkForm.querySelectorAll('.contact__tab')
-  const panels = homeTalkForm.querySelectorAll('.contact__panel')
-
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.tab
-
-      tabs.forEach((t) => {
-        const isActive = t === tab
-        t.classList.toggle('contact__tab--active', isActive)
-      })
-
-      panels.forEach((panel) => {
-        const isActive = panel.dataset.panel === target
-        panel.hidden = !isActive
-      })
-    })
-  })
-}
-
 function init() {
-  toggleHeaderMenu()
-  contactFormHandler()
   initHeader()
-  initHomeTalkForm()
+  homeForm()
+  toggleHeaderMenu()
 }
 
 init()
