@@ -1,87 +1,67 @@
-// Contact form tabs
+// Tabs and panel containers
 const contactTabs = document.querySelectorAll('.contact__tab')
 const contactPanels = document.querySelectorAll('.contact__panel')
+
+// Step containers (services and classes use separate step groups)
 const serviceSteps = document.querySelectorAll('[data-service-step]')
 const classSteps = document.querySelectorAll('[data-class-step]')
 
+// Switch visible step in "services" flow.
+// Only the active step remains enabled so hidden inputs are not focusable/submittable.
 const setServiceStep = (step) => {
   if (!serviceSteps.length) return
 
   serviceSteps.forEach((serviceStep) => {
     const isActive = serviceStep.dataset.serviceStep === String(step)
-    serviceStep.classList.toggle('contact__step--active', isActive)
     serviceStep.hidden = !isActive
-
-    serviceStep.querySelectorAll('input, select, textarea, button').forEach((field) => {
-      if (
-        field.hasAttribute('data-service-back') ||
-        field.hasAttribute('data-service-next') ||
-        field.hasAttribute('data-service-submit') ||
-        field.hasAttribute('data-service-edit')
-      ) {
-        return
-      }
-      field.disabled = !isActive
-    })
   })
 }
 
+// Switch visible step in "classes" flow.
 const setClassStep = (step) => {
   if (!classSteps.length) return
 
   classSteps.forEach((classStep) => {
     const isActive = classStep.dataset.classStep === String(step)
-    classStep.classList.toggle('contact__step--active', isActive)
     classStep.hidden = !isActive
-
-    classStep.querySelectorAll('input, select, textarea, button').forEach((field) => {
-      if (field.hasAttribute('data-class-submit')) return
-      field.disabled = !isActive
-    })
   })
 }
 
-if (contactTabs.length && contactPanels.length) {
-  const setPanelState = (panel, isActive) => {
-    panel.classList.toggle('contact__panel--active', isActive)
-    panel.hidden = !isActive
+// Apply active/inactive state to a panel and its inputs.
+const setPanelState = (panel, isActive) => {
+  panel.hidden = !isActive
 
-    panel.querySelectorAll('input, select, textarea').forEach((field) => {
-      field.disabled = !isActive
-    })
-
-    if (panel.dataset.panel === 'services' && isActive) {
-      setServiceStep(1)
-    }
-
-    if (panel.dataset.panel === 'classes' && isActive) {
-      setClassStep(1)
-    }
+  // Reset each flow to step 1 when its panel becomes active.
+  if (panel.dataset.panel === 'services' && isActive) {
+    setServiceStep(1)
   }
-
-  const currentTab = document.querySelector('.contact__tab--active')?.dataset.tab || 'services'
-
-  contactPanels.forEach((panel) => {
-    setPanelState(panel, panel.dataset.panel === currentTab)
-  })
-
-  contactTabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.tab
-
-      contactTabs.forEach((currentTab) => {
-        const isActive = currentTab === tab
-        currentTab.classList.toggle('contact__tab--active', isActive)
-        currentTab.setAttribute('aria-selected', String(isActive))
-      })
-
-      contactPanels.forEach((panel) => {
-        setPanelState(panel, panel.dataset.panel === target)
-      })
-    })
-  })
+  if (panel.dataset.panel === 'classes' && isActive) {
+    setClassStep(1)
+  }
 }
 
+const currentTab = 'services'
+contactPanels.forEach((panel) => {
+  setPanelState(panel, panel.dataset.panel === currentTab)
+})
+
+// Clicking a tab updates both tab button state and panel visibility.
+contactTabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.tab
+
+    contactTabs.forEach((currentTab) => {
+      const isActive = currentTab === tab
+      currentTab.classList.toggle('contact__tab--active', isActive)
+    })
+
+    contactPanels.forEach((panel) => {
+      setPanelState(panel, panel.dataset.panel === target)
+    })
+  })
+})
+
+// Buttons and result placeholders
 const serviceNextButton = document.querySelector('[data-service-next]')
 const serviceBackButton = document.querySelector('[data-service-back]')
 const serviceSubmitButton = document.querySelector('[data-service-submit]')
@@ -120,6 +100,8 @@ const attendeeLabelMap = {
   guest_flower_makeup: 'Flower girl (Makeup)'
 }
 
+// Render bullet-like list items in summary area.
+// Displays "- None" when nothing is selected so the section is never empty.
 const renderResultList = (targetList, items) => {
   if (!targetList) return
   targetList.innerHTML = ''
@@ -138,9 +120,12 @@ const renderResultList = (targetList, items) => {
   })
 }
 
+// Collect service-form values and reflect them into summary/result placeholders.
 const updateServiceResult = () => {
   const nameValue = document.getElementById('service-name')?.value?.trim()
   const contactValue = document.querySelector('input[name="service_phone"]')?.value?.trim()
+
+  // Convert checked checkbox values to display labels.
   const bridalServiceValues = [...document.querySelectorAll('input[name="bridal_service[]"]:checked')].map(
     (input) => bridalServiceLabelMap[input.value] || input.value
   )
@@ -153,30 +138,27 @@ const updateServiceResult = () => {
     (input) => attendeeLabelMap[input.name] || input.name
   )
 
-  if (resultName) {
-    resultName.textContent = nameValue || 'Guest'
-  }
-
-  if (resultContact) {
-    resultContact.textContent = contactValue || 'your contact number'
-  }
+  resultName.textContent = nameValue || 'Guest'
+  resultContact.textContent = contactValue || 'your contact number'
 
   renderResultList(resultBasicServices, bridalServiceValues)
   renderResultList(resultPremiumServices, premiumValues)
   renderResultList(resultAttendees, attendeeValues)
 }
 
+// Collect class-form values and mirror them to class result blocks.
 const updateClassResult = () => {
   const classNameValue = document.getElementById('class-name')?.value?.trim()
   const classContactValue = document.querySelector('input[name="class_phone"]')?.value?.trim()
 
-  if (classResultName) classResultName.textContent = classNameValue || 'Guest'
-  if (classResultNameSecond) classResultNameSecond.textContent = classNameValue || 'Guest'
-  if (classResultContact) classResultContact.textContent = classContactValue || '+1-0000000000'
+  classResultName.textContent = classNameValue || 'Guest'
+  classResultNameSecond.textContent = classNameValue || 'Guest'
+  classResultContact.textContent = classContactValue || '+1-0000000000'
 }
 
+// Guest counters (UI-only increment/decrement controls).
+// Current count is kept in local state and reflected in the counter text node.
 const guestCounters = document.querySelectorAll('[data-guest-counter]')
-
 guestCounters.forEach((counter) => {
   const valueEl = counter.querySelector('[data-counter-value]')
   const decreaseBtn = counter.querySelector('[data-counter-action="decrease"]')
@@ -184,6 +166,7 @@ guestCounters.forEach((counter) => {
   let count = Number(valueEl?.textContent || 0)
 
   const render = () => {
+    // Keep minus button disabled at zero to avoid negative counts.
     if (valueEl) valueEl.textContent = String(count)
     if (decreaseBtn) decreaseBtn.disabled = count === 0
   }
@@ -201,51 +184,15 @@ guestCounters.forEach((counter) => {
   render()
 })
 
-if (serviceNextButton) {
-  serviceNextButton.addEventListener('click', () => {
-    setServiceStep(2)
-  })
-}
-
-if (serviceBackButton) {
-  serviceBackButton.addEventListener('click', () => {
-    setServiceStep(1)
-  })
-}
-
-if (serviceSubmitButton) {
-  serviceSubmitButton.addEventListener('click', () => {
-    updateServiceResult()
-    setServiceStep(3)
-  })
-}
-
-if (serviceEditButton) {
-  serviceEditButton.addEventListener('click', () => {
-    setServiceStep(2)
-  })
-}
-
-if (classSubmitButton) {
-  classSubmitButton.addEventListener('click', () => {
-    updateClassResult()
-    setClassStep(2)
-  })
-}
-
-// Contact form handling
-const contactFormEl = document.getElementById('contact-form')
-
-if (contactFormEl) {
-  contactFormEl.addEventListener('submit', (e) => {
-    e.preventDefault()
-
-    const formData = new FormData(contactFormEl)
-    const data = Object.fromEntries(formData)
-
-    console.log('Form submitted:', data)
-    alert('Thank you for your message!')
-
-    contactFormEl.reset()
-  })
-}
+// Service flow navigation
+serviceNextButton.addEventListener('click', () => setServiceStep(2))
+serviceBackButton.addEventListener('click', () => setServiceStep(1))
+serviceSubmitButton.addEventListener('click', () => {
+  updateServiceResult()
+  setServiceStep(3)
+})
+serviceEditButton.addEventListener('click', () => setServiceStep(2))
+classSubmitButton.addEventListener('click', () => {
+  updateClassResult()
+  setClassStep(2)
+})
