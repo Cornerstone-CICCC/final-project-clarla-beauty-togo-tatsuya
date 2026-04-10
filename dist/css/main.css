@@ -4053,7 +4053,13 @@ img {
 .contact__panel[data-panel=services] .contact__guest-row .contact__check {
   margin-top: 0;
   grid-column: 1/-1;
-  font-size: 13px;
+  font-size: 12px;
+}
+.contact__panel[data-panel=services] .contact__group--guest .contact__guest-row > span:first-child {
+  font-size: 15px;
+}
+.contact__panel[data-panel=services] .contact__group--guest .contact__guest-counter-button, .contact__panel[data-panel=services] .contact__group--guest .contact__guest-counter-value {
+  font-size: 11px;
 }
 .contact__panel[data-panel=services] .contact__result {
   gap: 10px;
@@ -4183,6 +4189,10 @@ img {
   .contact__group-title, .contact__field > label:not(.contact__check) {
     font-size: 24px;
   }
+  .contact__panel[data-panel=services] [data-service-step="1"] .contact__chips {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
   .contact__panel[data-panel=services] .contact__premium-grid {
     grid-template-columns: 1fr 1fr;
     gap: 12px 24px;
@@ -4232,9 +4242,15 @@ img {
     grid-column: auto;
     align-items: center;
     gap: 14px;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1;
     color: #2f2727;
+  }
+  .contact__panel[data-panel=services] .contact__group--guest .contact__guest-row > span:first-child {
+    font-size: 20px;
+  }
+  .contact__panel[data-panel=services] .contact__group--guest .contact__guest-counter-button, .contact__panel[data-panel=services] .contact__group--guest .contact__guest-counter-value {
+    font-size: 20px;
   }
   .contact__panel[data-panel=services] .contact__guest-row .contact__check input[type=checkbox] {
     inline-size: 24px;

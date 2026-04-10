@@ -837,7 +837,16 @@
   &__panel[data-panel='services'] &__guest-row .contact__check {
     margin-top: 0;
     grid-column: 1 / -1;
-    font-size: 13px;
+    font-size: 12px;
+  }
+
+  &__panel[data-panel='services'] &__group--guest &__guest-row > span:first-child {
+    font-size: 15px;
+  }
+
+  &__panel[data-panel='services'] &__group--guest &__guest-counter-button,
+  &__panel[data-panel='services'] &__group--guest &__guest-counter-value {
+    font-size: 11px;
   }
 
   &__panel[data-panel='services'] &__result {
@@ -962,6 +971,11 @@
       font-size: 24px;
     }
 
+    &__panel[data-panel='services'] [data-service-step='1'] &__chips {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
     &__panel[data-panel='services'] &__premium-grid {
       grid-template-columns: 1fr 1fr;
       gap: 12px 24px;
@@ -1022,9 +1036,18 @@
       grid-column: auto;
       align-items: center;
       gap: 14px;
-      font-size: 22px;
+      font-size: 20px;
       line-height: 1;
       color: #2f2727;
+    }
+
+    &__panel[data-panel='services'] &__group--guest &__guest-row > span:first-child {
+      font-size: 20px;
+    }
+
+    &__panel[data-panel='services'] &__group--guest &__guest-counter-button,
+    &__panel[data-panel='services'] &__group--guest &__guest-counter-value {
+      font-size: 20px;
     }
 
     &__panel[data-panel='services'] &__guest-row .contact__check input[type='checkbox'] {
