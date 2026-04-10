@@ -430,7 +430,7 @@ img {
     padding-top: 184px;
   }
 }
-.home .hero {
+.home .home-hero {
   position: relative;
   height: calc(100dvh - 112px);
   width: 100%;
@@ -438,11 +438,11 @@ img {
   overflow: hidden;
 }
 @media (min-width: 1280px) {
-  .home .hero {
+  .home .home-hero {
     height: calc(100dvh - 184px);
   }
 }
-.home .hero::before {
+.home .home-hero::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -450,7 +450,7 @@ img {
   z-index: 10;
   animation: overlay-fadeout 1.5s ease-out 1s forwards;
 }
-.home .hero__body {
+.home .home-hero__body {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -461,13 +461,13 @@ img {
   flex-direction: column;
   align-items: center;
 }
-.home .hero__signature {
+.home .home-hero__signature {
   max-width: 90%;
   width: 600px;
   height: auto;
   margin-bottom: 2rem;
 }
-.home .hero__description {
+.home .home-hero__description {
   font-size: 1rem;
   font-weight: 300;
   color: #fff;
@@ -479,7 +479,7 @@ img {
   width: 600px;
   margin-bottom: 2rem;
 }
-.home .hero__btn {
+.home .home-hero__btn {
   font-size: 1.125rem;
   font-weight: normal;
   color: #fff;
@@ -492,12 +492,12 @@ img {
   animation: content-fadein 0.8s ease-out 1.5s forwards;
   transition: background-color 0.3s, color 0.3s;
 }
-.home .hero__btn:hover {
+.home .home-hero__btn:hover {
   background-color: rgba(255, 255, 255, 0.8);
   color: var(--brand);
 }
 @media (min-width: 768px) {
-  .home .hero__btn {
+  .home .home-hero__btn {
     padding: 1.5rem 2rem;
   }
 }
@@ -682,7 +682,7 @@ img {
     max-width: 140px;
   }
 }
-.home .home__customer {
+.home .home-customer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -691,11 +691,11 @@ img {
   background-color: var(--light-pink);
 }
 @media (min-width: 768px) {
-  .home .home__customer {
+  .home .home-customer {
     padding: 6rem 0;
   }
 }
-.home .home__customer .customer__title {
+.home .home-customer__title {
   font-size: clamp(2.5rem, 5vw, 5rem);
   font-family: "Cormorant Garamond", "Georgia", serif;
   font-weight: 400;
@@ -704,7 +704,7 @@ img {
   text-align: center;
   margin-bottom: 1rem;
 }
-.home .home__customer .customer__title::after {
+.home .home-customer__title::after {
   content: "";
   display: block;
   width: 120px;
@@ -713,11 +713,11 @@ img {
   margin: 1rem auto 0;
 }
 @media (min-width: 768px) {
-  .home .home__customer .customer__title::after {
+  .home .home-customer__title::after {
     width: 200px;
   }
 }
-.home .home__customer .customer__description {
+.home .home-customer__description {
   font-size: 1rem;
   font-weight: 300;
   color: var(--dark-grey);
@@ -727,14 +727,14 @@ img {
   margin-bottom: 2rem;
 }
 @media (min-width: 768px) {
-  .home .home__customer .customer__description {
+  .home .home-customer__description {
     font-size: 1.125rem;
     font-weight: 300;
     color: var(--dark-grey);
     font-family: "Nunito", "Arial", sans-serif;
   }
 }
-.home .home__customer .customer__btn {
+.home .home-customer__btn {
   font-size: 1.125rem;
   font-weight: normal;
   color: var(--dark-grey);
@@ -745,25 +745,25 @@ img {
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
-.home .home__customer .customer__btn:hover {
+.home .home-customer__btn:hover {
   background-color: var(--accent);
   color: var(--snow-white);
   border-color: var(--accent);
 }
 @media (min-width: 768px) {
-  .home .home__customer .customer__btn {
+  .home .home-customer__btn {
     padding: 1rem 2.5rem;
   }
 }
-.home .home__customer .customer__btn {
+.home .home-customer__btn {
   margin-bottom: 2.5rem;
 }
 @media (min-width: 768px) {
-  .home .home__customer .customer__btn {
+  .home .home-customer__btn {
     margin-bottom: 4rem;
   }
 }
-.home .home__customer .customer__list {
+.home .home-customer__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
@@ -772,26 +772,26 @@ img {
   list-style: none;
 }
 @media (min-width: 768px) {
-  .home .home__customer .customer__list {
+  .home .home-customer__list {
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
   }
 }
-.home .home__customer .customer__item {
+.home .home-customer__item {
   aspect-ratio: 2/3;
   overflow: hidden;
 }
 @media (min-width: 768px) {
-  .home .home__customer .customer__item {
+  .home .home-customer__item {
     aspect-ratio: 4/5;
   }
 }
-.home .home__customer .customer__image {
+.home .home-customer__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.home .home__customer .customer__body {
+.home .home-customer__body {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -799,7 +799,7 @@ img {
   max-width: 768px;
   margin: 0 auto;
 }
-.home .home__customer .customer__body::before {
+.home .home-customer__body::before {
   content: "";
   display: block;
   width: 32px;
@@ -807,7 +807,7 @@ img {
   background: url("/images/icon-quote.svg") center/contain no-repeat;
   margin-bottom: 1rem;
 }
-.home .home__customer .customer__comment {
+.home .home-customer__comment {
   font-size: 1.125rem;
   font-weight: 400;
   color: var(--dark-brown);
@@ -817,30 +817,30 @@ img {
   margin-bottom: 1.5rem;
 }
 @media (min-width: 768px) {
-  .home .home__customer .customer__comment {
+  .home .home-customer__comment {
     font-size: 1.5rem;
     font-weight: 400;
     color: var(--dark-brown);
     font-family: "Lora", "Georgia", serif;
   }
 }
-.home .home__customer .customer__switch-btn {
+.home .home-customer__switch-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2rem;
 }
-.home .home__customer .customer__switch-btn img {
+.home .home-customer__switch-btn img {
   width: 24px;
   height: auto;
   cursor: pointer;
   opacity: 0.6;
   transition: opacity 0.3s;
 }
-.home .home__customer .customer__switch-btn img:hover {
+.home .home-customer__switch-btn img:hover {
   opacity: 1;
 }
-.home .home__customer .customer__current {
+.home .home-customer__current {
   font-size: 2rem;
   font-weight: 400;
   color: var(--dark-brown);
@@ -874,7 +874,7 @@ img {
   width: 120px;
   height: 0.5px;
   background-color: var(--accent);
-  margin: 1rem auto 0;
+  margin: 1.5rem auto 0.5rem;
 }
 @media (min-width: 768px) {
   .home .home-services__title::after {
@@ -930,8 +930,8 @@ img {
 .home .home-services__list {
   display: flex;
   flex-direction: column;
-  gap: 0;
-  width: 100%;
+  gap: 1.5rem;
+  width: 90%;
   list-style: none;
 }
 @media (min-width: 768px) {
