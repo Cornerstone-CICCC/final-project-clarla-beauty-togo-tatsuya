@@ -722,6 +722,113 @@ $overlay-fade-duration: 1.5s;
     }
   }
 
+  .home-tips {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: $spacing-4xl $spacing-md;
+    background-color: var(--snow-white);
+
+    @include md {
+      padding: $spacing-5xl $spacing-2xl;
+    }
+
+    &__title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-family: $font-family-heading;
+      font-weight: 400;
+      color: var(--dark-brown);
+      letter-spacing: 0.1em;
+      text-align: center;
+      margin-bottom: $spacing-md;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 1px;
+        background-color: var(--accent);
+        margin: $spacing-md auto 0;
+
+        @include md {
+          width: 160px;
+        }
+      }
+    }
+
+    &__list {
+      display: flex;
+      gap: $spacing-md;
+      width: 100%;
+      max-width: 100%;
+      padding: $spacing-xl 0;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      list-style: none;
+
+      // スクロールバーを非表示
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      @include md {
+        justify-content: center;
+        gap: $spacing-xl;
+        max-width: $breakpoint-lg;
+        margin: 0 auto;
+        overflow-x: visible;
+        scroll-snap-type: none;
+      }
+    }
+
+    &__item {
+      flex: 0 0 85%;
+      scroll-snap-align: center;
+
+      @include md {
+        flex: 0 0 auto;
+        width: calc((100% - $spacing-xl * 2) / 3);
+        max-width: 300px;
+      }
+    }
+
+    &__image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+
+      &--sp {
+        display: block;
+
+        @include md {
+          display: none;
+        }
+      }
+
+      &--pc {
+        display: none;
+
+        @include md {
+          display: block;
+        }
+      }
+    }
+
+    &__btn {
+      @include btn-outline;
+      margin-top: $spacing-md;
+
+      @include md {
+        margin-top: $spacing-xl;
+      }
+    }
+  }
+
   .home-talk {
     width: 100%;
     background-color: var(--light-pink);
@@ -758,8 +865,8 @@ $overlay-fade-duration: 1.5s;
       }
     }
 
-    // コンタクトフォームのスタイルを継承
-    .contact__form {
+    // コンタクトフォームのスタイル
+    .home-contact__form {
       max-width: 100%;
       background-color: rgba($color-light-pink, 0.5);
       border: 1px solid rgba($color-main, 0.15);
@@ -770,14 +877,14 @@ $overlay-fade-duration: 1.5s;
       }
     }
 
-    .contact__tabs {
+    .home-contact__tabs {
       display: grid;
       grid-template-columns: 1fr 1fr;
       border-bottom: 1px solid rgba($color-main, 0.4);
       margin-bottom: $spacing-lg;
     }
 
-    .contact__tab {
+    .home-contact__tab {
       border: 0;
       background: transparent;
       font-size: clamp(1.25rem, 2vw, 1.75rem);
@@ -794,7 +901,7 @@ $overlay-fade-duration: 1.5s;
       }
     }
 
-    .contact__panel {
+    .home-contact__panel {
       display: flex;
       flex-direction: column;
       gap: $spacing-lg;
@@ -804,7 +911,7 @@ $overlay-fade-duration: 1.5s;
       }
     }
 
-    .contact__step {
+    .home-contact__step {
       display: flex;
       flex-direction: column;
       gap: $spacing-lg;
@@ -814,13 +921,13 @@ $overlay-fade-duration: 1.5s;
       }
     }
 
-    .contact__group {
+    .home-contact__group {
       display: flex;
       flex-direction: column;
       gap: $spacing-sm;
     }
 
-    .contact__group-title {
+    .home-contact__group-title {
       font-size: clamp(1.25rem, 2vw, 1.5rem);
       font-family: $font-family-heading;
       font-weight: 400;
@@ -828,7 +935,7 @@ $overlay-fade-duration: 1.5s;
       margin-bottom: $spacing-xs;
     }
 
-    .contact__chips {
+    .home-contact__chips {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: $spacing-sm;
@@ -838,7 +945,7 @@ $overlay-fade-duration: 1.5s;
       }
     }
 
-    .contact__chip {
+    .home-contact__chip {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -857,27 +964,27 @@ $overlay-fade-duration: 1.5s;
         border-color: $color-dark-pink;
       }
 
-      &:has(input:checked) .contact__chip-label {
+      &:has(input:checked) .home-contact__chip-label {
         color: var(--dark-brown);
       }
     }
 
-    .contact__chip-label {
+    .home-contact__chip-label {
       flex: 1;
       color: $color-dark-grey;
     }
 
-    .contact__chip-check {
+    .home-contact__chip-check {
       width: 20px;
       height: 20px;
       opacity: 0;
     }
 
-    .contact__chip input:checked ~ .contact__chip-check {
+    .home-contact__chip input:checked ~ .home-contact__chip-check {
       opacity: 1;
     }
 
-    .contact__row {
+    .home-contact__row {
       display: grid;
       gap: $spacing-md;
 
@@ -886,12 +993,12 @@ $overlay-fade-duration: 1.5s;
       }
     }
 
-    .contact__field {
+    .home-contact__field {
       display: flex;
       flex-direction: column;
       gap: $spacing-sm;
 
-      > label:not(.contact__check) {
+      > label:not(.home-contact__check) {
         font-size: clamp(1.25rem, 2vw, 1.5rem);
         font-family: $font-family-heading;
         font-weight: 400;
@@ -919,7 +1026,7 @@ $overlay-fade-duration: 1.5s;
       }
     }
 
-    .contact__check {
+    .home-contact__check {
       display: flex;
       align-items: center;
       gap: $spacing-sm;
@@ -961,7 +1068,7 @@ $overlay-fade-duration: 1.5s;
       }
     }
 
-    .contact__choices {
+    .home-contact__choices {
       display: flex;
       flex-wrap: wrap;
       gap: $spacing-md;
@@ -973,7 +1080,7 @@ $overlay-fade-duration: 1.5s;
       }
     }
 
-    .contact__choice {
+    .home-contact__choice {
       display: inline-flex;
       align-items: center;
       gap: $spacing-sm;
@@ -1003,11 +1110,11 @@ $overlay-fade-duration: 1.5s;
       }
     }
 
-    .contact__phone-row {
+    .home-contact__phone-row {
       display: grid;
       grid-template-columns: 40px 1fr;
 
-      .contact__country-code {
+      .home-contact__country-code {
         border: 1px solid rgba($color-main, 0.25);
         border-right: 0;
         background: $color-paper-white;
@@ -1035,7 +1142,7 @@ $overlay-fade-duration: 1.5s;
       }
     }
 
-    .contact__submit {
+    .home-contact__submit {
       align-self: center;
       width: 100%;
       max-width: 200px;

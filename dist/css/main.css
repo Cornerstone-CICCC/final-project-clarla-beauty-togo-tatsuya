@@ -1228,6 +1228,131 @@ img {
   width: 100%;
   height: auto;
 }
+.home .home-tips {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 4rem 1rem;
+  background-color: var(--snow-white);
+}
+@media (min-width: 768px) {
+  .home .home-tips {
+    padding: 5rem 2.5rem;
+  }
+}
+.home .home-tips__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-family: "Baskervville", "Georgia", serif;
+  font-weight: 400;
+  color: var(--dark-brown);
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.home .home-tips__title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 1px;
+  background-color: var(--accent);
+  margin: 1rem auto 0;
+}
+@media (min-width: 768px) {
+  .home .home-tips__title::after {
+    width: 160px;
+  }
+}
+.home .home-tips__list {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 100%;
+  padding: 2rem 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  list-style: none;
+}
+.home .home-tips__list::-webkit-scrollbar {
+  display: none;
+}
+.home .home-tips__list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+@media (min-width: 768px) {
+  .home .home-tips__list {
+    justify-content: center;
+    gap: 2rem;
+    max-width: 992px;
+    margin: 0 auto;
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+}
+.home .home-tips__item {
+  flex: 0 0 85%;
+  scroll-snap-align: center;
+}
+@media (min-width: 768px) {
+  .home .home-tips__item {
+    flex: 0 0 auto;
+    width: calc((100% - 4rem) / 3);
+    max-width: 300px;
+  }
+}
+.home .home-tips__image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.home .home-tips__image--sp {
+  display: block;
+}
+@media (min-width: 768px) {
+  .home .home-tips__image--sp {
+    display: none;
+  }
+}
+.home .home-tips__image--pc {
+  display: none;
+}
+@media (min-width: 768px) {
+  .home .home-tips__image--pc {
+    display: block;
+  }
+}
+.home .home-tips__btn {
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: var(--dark-grey);
+  font-family: "Lora", "Georgia", serif;
+  padding: 1rem 2rem;
+  border: 1px solid var(--dark-grey);
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+.home .home-tips__btn:hover {
+  background-color: var(--accent);
+  color: var(--snow-white);
+  border-color: var(--accent);
+}
+@media (min-width: 768px) {
+  .home .home-tips__btn {
+    padding: 1rem 2.5rem;
+  }
+}
+.home .home-tips__btn {
+  margin-top: 1rem;
+}
+@media (min-width: 768px) {
+  .home .home-tips__btn {
+    margin-top: 2rem;
+  }
+}
 .home .home-talk {
   width: 100%;
   background-color: var(--light-pink);
@@ -1266,24 +1391,24 @@ img {
     font-size: 1.125rem;
   }
 }
-.home .home-talk .contact__form {
+.home .home-talk .home-contact__form {
   max-width: 100%;
   background-color: rgba(250, 233, 231, 0.5);
   border: 1px solid rgba(114, 90, 88, 0.15);
   padding: 1rem;
 }
 @media (min-width: 768px) {
-  .home .home-talk .contact__form {
+  .home .home-talk .home-contact__form {
     padding: 2rem;
   }
 }
-.home .home-talk .contact__tabs {
+.home .home-talk .home-contact__tabs {
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-bottom: 1px solid rgba(114, 90, 88, 0.4);
   margin-bottom: 1.5rem;
 }
-.home .home-talk .contact__tab {
+.home .home-talk .home-contact__tab {
   border: 0;
   background: transparent;
   font-size: clamp(1.25rem, 2vw, 1.75rem);
@@ -1294,49 +1419,49 @@ img {
   cursor: pointer;
   text-align: center;
 }
-.home .home-talk .contact__tab--active {
+.home .home-talk .home-contact__tab--active {
   color: var(--dark-brown);
   border-bottom-color: var(--dark-brown);
 }
-.home .home-talk .contact__panel {
+.home .home-talk .home-contact__panel {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
-.home .home-talk .contact__panel[hidden] {
+.home .home-talk .home-contact__panel[hidden] {
   display: none;
 }
-.home .home-talk .contact__step {
+.home .home-talk .home-contact__step {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
-.home .home-talk .contact__step[hidden] {
+.home .home-talk .home-contact__step[hidden] {
   display: none;
 }
-.home .home-talk .contact__group {
+.home .home-talk .home-contact__group {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.home .home-talk .contact__group-title {
+.home .home-talk .home-contact__group-title {
   font-size: clamp(1.25rem, 2vw, 1.5rem);
   font-family: "Baskervville", "Georgia", serif;
   font-weight: 400;
   color: var(--dark-brown);
   margin-bottom: 0.25rem;
 }
-.home .home-talk .contact__chips {
+.home .home-talk .home-contact__chips {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
 }
 @media (max-width: 575px) {
-  .home .home-talk .contact__chips {
+  .home .home-talk .home-contact__chips {
     grid-template-columns: 1fr;
   }
 }
-.home .home-talk .contact__chip {
+.home .home-talk .home-contact__chip {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1347,67 +1472,67 @@ img {
   font-size: 0.875rem;
   cursor: pointer;
 }
-.home .home-talk .contact__chip input {
+.home .home-talk .home-contact__chip input {
   display: none;
 }
-.home .home-talk .contact__chip:has(input:checked) {
+.home .home-talk .home-contact__chip:has(input:checked) {
   border-color: #b99692;
 }
-.home .home-talk .contact__chip:has(input:checked) .contact__chip-label {
+.home .home-talk .home-contact__chip:has(input:checked) .home-contact__chip-label {
   color: var(--dark-brown);
 }
-.home .home-talk .contact__chip-label {
+.home .home-talk .home-contact__chip-label {
   flex: 1;
   color: #535353;
 }
-.home .home-talk .contact__chip-check {
+.home .home-talk .home-contact__chip-check {
   width: 20px;
   height: 20px;
   opacity: 0;
 }
-.home .home-talk .contact__chip input:checked ~ .contact__chip-check {
+.home .home-talk .home-contact__chip input:checked ~ .home-contact__chip-check {
   opacity: 1;
 }
-.home .home-talk .contact__row {
+.home .home-talk .home-contact__row {
   display: grid;
   gap: 1rem;
 }
 @media (min-width: 576px) {
-  .home .home-talk .contact__row {
+  .home .home-talk .home-contact__row {
     grid-template-columns: 1fr 1fr;
   }
 }
-.home .home-talk .contact__field {
+.home .home-talk .home-contact__field {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.home .home-talk .contact__field > label:not(.contact__check) {
+.home .home-talk .home-contact__field > label:not(.home-contact__check) {
   font-size: clamp(1.25rem, 2vw, 1.5rem);
   font-family: "Baskervville", "Georgia", serif;
   font-weight: 400;
   color: var(--dark-brown);
 }
-.home .home-talk .contact__field input,
-.home .home-talk .contact__field select,
-.home .home-talk .contact__field textarea {
+.home .home-talk .home-contact__field input,
+.home .home-talk .home-contact__field select,
+.home .home-talk .home-contact__field textarea {
   background-color: #fbfafa;
   border: 1px solid rgba(114, 90, 88, 0.25);
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
   color: rgba(114, 90, 88, 0.85);
 }
-.home .home-talk .contact__field input:focus,
-.home .home-talk .contact__field select:focus,
-.home .home-talk .contact__field textarea:focus {
+.home .home-talk .home-contact__field input:focus,
+.home .home-talk .home-contact__field select:focus,
+.home .home-talk .home-contact__field textarea:focus {
   outline: none;
   border-color: rgba(114, 90, 88, 0.55);
 }
-.home .home-talk .contact__field textarea {
+.home .home-talk .home-contact__field textarea {
   min-height: 110px;
   resize: vertical;
 }
-.home .home-talk .contact__check {
+.home .home-talk .home-contact__check {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -1415,7 +1540,7 @@ img {
   color: var(--dark-grey);
   margin-top: 0.25rem;
 }
-.home .home-talk .contact__check input[type=checkbox] {
+.home .home-talk .home-contact__check input[type=checkbox] {
   -webkit-appearance: none;
   appearance: none;
   width: 18px;
@@ -1433,11 +1558,11 @@ img {
   cursor: pointer;
   box-sizing: border-box;
 }
-.home .home-talk .contact__check input[type=checkbox]:checked {
+.home .home-talk .home-contact__check input[type=checkbox]:checked {
   background-color: #b99692;
   border-color: #b99692;
 }
-.home .home-talk .contact__check input[type=checkbox]:checked::after {
+.home .home-talk .home-contact__check input[type=checkbox]:checked::after {
   content: "";
   width: 4px;
   height: 8px;
@@ -1445,24 +1570,24 @@ img {
   border-width: 0 2px 2px 0;
   transform: rotate(45deg) translate(-1px, -1px);
 }
-.home .home-talk .contact__choices {
+.home .home-talk .home-contact__choices {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2px;
 }
-.home .home-talk .contact__choices--stack {
+.home .home-talk .home-contact__choices--stack {
   flex-direction: column;
   gap: 0.5rem;
 }
-.home .home-talk .contact__choice {
+.home .home-talk .home-contact__choice {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.875rem;
   color: var(--dark-brown);
 }
-.home .home-talk .contact__choice input[type=radio] {
+.home .home-talk .home-contact__choice input[type=radio] {
   -webkit-appearance: none;
   appearance: none;
   width: 18px;
@@ -1478,15 +1603,15 @@ img {
   place-content: center;
   cursor: pointer;
 }
-.home .home-talk .contact__choice input[type=radio]:checked {
+.home .home-talk .home-contact__choice input[type=radio]:checked {
   background-color: rgba(185, 150, 146, 0.75);
   border-color: #fbfafa;
 }
-.home .home-talk .contact__phone-row {
+.home .home-talk .home-contact__phone-row {
   display: grid;
   grid-template-columns: 40px 1fr;
 }
-.home .home-talk .contact__phone-row .contact__country-code {
+.home .home-talk .home-contact__phone-row .home-contact__country-code {
   border: 1px solid rgba(114, 90, 88, 0.25);
   border-right: 0;
   background: #fbfafa;
@@ -1497,7 +1622,7 @@ img {
   color: rgba(114, 90, 88, 0.7);
   font-size: 0.875rem;
 }
-.home .home-talk .contact__phone-row input {
+.home .home-talk .home-contact__phone-row input {
   border-left: 0;
   background-color: #fbfafa;
   border: 1px solid rgba(114, 90, 88, 0.25);
@@ -1506,11 +1631,11 @@ img {
   font-size: 0.875rem;
   color: rgba(114, 90, 88, 0.85);
 }
-.home .home-talk .contact__phone-row input:focus {
+.home .home-talk .home-contact__phone-row input:focus {
   outline: none;
   border-color: rgba(114, 90, 88, 0.55);
 }
-.home .home-talk .contact__submit {
+.home .home-talk .home-contact__submit {
   align-self: center;
   width: 100%;
   max-width: 200px;
@@ -1524,7 +1649,7 @@ img {
   transition: background-color 0.25s, color 0.25s;
   margin-top: 1rem;
 }
-.home .home-talk .contact__submit:hover {
+.home .home-talk .home-contact__submit:hover {
   background-color: rgba(114, 90, 88, 0.08);
   color: #725a58;
 }
